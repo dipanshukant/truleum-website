@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Loft Room Configurator | Plan Your Loft Conversion | Truleum"
-  description="Answer 3 quick questions about your home and get a personalised loft conversion floor plan — with pricing, dimensions, and build time. Free, instant, no registration."
+  description="Answer 3 quick questions about your home and get a personalised loft conversion room plan — with pricing, dimensions, and build time. Free, instant, no registration."
   canonical="https://truleumloftspecialist.com/loft-room-configurator/"
 >
 
@@ -36,29 +36,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 .rc-step-label-txt.active{color:rgba(255,255,255,0.9);font-weight:600;}
 .rc-step-spacer{width:48px;}
 
-/* ── Configurator body ── */
-.rc-body{background:#f0f4f8;padding:52px 20px 210px;font-family:'Poppins',Arial,sans-serif;}
-.rc-inner{max-width:860px;margin:0 auto;}
+/* ── Body ── */
+.rc-body{background:#f0f4f8;padding:52px 20px 240px;font-family:'Poppins',Arial,sans-serif;}
+.rc-inner{max-width:900px;margin:0 auto;}
 
 /* ── Steps ── */
 .wiz-step{display:none;}
 .wiz-step.active{display:block;}
-
-/* Section heading */
 .wiz-heading{font-size:1.15rem;font-weight:800;color:#0a1a4a;margin-bottom:6px;}
 .wiz-sub{font-size:0.88rem;color:#6b7280;margin-bottom:28px;}
 
-/* ── Choice cards ── */
+/* ── Choice cards (house) ── */
 .choice-grid{display:grid;gap:14px;}
 .choice-grid.cols2{grid-template-columns:repeat(2,1fr);}
-.choice-grid.cols3{grid-template-columns:repeat(3,1fr);}
-.choice-grid.cols5{grid-template-columns:repeat(5,1fr);}
-
-.choice-card{background:#fff;border:2px solid #e5e7eb;border-radius:16px;padding:22px 18px 18px;cursor:pointer;transition:all 0.18s ease;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;position:relative;}
+.choice-card{background:#fff;border:2px solid #e5e7eb;border-radius:16px;padding:22px 18px 18px;cursor:pointer;transition:all 0.18s;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;position:relative;}
 .choice-card:hover{border-color:#c9902e;transform:translateY(-2px);box-shadow:0 6px 24px rgba(10,26,74,0.1);}
 .choice-card.selected{border-color:#0a1a4a;background:#f0f4fb;box-shadow:0 6px 24px rgba(10,26,74,0.12);}
-.choice-card.recommended{border-color:#c9902e;}
-
 .choice-icon{font-size:32px;line-height:1;}
 .choice-name{font-size:13px;font-weight:700;color:#0a1a4a;line-height:1.3;}
 .choice-desc{font-size:11.5px;color:#6b7280;line-height:1.4;}
@@ -67,15 +60,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 .rec-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#ffe89f 0%,#75561d 100%);color:#3d2600;font-size:10px;font-weight:800;padding:3px 10px;border-radius:20px;white-space:nowrap;letter-spacing:0.04em;}
 
 /* Recommendation banner */
-.rec-banner{background:linear-gradient(135deg,#fff8e8 0%,#fdefc8 100%);border:1.5px solid #c9902e;border-radius:12px;padding:14px 18px;margin-bottom:24px;display:flex;align-items:flex-start;gap:12px;display:none;}
+.rec-banner{background:linear-gradient(135deg,#fff8e8 0%,#fdefc8 100%);border:1.5px solid #c9902e;border-radius:12px;padding:14px 18px;margin-bottom:24px;align-items:flex-start;gap:12px;display:none;}
 .rec-banner.visible{display:flex;}
 .rec-banner-icon{font-size:22px;flex-shrink:0;margin-top:1px;}
 .rec-banner-text{font-size:13px;color:#5c3a00;line-height:1.5;}
 .rec-banner-text strong{color:#3d2600;font-weight:700;}
 
-/* ── Loft cards (step 2) — 5 across ── */
+/* ── Loft cards ── */
 .loft-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
-.loft-card{background:#fff;border:2px solid #e5e7eb;border-radius:14px;padding:18px 12px 14px;cursor:pointer;transition:all 0.18s ease;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;}
+.loft-card{background:#fff;border:2px solid #e5e7eb;border-radius:14px;padding:18px 12px 14px;cursor:pointer;transition:all 0.18s;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;}
 .loft-card:hover{border-color:#c9902e;transform:translateY(-2px);box-shadow:0 6px 24px rgba(10,26,74,0.1);}
 .loft-card.selected{border-color:#0a1a4a;background:#f0f4fb;}
 .loft-card.recommended{border-color:#c9902e;}
@@ -83,9 +76,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 .loft-card-name{font-size:12px;font-weight:700;color:#0a1a4a;line-height:1.3;}
 .loft-card-price{font-size:11px;color:#6b7280;}
 
-/* ── Room cards (step 3) ── */
+/* ── Room cards ── */
 .room-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.room-card{background:#fff;border:2px solid #e5e7eb;border-radius:16px;padding:26px 18px 20px;cursor:pointer;transition:all 0.18s ease;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;}
+.room-card{background:#fff;border:2px solid #e5e7eb;border-radius:16px;padding:26px 18px 20px;cursor:pointer;transition:all 0.18s;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;}
 .room-card:hover{border-color:#c9902e;transform:translateY(-2px);box-shadow:0 6px 24px rgba(10,26,74,0.1);}
 .room-card.selected{border-color:#0a1a4a;background:#f0f4fb;}
 .room-card-icon{font-size:36px;line-height:1;}
@@ -100,21 +93,38 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 .btn-next.ready{opacity:1;pointer-events:auto;}
 .btn-next.ready:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(117,86,29,0.45);}
 
-/* ── Result panel ── */
+/* ── Result ── */
 #step-result{display:none;}
 #step-result.active{display:block;}
 
-.result-grid{display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:start;}
 .result-heading{font-size:1.1rem;font-weight:800;color:#0a1a4a;margin-bottom:4px;}
-.result-sub{font-size:0.85rem;color:#6b7280;margin-bottom:20px;}
+.result-sub{font-size:0.85rem;color:#6b7280;margin-bottom:22px;}
+.result-grid{display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:start;}
 
-/* Floor plan card */
-.fp-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 6px 30px rgba(10,26,74,0.1);}
-.fp-title{background:#0a1a4a;color:#fff;font-size:12px;font-weight:700;padding:10px 16px;letter-spacing:0.06em;text-transform:uppercase;}
-.fp-svg-wrap{padding:24px;display:flex;justify-content:center;align-items:center;min-height:220px;}
-.fp-svg-wrap svg{max-width:100%;height:auto;}
+/* ── Room Vision Card ── */
+.rv-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 6px 30px rgba(10,26,74,0.1);}
+.rv-header{background:linear-gradient(135deg,#060f32 0%,#0f2460 100%);padding:20px 24px;display:flex;align-items:center;gap:14px;}
+.rv-header-icon{width:48px;height:48px;background:linear-gradient(135deg,#ffe89f 0%,#75561d 100%);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.rv-header-text{}
+.rv-header-label{font-size:10px;font-weight:700;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:2px;}
+.rv-header-title{font-size:15px;font-weight:800;color:#fff;line-height:1.2;}
 
-/* Info card */
+/* Zone visual */
+.rv-zones{display:flex;gap:6px;padding:20px 24px 0;height:72px;}
+.rv-zone{border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex:1;text-align:center;line-height:1.3;}
+.rv-zone.z-bedroom{background:linear-gradient(135deg,#1e3a8a,#1d4ed8);}
+.rv-zone.z-ensuite{background:linear-gradient(135deg,#0e7490,#06b6d4);}
+.rv-zone.z-office{background:linear-gradient(135deg,#92400e,#d97706);}
+.rv-zone.z-landing{background:#e5e7eb;color:#9ca3af;font-size:10px;flex:0 0 56px;}
+
+/* Features list */
+.rv-features{padding:20px 24px 24px;}
+.rv-features-label{font-size:10px;font-weight:800;color:#9ca3af;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;}
+.rv-feature-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.rv-feature-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#374151;line-height:1.4;}
+.rv-feature-list li::before{content:'✓';color:#c9902e;font-weight:800;font-size:13px;flex-shrink:0;margin-top:1px;}
+
+/* ── Info card ── */
 .info-card{background:#fff;border-radius:18px;padding:26px 22px;box-shadow:0 6px 30px rgba(10,26,74,0.1);display:flex;flex-direction:column;gap:14px;}
 .info-card-title{font-size:13px;font-weight:800;color:#0a1a4a;text-transform:uppercase;letter-spacing:0.08em;padding-bottom:12px;border-bottom:2px solid #f0f4f8;}
 .info-row{display:flex;justify-content:space-between;align-items:baseline;gap:8px;}
@@ -122,19 +132,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 .info-value{font-size:13px;font-weight:700;color:#0a1a4a;text-align:right;}
 .info-value.gold{color:#c9902e;}
 .info-divider{border:none;border-top:1px solid #f0f4f8;}
-
 .planning-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;}
 .planning-badge.green{background:#dcfce7;color:#15803d;}
 .planning-badge.amber{background:#fef9c3;color:#a16207;}
-
 .why-box{background:#f8f9fb;border-radius:10px;padding:14px 16px;font-size:12.5px;color:#374151;line-height:1.55;border-left:3px solid #c9902e;}
 
 /* CTA */
-.result-cta{margin-top:22px;}
+.result-cta{margin-top:4px;}
 .result-cta a{display:block;background:linear-gradient(135deg,#ffe89f 0%,#75561d 100%);color:#3d2600;text-decoration:none;font-size:15px;font-weight:800;font-family:'Poppins',Arial,sans-serif;text-align:center;padding:16px 24px;border-radius:12px;box-shadow:0 4px 20px rgba(117,86,29,0.35);transition:all 0.15s;}
 .result-cta a:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(117,86,29,0.45);}
 .result-cta p{font-size:11.5px;color:#9ca3af;text-align:center;margin-top:10px;}
-
 .btn-restart{background:none;border:none;color:#c9902e;font-size:13px;font-weight:600;font-family:'Poppins',Arial,sans-serif;cursor:pointer;text-decoration:underline;display:block;margin:18px auto 0;text-align:center;}
 .btn-restart:hover{color:#a07020;}
 
@@ -147,7 +154,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 @media(max-width:500px){
   .loft-grid{grid-template-columns:repeat(2,1fr);}
-  .choice-grid.cols2{grid-template-columns:1fr 1fr;}
   .room-grid{grid-template-columns:1fr !important;}
 }
 </style>
@@ -162,9 +168,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <!-- Hero -->
 <div class="rc-hero">
   <h1>Design Your <em>Loft Conversion</em></h1>
-  <p>3 quick questions → get your personalised floor plan with pricing, dimensions and build time.</p>
-
-  <!-- Step progress -->
+  <p>3 quick questions → get your personalised room plan with pricing, dimensions and build time.</p>
   <div class="rc-steps" id="stepDots">
     <div class="rc-step-dot active" id="dot1">1</div>
     <div class="rc-step-line" id="line1"></div>
@@ -185,11 +189,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <div class="rc-body">
   <div class="rc-inner">
 
-    <!-- ════ STEP 1: House Type ════ -->
+    <!-- STEP 1: House Type -->
     <div class="wiz-step active" id="step1">
       <div class="wiz-heading">What type of house do you have?</div>
       <div class="wiz-sub">This helps us recommend the best loft conversion for your property.</div>
-
       <div class="choice-grid cols2">
         <div class="choice-card" data-val="terraced" onclick="pickHouse(this)">
           <span class="choice-icon">🏘️</span>
@@ -212,24 +215,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <span class="choice-desc">Single-storey, ideal for full loft</span>
         </div>
       </div>
-
       <div class="wiz-nav" style="justify-content:flex-end;">
         <button class="btn-next" id="next1" onclick="goStep(2)">Next: Choose Loft Type →</button>
       </div>
     </div>
 
-    <!-- ════ STEP 2: Loft Type ════ -->
+    <!-- STEP 2: Loft Type -->
     <div class="wiz-step" id="step2">
       <div class="wiz-heading">What type of loft conversion do you want?</div>
       <div class="wiz-sub">We've highlighted the best option for your house type — but you can choose any.</div>
-
-      <!-- Recommendation banner -->
       <div class="rec-banner" id="recBanner">
         <span class="rec-banner-icon">💡</span>
         <span class="rec-banner-text" id="recBannerText"></span>
       </div>
-
-      <div class="loft-grid" id="loftGrid">
+      <div class="loft-grid">
         <div class="loft-card" data-val="velux" onclick="pickLoft(this)">
           <span class="rec-badge" style="display:none;" id="badge-velux">⭐ Recommended</span>
           <span class="loft-card-icon">🪟</span>
@@ -261,18 +260,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <span class="loft-card-price">From £42,000</span>
         </div>
       </div>
-
       <div class="wiz-nav">
         <button class="btn-back" onclick="goStep(1)">← Back</button>
         <button class="btn-next" id="next2" onclick="goStep(3)">Next: Choose Room Use →</button>
       </div>
     </div>
 
-    <!-- ════ STEP 3: Room Use ════ -->
+    <!-- STEP 3: Room Use -->
     <div class="wiz-step" id="step3">
       <div class="wiz-heading">How will you use the loft space?</div>
-      <div class="wiz-sub">Your room use affects the floor plan layout, storage options, and finishing requirements.</div>
-
+      <div class="wiz-sub">Your room use shapes the layout, storage options, and finish.</div>
       <div class="room-grid">
         <div class="room-card" data-val="bedroom" onclick="pickRoom(this)">
           <span class="room-card-icon">🛏️</span>
@@ -282,32 +279,40 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="room-card" data-val="ensuite" onclick="pickRoom(this)">
           <span class="room-card-icon">🚿</span>
           <span class="room-card-name">Bedroom + En-suite</span>
-          <span class="room-card-desc">Double bed, walk-in or wet room en-suite</span>
+          <span class="room-card-desc">Double bed, private shower room or wet room</span>
         </div>
         <div class="room-card" data-val="office" onclick="pickRoom(this)">
           <span class="room-card-icon">💻</span>
           <span class="room-card-name">Home Office</span>
-          <span class="room-card-desc">Desk, storage, maximum natural light</span>
+          <span class="room-card-desc">Desk space, storage, maximum natural light</span>
         </div>
       </div>
-
       <div class="wiz-nav">
         <button class="btn-back" onclick="goStep(2)">← Back</button>
-        <button class="btn-next" id="next3" onclick="showResult()">See My Floor Plan →</button>
+        <button class="btn-next" id="next3" onclick="showResult()">See My Room Plan →</button>
       </div>
     </div>
 
-    <!-- ════ RESULT ════ -->
+    <!-- RESULT -->
     <div id="step-result">
-      <div class="result-heading">Your Personalised Loft Plan</div>
+      <div class="result-heading">Your Personalised Loft Room</div>
       <div class="result-sub" id="resultSub"></div>
 
       <div class="result-grid">
-        <!-- Floor plan -->
-        <div>
-          <div class="fp-card">
-            <div class="fp-title" id="fpTitle">Floor Plan</div>
-            <div class="fp-svg-wrap" id="fpSvg"></div>
+
+        <!-- Room Vision Card -->
+        <div class="rv-card">
+          <div class="rv-header">
+            <div class="rv-header-icon" id="rvIcon"></div>
+            <div class="rv-header-text">
+              <div class="rv-header-label" id="rvLabel"></div>
+              <div class="rv-header-title" id="rvTitle"></div>
+            </div>
+          </div>
+          <div class="rv-zones" id="rvZones"></div>
+          <div class="rv-features">
+            <div class="rv-features-label">What's included in your loft</div>
+            <ul class="rv-feature-list" id="rvFeatures"></ul>
           </div>
         </div>
 
@@ -315,7 +320,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div>
           <div class="info-card">
             <div class="info-card-title" id="infoTitle"></div>
-
             <div class="info-row">
               <span class="info-label">Starting Price</span>
               <span class="info-value gold" id="infoPrice"></span>
@@ -344,13 +348,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
             <hr class="info-divider">
             <div class="why-box" id="infoWhy"></div>
-
             <div class="result-cta">
-              <a href="/contact/" id="ctaLink">Get a Free Quote for This Layout</a>
+              <a href="/contact/">Get a Free Quote for This Room</a>
               <p>No obligation — free site visit in Cambridge &amp; Cambridgeshire</p>
             </div>
           </div>
-
           <button class="btn-restart" onclick="restart()">← Start Over</button>
         </div>
       </div>
@@ -360,96 +362,105 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </div>
 
 <script is:inline>
-// ── State ──
-var houseType = null;
-var loftType  = null;
-var roomUse   = null;
+var houseType = null, loftType = null, roomUse = null;
 
-// Recommendation map: house type → recommended loft
 var recMap = {
   terraced: { loft: 'dormer',   reason: 'Terraced houses suit a <strong>rear Dormer</strong> — maximum headroom without touching the party walls.' },
-  semi:     { loft: 'hipgable', reason: 'Semi-detached properties are ideal for a <strong>Hip-to-Gable</strong> conversion — uses the sloping end wall for maximum space.' },
+  semi:     { loft: 'hipgable', reason: 'Semi-detached properties are ideal for a <strong>Hip-to-Gable</strong> — uses the sloping end wall for maximum space.' },
   detached: { loft: 'mansard',  reason: 'Detached homes have the freedom for a full <strong>Mansard</strong> — the most spacious and value-adding option.' },
-  bungalow: { loft: 'dormer',   reason: 'Bungalows benefit most from a <strong>Dormer</strong> conversion — transforms the roof into a full usable storey.' }
+  bungalow: { loft: 'dormer',   reason: 'Bungalows benefit most from a <strong>Dormer</strong> — transforms the roof into a full usable storey.' }
 };
 
-// ── Floor plan SVGs ── (loft × room)
-var floorPlans = {
-  velux: {
-    bedroom: '<svg viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:260px;"><rect width="260" height="200" rx="6" fill="#f8f9fb"/><rect x="20" y="20" width="220" height="160" rx="4" fill="#e3e8f0" stroke="#0a1a4a" stroke-width="2"/><rect x="30" y="30" width="140" height="130" rx="3" fill="#dbeafe" stroke="#1f3a8a" stroke-width="1.5"/><text x="100" y="100" text-anchor="middle" font-size="11" font-family="Poppins,Arial,sans-serif" fill="#1f3a8a" font-weight="600">Bedroom</text><rect x="180" y="30" width="50" height="50" rx="3" fill="#fff" stroke="#9ca3af" stroke-width="1"/><text x="205" y="59" text-anchor="middle" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#6b7280">Stairs</text><rect x="35" y="140" width="30" height="15" rx="2" fill="#bfdbfe" stroke="#1f3a8a" stroke-width="1"/><text x="50" y="151" text-anchor="middle" font-size="8" font-family="Poppins,Arial,sans-serif" fill="#1f3a8a">Bed</text><rect x="70" y="140" width="20" height="15" rx="2" fill="#bfdbfe" stroke="#1f3a8a" stroke-width="1"/><text x="80" y="151" text-anchor="middle" font-size="7" font-family="Poppins,Arial,sans-serif" fill="#1f3a8a">W</text><circle cx="230" cy="130" r="14" fill="none" stroke="#c9902e" stroke-width="1.5" stroke-dasharray="3,2"/><text x="230" y="122" text-anchor="middle" font-size="8" font-family="Poppins,Arial,sans-serif" fill="#c9902e">Sky</text><text x="230" y="132" text-anchor="middle" font-size="8" font-family="Poppins,Arial,sans-serif" fill="#c9902e">light</text><text x="180" y="185" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#9ca3af">Velux Bedroom</text></svg>',
-    ensuite: '<svg viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:260px;"><rect width="260" height="200" rx="6" fill="#f8f9fb"/><rect x="20" y="20" width="220" height="160" rx="4" fill="#e3e8f0" stroke="#0a1a4a" stroke-width="2"/><rect x="30" y="30" width="130" height="130" rx="3" fill="#dbeafe" stroke="#1f3a8a" stroke-width="1.5"/><text x="95" y="98" text-anchor="middle" font-size="11" font-family="Poppins,Arial,sans-serif" fill="#1f3a8a" font-weight="600">Bedroom</text><rect x="170" y="30" width="60" height="65" rx="3" fill="#cffafe" stroke="#0891b2" stroke-width="1.5"/><text x="200" y="66" text-anchor="middle" font-size="10" font-family="Poppins,Arial,sans-serif" fill="#0891b2" font-weight="600">En-suite</text><rect x="180" y="100" width="50" height="50" rx="3" fill="#fff" stroke="#9ca3af" stroke-width="1"/><text x="205" y="129" text-anchor="middle" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#6b7280">Stairs</text><circle cx="240" cy="168" r="12" fill="none" stroke="#c9902e" stroke-width="1.5" stroke-dasharray="3,2"/><text x="240" y="172" text-anchor="middle" font-size="8" font-family="Poppins,Arial,sans-serif" fill="#c9902e">Sky</text><text x="10" y="185" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#9ca3af">Velux Bedroom + En-suite</text></svg>',
-    office: '<svg viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:260px;"><rect width="260" height="200" rx="6" fill="#f8f9fb"/><rect x="20" y="20" width="220" height="160" rx="4" fill="#e3e8f0" stroke="#0a1a4a" stroke-width="2"/><rect x="30" y="30" width="170" height="130" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/><text x="115" y="98" text-anchor="middle" font-size="11" font-family="Poppins,Arial,sans-serif" fill="#92400e" font-weight="600">Home Office</text><rect x="210" y="30" width="20" height="130" rx="3" fill="#fff" stroke="#9ca3af" stroke-width="1"/><text x="220" y="98" text-anchor="middle" font-size="8" font-family="Poppins,Arial,sans-serif" fill="#6b7280" transform="rotate(90,220,98)">Stairs</text><circle cx="60" cy="50" r="12" fill="none" stroke="#c9902e" stroke-width="1.5" stroke-dasharray="3,2"/><text x="60" y="54" text-anchor="middle" font-size="8" font-family="Poppins,Arial,sans-serif" fill="#c9902e">Sky</text><circle cx="160" cy="50" r="12" fill="none" stroke="#c9902e" stroke-width="1.5" stroke-dasharray="3,2"/><text x="160" y="54" text-anchor="middle" font-size="8" font-family="Poppins,Arial,sans-serif" fill="#c9902e">Sky</text><text x="10" y="185" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#9ca3af">Velux Home Office</text></svg>'
-  },
-  dormer: {
-    bedroom: '<svg viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:260px;"><rect width="260" height="200" rx="6" fill="#f8f9fb"/><rect x="10" y="20" width="240" height="165" rx="4" fill="#e3e8f0" stroke="#0a1a4a" stroke-width="2"/><rect x="20" y="30" width="170" height="140" rx="3" fill="#dbeafe" stroke="#1f3a8a" stroke-width="1.5"/><text x="105" y="105" text-anchor="middle" font-size="11" font-family="Poppins,Arial,sans-serif" fill="#1f3a8a" font-weight="600">Bedroom</text><rect x="200" y="30" width="40" height="140" rx="3" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="1" stroke-dasharray="4,2"/><text x="220" y="105" text-anchor="middle" font-size="8" font-family="Poppins,Arial,sans-serif" fill="#0ea5e9" transform="rotate(90,220,105)">Dormer Extension</text><rect x="25" y="140" width="35" height="20" rx="2" fill="#bfdbfe" stroke="#1f3a8a" stroke-width="1"/><text x="43" y="153" text-anchor="middle" font-size="8" font-family="Poppins,Arial,sans-serif" fill="#1f3a8a">Bed</text><rect x="65" y="140" width="20" height="20" rx="2" fill="#bfdbfe" stroke="#1f3a8a" stroke-width="1"/><text x="75" y="153" text-anchor="middle" font-size="7" font-family="Poppins,Arial,sans-serif" fill="#1f3a8a">WRB</text><text x="10" y="190" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#9ca3af">Dormer Bedroom</text></svg>',
-    ensuite: '<svg viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:260px;"><rect width="260" height="200" rx="6" fill="#f8f9fb"/><rect x="10" y="20" width="240" height="165" rx="4" fill="#e3e8f0" stroke="#0a1a4a" stroke-width="2"/><rect x="20" y="30" width="130" height="140" rx="3" fill="#dbeafe" stroke="#1f3a8a" stroke-width="1.5"/><text x="85" y="105" text-anchor="middle" font-size="11" font-family="Poppins,Arial,sans-serif" fill="#1f3a8a" font-weight="600">Bedroom</text><rect x="160" y="30" width="80" height="80" rx="3" fill="#cffafe" stroke="#0891b2" stroke-width="1.5"/><text x="200" y="74" text-anchor="middle" font-size="10" font-family="Poppins,Arial,sans-serif" fill="#0891b2" font-weight="600">En-suite</text><rect x="160" y="120" width="80" height="50" rx="3" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/><text x="200" y="149" text-anchor="middle" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#6b7280">Stairs / Landing</text><text x="10" y="190" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#9ca3af">Dormer Bedroom + En-suite</text></svg>',
-    office: '<svg viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:260px;"><rect width="260" height="200" rx="6" fill="#f8f9fb"/><rect x="10" y="20" width="240" height="165" rx="4" fill="#e3e8f0" stroke="#0a1a4a" stroke-width="2"/><rect x="20" y="30" width="190" height="140" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/><text x="115" y="105" text-anchor="middle" font-size="11" font-family="Poppins,Arial,sans-serif" fill="#92400e" font-weight="600">Home Office</text><rect x="220" y="30" width="20" height="140" rx="3" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/><text x="230" y="105" text-anchor="middle" font-size="7" font-family="Poppins,Arial,sans-serif" fill="#6b7280" transform="rotate(90,230,105)">Stairs</text><rect x="25" y="120" width="50" height="40" rx="2" fill="#fde68a" stroke="#d97706" stroke-width="1"/><text x="50" y="144" text-anchor="middle" font-size="8" font-family="Poppins,Arial,sans-serif" fill="#92400e">Desk Area</text><text x="10" y="190" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#9ca3af">Dormer Home Office</text></svg>'
-  },
-  hipgable: {
-    bedroom: '<svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:280px;"><rect width="280" height="200" rx="6" fill="#f8f9fb"/><polygon points="20,40 260,40 240,20 40,20" fill="#d1d5db" stroke="#0a1a4a" stroke-width="1.5"/><rect x="20" y="40" width="240" height="145" rx="3" fill="#e3e8f0" stroke="#0a1a4a" stroke-width="2"/><rect x="30" y="50" width="175" height="120" rx="3" fill="#dbeafe" stroke="#1f3a8a" stroke-width="1.5"/><text x="117" y="113" text-anchor="middle" font-size="11" font-family="Poppins,Arial,sans-serif" fill="#1f3a8a" font-weight="600">Bedroom</text><rect x="215" y="50" width="35" height="120" rx="3" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="1" stroke-dasharray="4,2"/><text x="232" y="113" text-anchor="middle" font-size="8" font-family="Poppins,Arial,sans-serif" fill="#0ea5e9" transform="rotate(90,232,113)">Gable Extension</text><rect x="35" y="145" width="40" height="20" rx="2" fill="#bfdbfe" stroke="#1f3a8a" stroke-width="1"/><text x="55" y="158" text-anchor="middle" font-size="8" font-family="Poppins,Arial,sans-serif" fill="#1f3a8a">Bed</text><text x="10" y="192" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#9ca3af">Hip-to-Gable Bedroom</text></svg>',
-    ensuite: '<svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:280px;"><rect width="280" height="200" rx="6" fill="#f8f9fb"/><polygon points="20,40 260,40 240,20 40,20" fill="#d1d5db" stroke="#0a1a4a" stroke-width="1.5"/><rect x="20" y="40" width="240" height="145" rx="3" fill="#e3e8f0" stroke="#0a1a4a" stroke-width="2"/><rect x="30" y="50" width="130" height="120" rx="3" fill="#dbeafe" stroke="#1f3a8a" stroke-width="1.5"/><text x="95" y="113" text-anchor="middle" font-size="11" font-family="Poppins,Arial,sans-serif" fill="#1f3a8a" font-weight="600">Bedroom</text><rect x="170" y="50" width="80" height="65" rx="3" fill="#cffafe" stroke="#0891b2" stroke-width="1.5"/><text x="210" y="86" text-anchor="middle" font-size="10" font-family="Poppins,Arial,sans-serif" fill="#0891b2" font-weight="600">En-suite</text><rect x="170" y="125" width="80" height="45" rx="3" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/><text x="210" y="151" text-anchor="middle" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#6b7280">Landing</text><text x="10" y="192" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#9ca3af">Hip-to-Gable + En-suite</text></svg>',
-    office: '<svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:280px;"><rect width="280" height="200" rx="6" fill="#f8f9fb"/><polygon points="20,40 260,40 240,20 40,20" fill="#d1d5db" stroke="#0a1a4a" stroke-width="1.5"/><rect x="20" y="40" width="240" height="145" rx="3" fill="#e3e8f0" stroke="#0a1a4a" stroke-width="2"/><rect x="30" y="50" width="215" height="120" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/><text x="137" y="113" text-anchor="middle" font-size="11" font-family="Poppins,Arial,sans-serif" fill="#92400e" font-weight="600">Home Office</text><rect x="35" y="130" width="60" height="30" rx="2" fill="#fde68a" stroke="#d97706" stroke-width="1"/><text x="65" y="149" text-anchor="middle" font-size="8" font-family="Poppins,Arial,sans-serif" fill="#92400e">Desk Zone</text><text x="10" y="192" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#9ca3af">Hip-to-Gable Home Office</text></svg>'
-  },
-  lshaped: {
-    bedroom: '<svg viewBox="0 0 280 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:280px;"><rect width="280" height="220" rx="6" fill="#f8f9fb"/><polygon points="20,25 200,25 200,100 260,100 260,200 20,200" fill="#e3e8f0" stroke="#0a1a4a" stroke-width="2"/><rect x="30" y="35" width="160" height="110" rx="3" fill="#dbeafe" stroke="#1f3a8a" stroke-width="1.5"/><text x="110" y="94" text-anchor="middle" font-size="11" font-family="Poppins,Arial,sans-serif" fill="#1f3a8a" font-weight="600">Main Bedroom</text><rect x="30" y="155" width="220" height="35" rx="3" fill="#dbeafe" stroke="#1f3a8a" stroke-width="1"/><text x="140" y="176" text-anchor="middle" font-size="10" font-family="Poppins,Arial,sans-serif" fill="#1f3a8a" font-weight="600">Landing / Second Space</text><text x="10" y="215" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#9ca3af">L-Shaped Bedroom</text></svg>',
-    ensuite: '<svg viewBox="0 0 280 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:280px;"><rect width="280" height="220" rx="6" fill="#f8f9fb"/><polygon points="20,25 200,25 200,100 260,100 260,200 20,200" fill="#e3e8f0" stroke="#0a1a4a" stroke-width="2"/><rect x="30" y="35" width="120" height="110" rx="3" fill="#dbeafe" stroke="#1f3a8a" stroke-width="1.5"/><text x="90" y="94" text-anchor="middle" font-size="10" font-family="Poppins,Arial,sans-serif" fill="#1f3a8a" font-weight="600">Bedroom</text><rect x="160" y="35" width="90" height="110" rx="3" fill="#cffafe" stroke="#0891b2" stroke-width="1.5"/><text x="205" y="94" text-anchor="middle" font-size="10" font-family="Poppins,Arial,sans-serif" fill="#0891b2" font-weight="600">En-suite</text><rect x="30" y="155" width="220" height="35" rx="3" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/><text x="140" y="176" text-anchor="middle" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#6b7280">Landing</text><text x="10" y="215" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#9ca3af">L-Shaped Bedroom + En-suite</text></svg>',
-    office: '<svg viewBox="0 0 280 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:280px;"><rect width="280" height="220" rx="6" fill="#f8f9fb"/><polygon points="20,25 200,25 200,100 260,100 260,200 20,200" fill="#e3e8f0" stroke="#0a1a4a" stroke-width="2"/><rect x="30" y="35" width="160" height="110" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/><text x="110" y="94" text-anchor="middle" font-size="11" font-family="Poppins,Arial,sans-serif" fill="#92400e" font-weight="600">Home Office</text><rect x="30" y="155" width="220" height="35" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1"/><text x="140" y="176" text-anchor="middle" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#92400e">Meeting / Breakout Zone</text><text x="10" y="215" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#9ca3af">L-Shaped Home Office</text></svg>'
-  },
-  mansard: {
-    bedroom: '<svg viewBox="0 0 280 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:280px;"><rect width="280" height="210" rx="6" fill="#f8f9fb"/><polygon points="30,35 250,35 260,15 20,15" fill="#c9902e" opacity="0.3" stroke="#c9902e" stroke-width="1.5"/><rect x="15" y="35" width="250" height="160" rx="4" fill="#e3e8f0" stroke="#0a1a4a" stroke-width="2"/><rect x="25" y="45" width="180" height="135" rx="3" fill="#dbeafe" stroke="#1f3a8a" stroke-width="1.5"/><text x="115" y="115" text-anchor="middle" font-size="12" font-family="Poppins,Arial,sans-serif" fill="#1f3a8a" font-weight="700">Bedroom</text><rect x="215" y="45" width="40" height="135" rx="3" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/><text x="235" y="115" text-anchor="middle" font-size="8" font-family="Poppins,Arial,sans-serif" fill="#6b7280" transform="rotate(90,235,115)">Stairs / Hall</text><rect x="30" y="155" width="50" height="20" rx="2" fill="#bfdbfe" stroke="#1f3a8a" stroke-width="1"/><text x="55" y="168" text-anchor="middle" font-size="8" font-family="Poppins,Arial,sans-serif" fill="#1f3a8a">King Bed</text><text x="10" y="204" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#9ca3af">Mansard Bedroom</text></svg>',
-    ensuite: '<svg viewBox="0 0 280 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:280px;"><rect width="280" height="210" rx="6" fill="#f8f9fb"/><polygon points="30,35 250,35 260,15 20,15" fill="#c9902e" opacity="0.3" stroke="#c9902e" stroke-width="1.5"/><rect x="15" y="35" width="250" height="160" rx="4" fill="#e3e8f0" stroke="#0a1a4a" stroke-width="2"/><rect x="25" y="45" width="140" height="135" rx="3" fill="#dbeafe" stroke="#1f3a8a" stroke-width="1.5"/><text x="95" y="115" text-anchor="middle" font-size="11" font-family="Poppins,Arial,sans-serif" fill="#1f3a8a" font-weight="700">Bedroom</text><rect x="175" y="45" width="75" height="80" rx="3" fill="#cffafe" stroke="#0891b2" stroke-width="1.5"/><text x="212" y="88" text-anchor="middle" font-size="10" font-family="Poppins,Arial,sans-serif" fill="#0891b2" font-weight="600">En-suite</text><rect x="175" y="135" width="75" height="45" rx="3" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/><text x="212" y="161" text-anchor="middle" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#6b7280">Stairs</text><text x="10" y="204" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#9ca3af">Mansard Bedroom + En-suite</text></svg>',
-    office: '<svg viewBox="0 0 280 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:280px;"><rect width="280" height="210" rx="6" fill="#f8f9fb"/><polygon points="30,35 250,35 260,15 20,15" fill="#c9902e" opacity="0.3" stroke="#c9902e" stroke-width="1.5"/><rect x="15" y="35" width="250" height="160" rx="4" fill="#e3e8f0" stroke="#0a1a4a" stroke-width="2"/><rect x="25" y="45" width="215" height="135" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/><text x="132" y="110" text-anchor="middle" font-size="12" font-family="Poppins,Arial,sans-serif" fill="#92400e" font-weight="700">Home Office</text><rect x="30" y="140" width="70" height="30" rx="2" fill="#fde68a" stroke="#d97706" stroke-width="1"/><text x="65" y="159" text-anchor="middle" font-size="8" font-family="Poppins,Arial,sans-serif" fill="#92400e">Primary Desk</text><rect x="120" y="140" width="55" height="30" rx="2" fill="#fde68a" stroke="#d97706" stroke-width="1"/><text x="147" y="159" text-anchor="middle" font-size="8" font-family="Poppins,Arial,sans-serif" fill="#92400e">2nd Desk</text><text x="10" y="204" font-size="9" font-family="Poppins,Arial,sans-serif" fill="#9ca3af">Mansard Home Office</text></svg>'
-  }
-};
-
-// ── Spec data ── (loft → room → stats)
 var specs = {
   velux: {
     name: 'Velux / Rooflight Conversion',
-    bedroom:  { price:'£18,000', area:'20–25 m²', ceiling:'2.2 m', build:'4–6 weeks', value:'+10–15%', planning:'green',  planText:'Permitted Development — no application needed in most cases' },
-    ensuite:  { price:'£22,000', area:'20–25 m²', ceiling:'2.2 m', build:'5–7 weeks', value:'+12–16%', planning:'green',  planText:'Permitted Development — no application needed in most cases' },
-    office:   { price:'£18,000', area:'20–28 m²', ceiling:'2.2 m', build:'4–6 weeks', value:'+8–12%',  planning:'green',  planText:'Permitted Development — no application needed in most cases' }
+    bedroom:  { price:'£18,000', area:'20–25 m²', ceiling:'2.2 m', build:'4–6 weeks', value:'+10–15%', planning:'green' },
+    ensuite:  { price:'£22,000', area:'20–25 m²', ceiling:'2.2 m', build:'5–7 weeks', value:'+12–16%', planning:'green' },
+    office:   { price:'£18,000', area:'20–28 m²', ceiling:'2.2 m', build:'4–6 weeks', value:'+8–12%',  planning:'green' }
   },
   dormer: {
     name: 'Dormer Loft Conversion',
-    bedroom:  { price:'£28,000', area:'25–35 m²', ceiling:'2.4 m', build:'6–8 weeks', value:'+15–20%', planning:'green',  planText:'Usually Permitted Development — check with your local council' },
-    ensuite:  { price:'£34,000', area:'25–35 m²', ceiling:'2.4 m', build:'7–9 weeks', value:'+18–22%', planning:'green',  planText:'Usually Permitted Development — check with your local council' },
-    office:   { price:'£28,000', area:'25–40 m²', ceiling:'2.4 m', build:'6–8 weeks', value:'+12–16%', planning:'green',  planText:'Usually Permitted Development — check with your local council' }
+    bedroom:  { price:'£28,000', area:'25–35 m²', ceiling:'2.4 m', build:'6–8 weeks', value:'+15–20%', planning:'green' },
+    ensuite:  { price:'£34,000', area:'25–35 m²', ceiling:'2.4 m', build:'7–9 weeks', value:'+18–22%', planning:'green' },
+    office:   { price:'£28,000', area:'25–40 m²', ceiling:'2.4 m', build:'6–8 weeks', value:'+12–16%', planning:'green' }
   },
   hipgable: {
     name: 'Hip-to-Gable Conversion',
-    bedroom:  { price:'£34,000', area:'30–40 m²', ceiling:'2.5 m', build:'7–9 weeks', value:'+18–25%', planning:'amber', planText:'Planning permission usually required — we handle all applications' },
-    ensuite:  { price:'£42,000', area:'30–40 m²', ceiling:'2.5 m', build:'8–10 weeks',value:'+20–28%', planning:'amber', planText:'Planning permission usually required — we handle all applications' },
-    office:   { price:'£34,000', area:'30–45 m²', ceiling:'2.5 m', build:'7–9 weeks', value:'+15–20%', planning:'amber', planText:'Planning permission usually required — we handle all applications' }
+    bedroom:  { price:'£34,000', area:'30–40 m²', ceiling:'2.5 m', build:'7–9 weeks',  value:'+18–25%', planning:'amber' },
+    ensuite:  { price:'£42,000', area:'30–40 m²', ceiling:'2.5 m', build:'8–10 weeks', value:'+20–28%', planning:'amber' },
+    office:   { price:'£34,000', area:'30–45 m²', ceiling:'2.5 m', build:'7–9 weeks',  value:'+15–20%', planning:'amber' }
   },
   lshaped: {
     name: 'L-Shaped Dormer',
-    bedroom:  { price:'£38,000', area:'40–55 m²', ceiling:'2.4 m', build:'8–10 weeks',value:'+20–28%', planning:'amber', planText:'Planning permission usually required — we handle all applications' },
-    ensuite:  { price:'£48,000', area:'40–55 m²', ceiling:'2.4 m', build:'9–12 weeks',value:'+22–30%', planning:'amber', planText:'Planning permission usually required — we handle all applications' },
-    office:   { price:'£38,000', area:'40–60 m²', ceiling:'2.4 m', build:'8–10 weeks',value:'+18–25%', planning:'amber', planText:'Planning permission usually required — we handle all applications' }
+    bedroom:  { price:'£38,000', area:'40–55 m²', ceiling:'2.4 m', build:'8–10 weeks', value:'+20–28%', planning:'amber' },
+    ensuite:  { price:'£48,000', area:'40–55 m²', ceiling:'2.4 m', build:'9–12 weeks', value:'+22–30%', planning:'amber' },
+    office:   { price:'£38,000', area:'40–60 m²', ceiling:'2.4 m', build:'8–10 weeks', value:'+18–25%', planning:'amber' }
   },
   mansard: {
     name: 'Mansard Loft Conversion',
-    bedroom:  { price:'£42,000', area:'40–60 m²', ceiling:'2.6 m', build:'10–14 weeks',value:'+25–35%', planning:'amber', planText:'Full planning permission required — we handle all applications' },
-    ensuite:  { price:'£52,000', area:'40–60 m²', ceiling:'2.6 m', build:'12–16 weeks',value:'+28–38%', planning:'amber', planText:'Full planning permission required — we handle all applications' },
-    office:   { price:'£42,000', area:'40–65 m²', ceiling:'2.6 m', build:'10–14 weeks',value:'+22–30%', planning:'amber', planText:'Full planning permission required — we handle all applications' }
+    bedroom:  { price:'£42,000', area:'40–60 m²', ceiling:'2.6 m', build:'10–14 weeks', value:'+25–35%', planning:'amber' },
+    ensuite:  { price:'£52,000', area:'40–60 m²', ceiling:'2.6 m', build:'12–16 weeks', value:'+28–38%', planning:'amber' },
+    office:   { price:'£42,000', area:'40–65 m²', ceiling:'2.6 m', build:'10–14 weeks', value:'+22–30%', planning:'amber' }
   }
 };
 
-// Why it suits your house
+// Room features — what's included (loft × room)
+var roomFeatures = {
+  velux: {
+    bedroom: ['Double or king-size bed fits comfortably','Built-in wardrobe in eaves alcove','Two Velux rooflights for natural light','Carpet, radiator & power points','Loft hatch or staircase access'],
+    ensuite: ['Double bedroom with private en-suite','Shower enclosure or compact wet room','WC, basin & mirror cabinet','Velux rooflight over sleeping area','Heated towel rail'],
+    office:  ['Open-plan workspace up to 28 m²','Dual Velux rooflights — bright all day','Multiple USB & power sockets','Floating shelving wall included','Carpeted or LVT floor finish']
+  },
+  dormer: {
+    bedroom: ['Full double or king-size bedroom','Full-height wardrobe wall possible','Dormer window with rear garden view','Radiator, lighting & ample power points','Eaves storage cupboards on both sides'],
+    ensuite: ['Spacious bedroom + private en-suite','Walk-in shower or freestanding bath option','WC, basin & illuminated mirror cabinet','Dormer window with privacy glass option','Heated towel rail & tiled finish'],
+    office:  ['Large open-plan workspace 25–40 m²','Dormer window floods desk with light','Triple-monitor desk setup fits easily','Integrated cable management','Eaves storage cupboards on both sides']
+  },
+  hipgable: {
+    bedroom: ['Wide king or super-king bedroom','Full-height gable end wall — no sloping ceilings','Large front or rear facing windows','Walk-in wardrobe zone possible','Eaves storage both sides'],
+    ensuite: ['Generous bedroom + full en-suite','Wet room or large walk-in shower','WC, basin & heated illuminated mirror','Gable window floods space with light','Separate dressing area possible'],
+    office:  ['Widest loft workspace available','Gable window as natural focal point','Dual desk layout with breakout zone','Full-height walls throughout — no eaves','Meeting or video-call corner possible']
+  },
+  lshaped: {
+    bedroom: ['Main bedroom in primary wing','Second usable zone in L-extension','King bed + separate dressing space','Dual aspect windows — excellent light','Walk-in wardrobe in L-wing possible'],
+    ensuite: ['Master suite with luxury en-suite','Large shower or freestanding bath','Dressing area between bedroom & bathroom','Dual aspect natural light','Underfloor heating option in bathroom'],
+    office:  ['Two separate work zones in L-shape','Primary desk wing + breakout L-wing','Bookshelves & storage throughout','Dual aspect skylights','Video-call zone separate from main desk']
+  },
+  mansard: {
+    bedroom: ['Largest bedroom footprint of all loft types','Near-full ceiling height throughout — no sloped walls','Walk-in wardrobe + separate dressing room','Juliet balcony option on rear wall','Hotel-quality finish achievable'],
+    ensuite: ['Full master suite — bedroom, en-suite & dressing','Luxury bath + walk-in shower','Near-vertical walls — zero wasted space','Underfloor heating option throughout','Highest value-add of all loft types'],
+    office:  ['Premium studio-grade workspace','Near-full ceiling height throughout','Comfortably fits team of 2–3','Full-height bookshelves & storage','Juliet balcony or rooflight option']
+  }
+};
+
+var S = 'border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;text-align:center;line-height:1.3;';
+var zBed     = S+'font-size:11px;color:#fff;flex:1;background:linear-gradient(135deg,#1e3a8a,#1d4ed8);';
+var zEnsuite = S+'font-size:11px;color:#fff;flex:0 0 90px;background:linear-gradient(135deg,#0e7490,#06b6d4);';
+var zOffice  = S+'font-size:11px;color:#fff;flex:1;background:linear-gradient(135deg,#92400e,#d97706);';
+var zLanding = S+'font-size:10px;color:#9ca3af;flex:0 0 60px;background:#e5e7eb;';
+var zoneBlocks = {
+  bedroom: '<div style="'+zBed+'">Bedroom</div><div style="'+zLanding+'">Landing</div>',
+  ensuite: '<div style="'+zBed+'">Bedroom</div><div style="'+zEnsuite+'">En-suite</div><div style="'+zLanding+'">Landing</div>',
+  office:  '<div style="'+zOffice+'">Home Office</div><div style="'+zLanding+'">Landing</div>'
+};
+
+var roomIcons  = { bedroom:'🛏️', ensuite:'🚿', office:'💻' };
+var roomLabels = { bedroom:'Extra Bedroom', ensuite:'Bedroom + En-suite', office:'Home Office' };
+var houseLabels= { terraced:'Terraced House', semi:'Semi-Detached', detached:'Detached House', bungalow:'Bungalow' };
+
 var whyText = {
   terraced: {
     velux:    'Velux is the most cost-effective upgrade for terraced houses — no structural changes to party walls.',
-    dormer:   'A rear Dormer is the top choice for terraced houses. It extends into the back garden without disturbing shared walls.',
+    dormer:   'A rear Dormer is the top choice for terraced houses — extends into the back garden without disturbing shared walls.',
     hipgable: 'Hip-to-Gable works well on end-of-terrace homes where one side is unattached.',
     lshaped:  'L-Shaped Dormers maximise a terraced home\'s rear and side roof space — ideal for Victorian terraces.',
     mansard:  'A Mansard gives terraced homes a near-vertical rear wall, matching the style seen across London terraces.'
   },
   semi: {
     velux:    'Velux keeps costs low for semi-detached homes with existing good headroom.',
-    dormer:   'A rear Dormer adds headroom and light to semi-detached lofts without any work to the shared party wall.',
-    hipgable: 'Hip-to-Gable is specifically designed for semi-detached homes — the sloped hip end becomes a vertical gable, gaining significant width.',
-    lshaped:  'L-Shaped Dormers pair perfectly with semi-detached Edwardian and Victorian properties that have an existing rear back addition.',
+    dormer:   'A rear Dormer adds headroom and light without any work to the shared party wall.',
+    hipgable: 'Hip-to-Gable is designed for semi-detached homes — the sloped hip end becomes a vertical gable, gaining significant width.',
+    lshaped:  'L-Shaped Dormers pair perfectly with semi-detached Edwardian and Victorian properties with a rear back addition.',
     mansard:  'A Mansard maximises every cubic metre of a semi-detached loft — the highest-value option for your property type.'
   },
   detached: {
@@ -457,10 +468,10 @@ var whyText = {
     dormer:   'A Dormer is a solid upgrade for detached homes, adding space and light to any roof pitch.',
     hipgable: 'Hip-to-Gable suits detached homes with hipped roofs — converts unused sloped sections into usable volume.',
     lshaped:  'L-Shaped Dormers give detached homes maximum space, especially on properties with rear extensions.',
-    mansard:  'A Mansard is the flagship option for detached homes — near-vertical walls on all sides create an almost full extra storey with outstanding planning value.'
+    mansard:  'A Mansard is the flagship option for detached homes — near-vertical walls create an almost full extra storey.'
   },
   bungalow: {
-    velux:    'Velux is the entry-level loft option for bungalows — enhances light and creates usable storage or sleeping space.',
+    velux:    'Velux is the entry-level loft option for bungalows — enhances light and creates usable sleeping or storage space.',
     dormer:   'A Dormer transforms a bungalow\'s roof into a full living storey — the most popular choice for bungalow owners.',
     hipgable: 'Hip-to-Gable works well on bungalows with hipped roofs, adding substantial volume on one or both ends.',
     lshaped:  'L-Shaped Dormers give bungalows maximum floor space — ideal if you want two separate rooms in the loft.',
@@ -468,52 +479,29 @@ var whyText = {
   }
 };
 
-// ── Wizard logic ──
 function goStep(n) {
-  // Validate before advancing
   if (n === 2 && !houseType) return;
   if (n === 3 && !loftType) return;
-
-  // Hide all steps
   document.querySelectorAll('.wiz-step').forEach(function(s){ s.classList.remove('active'); });
   if (n <= 3) document.getElementById('step' + n).classList.add('active');
   document.getElementById('step-result').style.display = 'none';
   document.getElementById('step-result').classList.remove('active');
-
-  // Update dots
   for (var i = 1; i <= 3; i++) {
     var dot = document.getElementById('dot' + i);
     var lbl = document.getElementById('lbl' + i);
-    if (i < n) {
-      dot.className = 'rc-step-dot done';
-      lbl.className = 'rc-step-label-txt';
-    } else if (i === n) {
-      dot.className = 'rc-step-dot active';
-      lbl.className = 'rc-step-label-txt active';
-    } else {
-      dot.className = 'rc-step-dot pending';
-      lbl.className = 'rc-step-label-txt';
-    }
-    if (i < 3) {
-      var line = document.getElementById('line' + i);
-      line.className = i < n ? 'rc-step-line done' : 'rc-step-line';
-    }
+    dot.className = i < n ? 'rc-step-dot done' : (i === n ? 'rc-step-dot active' : 'rc-step-dot pending');
+    lbl.className = i === n ? 'rc-step-label-txt active' : 'rc-step-label-txt';
+    if (i < 3) document.getElementById('line' + i).className = i < n ? 'rc-step-line done' : 'rc-step-line';
   }
-
-  // Show recommendation banner when entering step 2
   if (n === 2 && houseType) {
     var rec = recMap[houseType];
-    var banner = document.getElementById('recBanner');
     document.getElementById('recBannerText').innerHTML = rec.reason;
-    banner.classList.add('visible');
-
-    // Mark recommended badge
-    var lofts = ['velux','dormer','hipgable','lshaped','mansard'];
-    lofts.forEach(function(lt){
-      var badge = document.getElementById('badge-' + lt);
-      if (badge) badge.style.display = (lt === rec.loft) ? 'block' : 'none';
-      var card = document.querySelector('.loft-card[data-val="' + lt + '"]');
-      if (card) card.classList.toggle('recommended', lt === rec.loft);
+    document.getElementById('recBanner').classList.add('visible');
+    ['velux','dormer','hipgable','lshaped','mansard'].forEach(function(lt){
+      var b = document.getElementById('badge-' + lt);
+      if (b) b.style.display = lt === rec.loft ? 'block' : 'none';
+      var c = document.querySelector('.loft-card[data-val="' + lt + '"]');
+      if (c) c.classList.toggle('recommended', lt === rec.loft);
     });
   }
 }
@@ -541,11 +529,7 @@ function pickRoom(card) {
 
 function showResult() {
   if (!houseType || !loftType || !roomUse) return;
-
-  // Hide wizard steps
   document.querySelectorAll('.wiz-step').forEach(function(s){ s.classList.remove('active'); });
-
-  // Mark all dots done
   for (var i = 1; i <= 3; i++) {
     document.getElementById('dot' + i).className = 'rc-step-dot done';
     document.getElementById('lbl' + i).className = 'rc-step-label-txt';
@@ -554,16 +538,19 @@ function showResult() {
 
   var loftSpec = specs[loftType];
   var roomSpec = loftSpec[roomUse];
-  var houseLabels = { terraced: 'Terraced House', semi: 'Semi-Detached', detached: 'Detached House', bungalow: 'Bungalow' };
-  var roomLabels = { bedroom: 'Extra Bedroom', ensuite: 'Bedroom + En-suite', office: 'Home Office' };
 
-  // Sub heading
   document.getElementById('resultSub').textContent =
     houseLabels[houseType] + ' · ' + loftSpec.name + ' · ' + roomLabels[roomUse];
 
-  // Floor plan
-  document.getElementById('fpTitle').textContent = loftSpec.name + ' — ' + roomLabels[roomUse];
-  document.getElementById('fpSvg').innerHTML = floorPlans[loftType][roomUse];
+  // Room Vision Card
+  document.getElementById('rvIcon').textContent = roomIcons[roomUse];
+  document.getElementById('rvLabel').textContent = loftSpec.name;
+  document.getElementById('rvTitle').textContent = roomLabels[roomUse];
+  document.getElementById('rvZones').innerHTML = zoneBlocks[roomUse];
+  var feats = roomFeatures[loftType][roomUse];
+  document.getElementById('rvFeatures').innerHTML = feats.map(function(f){
+    return '<li style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#374151;line-height:1.4;"><span style="color:#c9902e;font-weight:800;flex-shrink:0;">✓</span>' + f + '</li>';
+  }).join('');
 
   // Info card
   document.getElementById('infoTitle').textContent = loftSpec.name;
@@ -572,30 +559,22 @@ function showResult() {
   document.getElementById('infoCeiling').textContent = roomSpec.ceiling;
   document.getElementById('infoBuild').textContent = roomSpec.build;
   document.getElementById('infoValue').textContent = roomSpec.value;
-
-  var badge = document.getElementById('infoPlanning');
-  badge.innerHTML = '<span class="planning-badge ' + roomSpec.planning + '">' +
-    (roomSpec.planning === 'green' ? '✓ Usually PD' : '⚠ Permission Likely') +
+  document.getElementById('infoPlanning').innerHTML =
+    '<span class="planning-badge ' + roomSpec.planning + '">' +
+    (roomSpec.planning === 'green' ? '✓ Usually Permitted Development' : '⚠ Planning Permission Likely') +
     '</span>';
-  badge.setAttribute('title', roomSpec.planText);
-
   document.getElementById('infoWhy').textContent = whyText[houseType][loftType];
 
-  // Show result
   var result = document.getElementById('step-result');
   result.style.display = 'block';
   result.classList.add('active');
-
-  // Scroll to result
   result.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function restart() {
   houseType = null; loftType = null; roomUse = null;
   document.querySelectorAll('.choice-card, .loft-card, .room-card').forEach(function(c){ c.classList.remove('selected'); });
-  document.getElementById('next1').classList.remove('ready');
-  document.getElementById('next2').classList.remove('ready');
-  document.getElementById('next3').classList.remove('ready');
+  ['next1','next2','next3'].forEach(function(id){ document.getElementById(id).classList.remove('ready'); });
   document.getElementById('step-result').style.display = 'none';
   document.getElementById('step-result').classList.remove('active');
   document.getElementById('recBanner').classList.remove('visible');

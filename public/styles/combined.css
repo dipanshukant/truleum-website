@@ -401,6 +401,7 @@ body {
     font-size: 0.85rem;
     color: rgba(255,255,255,0.9);
     font-weight: 600;
+    flex-wrap: wrap;
 }
 
 .hero-trust .trust-stars {
@@ -414,6 +415,10 @@ body {
     height: 14px;
     background: rgba(255,255,255,0.35);
     display: inline-block;
+}
+@media (max-width: 600px) {
+    .hero-trust { font-size: 0.68rem; flex-wrap: nowrap; gap: 5px; }
+    .hero-trust .trust-cambridge { display: inline; }
 }
 
 .cta-btn:hover {
