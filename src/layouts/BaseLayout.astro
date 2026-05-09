@@ -33,7 +33,10 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
   <meta name="robots" content={robots}>
   <link rel="canonical" href={canonicalURL}>
 
-  <link rel="icon" href="/wp-content/uploads/2025/10/cropped-truleum-logo-2-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260509">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png?v=20260509">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260509">
+  <link rel="shortcut icon" href="/favicon-32x32.png?v=20260509">
 
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content={ogType}>
