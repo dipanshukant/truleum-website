@@ -2,6 +2,8 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
+const v = Date.now();
+
 interface Props {
   title: string;
   description?: string;
@@ -54,9 +56,9 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="/styles/combined.css">
-  <link rel="stylesheet" href="/styles/global-overrides.css">
-  <link rel="stylesheet" href="/wp-content/themes/truleum-theme/assets/css/popup-contact-form.css">
+  <link rel="stylesheet" href={`/styles/combined.css?v=${v}`}>
+  <link rel="stylesheet" href={`/styles/global-overrides.css?v=${v}`}>
+  <link rel="stylesheet" href={`/wp-content/themes/truleum-theme/assets/css/popup-contact-form.css?v=${v}`}>
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
