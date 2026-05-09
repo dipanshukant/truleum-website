@@ -212,7 +212,7 @@
   content: '\2713';
   position: absolute;
   left: 0;
-  color: #d4af37;
+  color: #c9902e;
   font-weight: bold;
   font-size: 14px;
 }
@@ -234,7 +234,7 @@
 }
 
 .contact-details a:hover {
-  color: #d4af37;
+  color: #c9902e;
 }
 
 /* Next Steps Section */
@@ -305,7 +305,7 @@
 }
 
 .action-btn.secondary:hover {
-  border-color: #d4af37;
+  border-color: #c9902e;
   background: #fffbf0;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
@@ -338,7 +338,7 @@
   padding: 40px;
   border-radius: 15px;
   margin-bottom: 40px;
-  border-left: 4px solid #d4af37;
+  border-left: 4px solid #c9902e;
 }
 
 .social-proof h3 {
@@ -357,7 +357,7 @@
 }
 
 .testimonial-preview cite {
-  color: #d4af37;
+  color: #c9902e;
   font-weight: 500;
   font-style: normal;
 }

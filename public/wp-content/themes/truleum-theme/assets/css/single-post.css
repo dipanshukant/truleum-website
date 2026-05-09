@@ -65,7 +65,7 @@
 }
 
 .post-breadcrumb a:hover {
-  color: #d4af37;
+  color: #c9902e;
 }
 
 .breadcrumb-separator {
@@ -93,7 +93,7 @@
 }
 
 .post-category a {
-  background: #d4af37;
+  background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
   color: white;
   padding: 6px 15px;
   border-radius: 20px;
@@ -106,7 +106,7 @@
 }
 
 .post-category a:hover {
-  background: #b8941f;
+  background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
 }
 
 .post-date,
@@ -243,7 +243,7 @@
 
 .post-content-wrapper blockquote {
   background: #f8f9fa;
-  border-left: 4px solid #d4af37;
+  border-left: 4px solid #c9902e;
   padding: 25px 30px;
   margin: 30px 0;
   font-style: italic;
@@ -309,7 +309,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: 3px solid #d4af37;
+  border: 3px solid #c9902e;
 }
 
 .author-info {
@@ -336,7 +336,7 @@
 }
 
 .author-posts a:hover {
-  color: #d4af37;
+  color: #c9902e;
 }
 
 /* Sidebar */
@@ -438,7 +438,7 @@
 }
 
 .related-post-content a:hover {
-  color: #d4af37;
+  color: #c9902e;
 }
 
 .related-post-meta {
@@ -501,7 +501,7 @@
 }
 
 .cta-button {
-  background: #d4af37;
+  background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
   color: white;
   padding: 12px 25px;
   border-radius: 25px;
@@ -512,7 +512,7 @@
 }
 
 .cta-button:hover {
-  background: #b8941f;
+  background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
   transform: translateY(-2px);
 }
 
@@ -553,7 +553,7 @@
 
 .nav-link:hover {
   background: white;
-  border-color: #d4af37;
+  border-color: #c9902e;
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
@@ -639,12 +639,12 @@
 }
 
 .cta-btn.primary {
-  background: #d4af37;
+  background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
   color: white;
 }
 
 .cta-btn.primary:hover {
-  background: #b8941f;
+  background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
   transform: translateY(-2px);
 }
 

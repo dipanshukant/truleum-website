@@ -76,15 +76,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 .wwa-tag {
     display: inline-block;
-    background: rgba(245,158,11,0.15);
-    color: #f59e0b;
+    background: rgba(201,144,46,0.15);
+    color: #c9902e;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     padding: 5px 16px;
     border-radius: 50px;
-    border: 1px solid rgba(245,158,11,0.3);
+    border: 1px solid rgba(201,144,46,0.3);
     margin-bottom: 20px;
     width: fit-content;
 }
@@ -121,14 +121,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 .wwa-list li .wwa-check {
     width: 22px;
     height: 22px;
-    background: rgba(245,158,11,0.15);
-    border: 1.5px solid rgba(245,158,11,0.4);
+    background: rgba(201,144,46,0.15);
+    border: 1.5px solid rgba(201,144,46,0.4);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    color: #f59e0b;
+    color: #c9902e;
     font-size: 12px;
     font-weight: 700;
 }
@@ -138,7 +138,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     flex-wrap: wrap;
 }
 .wwa-btn-primary {
-    background: #f59e0b;
+    background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
     color: #0a1a4a;
     font-size: 0.82rem;
     font-weight: 700;
@@ -149,7 +149,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     text-decoration: none;
     transition: background 0.2s, transform 0.2s;
 }
-.wwa-btn-primary:hover { background: #fbbf24; transform: translateY(-1px); }
+.wwa-btn-primary:hover { background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%); transform: translateY(-1px); }
 .wwa-btn-secondary {
     background: transparent;
     color: #fff;
@@ -173,7 +173,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <div class="wwa-inner">
     <div class="wwa-img-col">
-        <img src="/wp-content/uploads/2025/09/cambridge-loft-conversion-specialists.png" alt="Cambridge Loft Conversion Specialists by Truleum">
+        <img src="/wp-content/uploads/2025/09/cambridge-loft-conversion-specialists-truleum.jpg" alt="Cambridge Loft Conversion Specialists by Truleum">
     </div>
     <div class="wwa-content">
         <span class="wwa-tag">Who We Are</span>
@@ -263,7 +263,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     stroke-linejoin: round;
   }
   .connector-line {
-    stroke: rgba(245,158,11,0.13);
+    stroke: rgba(201,144,46,0.13);
     stroke-width: 1;
     stroke-dasharray: 4 5;
     fill: none;
@@ -313,9 +313,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .area-pin:hover .pin-label     { fill: #fff; }
   .area-pin:hover .pin-label-hub { fill: #fff; }
   .pin-tooltip { display: none; }
-  .tooltip-bg { fill: #0a1a4a; stroke: rgba(245,158,11,0.4); stroke-width: 1; }
+  .tooltip-bg { fill: #0a1a4a; stroke: rgba(201,144,46,0.4); stroke-width: 1; }
   .tooltip-txt {
-    fill: #f59e0b;
+    fill: #c9902e;
     font-size: 9px;
     font-weight: 700;
     font-family: 'Poppins', Arial, sans-serif;
@@ -325,15 +325,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .map-info-col { display: flex; flex-direction: column; gap: 0; }
   .map-eyebrow {
     display: inline-block;
-    background: rgba(245,158,11,0.12);
-    color: #f59e0b;
+    background: rgba(201,144,46,0.12);
+    color: #c9902e;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     padding: 5px 16px;
     border-radius: 50px;
-    border: 1px solid rgba(245,158,11,0.28);
+    border: 1px solid rgba(201,144,46,0.28);
     margin-bottom: 16px;
     width: fit-content;
   }
@@ -344,7 +344,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin: 0 0 10px;
     line-height: 1.2;
   }
-  .map-info-col h2 span { color: #f59e0b; }
+  .map-info-col h2 span { color: #c9902e; }
   .map-info-col > p {
     color: #94a3b8;
     font-size: 0.9rem;
@@ -362,7 +362,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     align-items: center;
     gap: 7px;
     background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(245,158,11,0.2);
+    border: 1px solid rgba(201,144,46,0.2);
     color: #cbd5e1;
     padding: 9px 12px;
     border-radius: 8px;
@@ -374,16 +374,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     white-space: nowrap;
   }
   .area-chip:hover {
-    background: rgba(245,158,11,0.13);
-    border-color: #f59e0b;
-    color: #f59e0b;
+    background: rgba(201,144,46,0.13);
+    border-color: #c9902e;
+    color: #c9902e;
     transform: translateY(-1px);
   }
   .area-chip-dot {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #f59e0b;
+    background: #c9902e;
     flex-shrink: 0;
   }
   .map-cta-note {
@@ -392,7 +392,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
   }
-  .map-cta-note a { color: #f59e0b; text-decoration: none; font-weight: 600; }
+  .map-cta-note a { color: #c9902e; text-decoration: none; font-weight: 600; }
   .map-cta-note a:hover { text-decoration: underline; }
   @media (max-width: 860px) {
     .map-layout { grid-template-columns: 1fr; gap: 36px; }
@@ -542,13 +542,68 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
 
         <style>
-        .review-cards-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 32px 0 36px;
+        /* Carousel wrapper */
+        .review-carousel-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin: 32px 0 12px;
         }
+        .rc-viewport {
+            flex: 1;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            display: flex;
+            gap: 20px;
+            padding: 8px 2px 20px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .rc-viewport::-webkit-scrollbar { display: none; }
+        .rc-arrow {
+            flex-shrink: 0;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            border: 2px solid #0a1a4a;
+            background: #fff;
+            color: #0a1a4a;
+            font-size: 26px;
+            font-weight: 300;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, color 0.2s;
+            line-height: 1;
+            padding: 0 0 2px;
+            box-shadow: 0 2px 8px rgba(10,26,74,0.1);
+        }
+        .rc-arrow:hover { background: #0a1a4a; color: #fff; }
+        /* Dots */
+        .rc-dots {
+            display: flex;
+            justify-content: center;
+            gap: 7px;
+            margin-bottom: 24px;
+        }
+        .rc-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #d1d5db;
+            transition: background 0.2s, transform 0.2s;
+            cursor: pointer;
+            border: none;
+            padding: 0;
+        }
+        .rc-dot.rc-dot-active { background: #0a1a4a; transform: scale(1.3); }
+        /* Cards */
         .review-card {
+            scroll-snap-align: start;
+            flex: 0 0 calc((100% - 40px) / 3);
             background: #fff;
             border: 1px solid #e5e7eb;
             border-radius: 14px;
@@ -585,16 +640,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        .review-info {
-            font-size: 12px;
-            color: #6b7280;
-            margin-top: 1px;
-        }
-        .review-stars {
-            color: #f59e0b;
-            font-size: 14px;
-            letter-spacing: 1px;
-        }
+        .review-info { font-size: 12px; color: #6b7280; margin-top: 1px; }
+        .review-stars { color: #c9902e; font-size: 14px; letter-spacing: 1px; }
         .review-text {
             font-size: 14px;
             line-height: 1.75;
@@ -603,11 +650,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             max-height: 100px;
             overflow: hidden;
             transition: max-height 0.4s ease;
-            position: relative;
         }
-        .review-text.rt-expanded {
-            max-height: 2000px;
-        }
+        .review-text.rt-expanded { max-height: 2000px; }
         .review-google-badge {
             display: flex;
             align-items: center;
@@ -618,10 +662,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         }
         .review-google-badge svg { flex-shrink: 0; }
         @media (max-width: 900px) {
-            .review-cards-grid { grid-template-columns: repeat(2, 1fr); }
+            .review-card { flex: 0 0 calc((100% - 20px) / 2); }
         }
         @media (max-width: 600px) {
-            .review-cards-grid { grid-template-columns: 1fr; }
+            .review-card { flex: 0 0 100%; }
+            .rc-arrow { width: 38px; height: 38px; font-size: 22px; }
         }
         .reviews-cta {
             text-align: center;
@@ -647,12 +692,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             color: #fff;
             box-shadow: 0 4px 18px rgba(66,133,244,0.28);
         }
-        .view-all-reviews-btn i {
-            font-size: 17px;
-        }
+        .view-all-reviews-btn i { font-size: 17px; }
         </style>
 
-        <div class="review-cards-grid">
+        <div class="review-carousel-wrap">
+            <button class="rc-arrow rc-prev" id="rcPrev" aria-label="Previous reviews">&#8249;</button>
+            <div class="rc-viewport" id="rcViewport">
 
             <div class="review-card">
                 <div class="review-card-top">
@@ -751,7 +796,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 </div>
             </div>
 
+            </div>
+            <button class="rc-arrow rc-next" id="rcNext" aria-label="Next reviews">&#8250;</button>
         </div>
+        <div class="rc-dots" id="rcDots"></div>
 
         <div class="reviews-cta">
             <a href="https://share.google/Kx9tClkB5mk2rn4mN" target="_blank" class="view-all-reviews-btn">
@@ -763,8 +811,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </section>
 <script is:inline>
 (function(){
+    /* ── Read-more buttons ── */
     var s = document.createElement('style');
-    s.textContent = '.rt-read-more{display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:transparent;border:1.5px solid #f59e0b;color:#f59e0b;font-size:12.5px;font-weight:600;font-family:Poppins,Arial,sans-serif;cursor:pointer;padding:6px 16px;border-radius:6px;letter-spacing:.02em;transition:background .2s,color .2s}.rt-read-more:hover{background:#f59e0b;color:#fff}';
+    s.textContent = '.rt-read-more{display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:transparent;border:1.5px solid #c9902e;color:#c9902e;font-size:12.5px;font-weight:600;font-family:Poppins,Arial,sans-serif;cursor:pointer;padding:6px 16px;border-radius:6px;letter-spacing:.02em;transition:background .2s,color .2s}.rt-read-more:hover{background:linear-gradient(135deg,#ffe89f 0%,#75561d 100%);color:#fff}';
     document.head.appendChild(s);
     document.querySelectorAll('.review-text').forEach(function(p){
         if(p.scrollHeight > p.clientHeight + 4){
@@ -780,6 +829,67 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             p.parentNode.insertBefore(btn, p.nextSibling);
         }
     });
+
+    /* ── Carousel ── */
+    var viewport = document.getElementById('rcViewport');
+    var prevBtn  = document.getElementById('rcPrev');
+    var nextBtn  = document.getElementById('rcNext');
+    var dotsWrap = document.getElementById('rcDots');
+    if(!viewport) return;
+    var cards = viewport.querySelectorAll('.review-card');
+    var total = cards.length;
+
+    function visCount(){
+        if(window.innerWidth <= 600) return 1;
+        if(window.innerWidth <= 900) return 2;
+        return 3;
+    }
+
+    function cardStep(){
+        return cards[0].getBoundingClientRect().width + 20;
+    }
+
+    function curIdx(){
+        return Math.round(viewport.scrollLeft / cardStep());
+    }
+
+    function goTo(idx){
+        viewport.scrollTo({ left: idx * cardStep(), behavior: 'smooth' });
+    }
+
+    function buildDots(){
+        dotsWrap.innerHTML = '';
+        var num = Math.max(1, total - visCount() + 1);
+        for(var i = 0; i < num; i++){
+            var d = document.createElement('button');
+            d.className = 'rc-dot' + (i === 0 ? ' rc-dot-active' : '');
+            d.setAttribute('aria-label', 'Go to review ' + (i + 1));
+            (function(n){ d.addEventListener('click', function(){ goTo(n); }); })(i);
+            dotsWrap.appendChild(d);
+        }
+    }
+
+    function updateUI(){
+        var idx  = curIdx();
+        var dots = dotsWrap.querySelectorAll('.rc-dot');
+        dots.forEach(function(d, i){ d.classList.toggle('rc-dot-active', i === idx); });
+    }
+
+    buildDots();
+    updateUI();
+
+    prevBtn.addEventListener('click', function(){
+        var idx  = curIdx();
+        var maxI = Math.max(0, total - visCount());
+        goTo(idx <= 0 ? maxI : idx - 1);
+    });
+    nextBtn.addEventListener('click', function(){
+        var idx  = curIdx();
+        var maxI = Math.max(0, total - visCount());
+        goTo(idx >= maxI ? 0 : idx + 1);
+    });
+    viewport.addEventListener('scroll', updateUI);
+    window.addEventListener('resize', function(){ buildDots(); updateUI(); });
 })();
 </script>
 
@@ -796,7 +906,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         content: '';
         position: absolute;
         inset: 0;
-        background: radial-gradient(ellipse at 70% 50%, rgba(245,158,11,0.08) 0%, transparent 60%);
+        background: radial-gradient(ellipse at 70% 50%, rgba(201,144,46,0.08) 0%, transparent 60%);
         pointer-events: none;
     }
     .ba-container {
@@ -808,15 +918,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
     .ba-eyebrow {
         display: inline-block;
-        background: rgba(245,158,11,0.15);
-        color: #f59e0b;
+        background: rgba(201,144,46,0.15);
+        color: #c9902e;
         font-size: 12px;
         font-weight: 700;
         letter-spacing: 2px;
         text-transform: uppercase;
         padding: 6px 16px;
         border-radius: 50px;
-        border: 1px solid rgba(245,158,11,0.3);
+        border: 1px solid rgba(201,144,46,0.3);
         margin-bottom: 16px;
     }
     .ba-title {
@@ -828,7 +938,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
     .ba-title em {
         font-style: normal;
-        color: #f59e0b;
+        color: #c9902e;
     }
     .ba-subtitle {
         color: rgba(255,255,255,0.6);
@@ -883,7 +993,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
     .ba-label-after {
         right: 20px;
-        background: rgba(245,158,11,0.88);
+        background: rgba(201,144,46,0.88);
         color: #fff;
         border: 1px solid rgba(255,255,255,0.25);
     }
@@ -1117,7 +1227,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         display: inline-block;
         width: 16px;
         height: 2px;
-        background: #f59e0b;
+        background: #c9902e;
         border-radius: 1px;
         flex-shrink: 0;
     }
@@ -1174,13 +1284,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         width: 160px;
         height: 160px;
         border-radius: 50%;
-        background: rgba(245,158,11,0.08);
+        background: rgba(201,144,46,0.08);
         pointer-events: none;
     }
     .qc-result-icon {
         width: 52px;
         height: 52px;
-        background: rgba(245,158,11,0.15);
+        background: rgba(201,144,46,0.15);
         border-radius: 14px;
         display: flex;
         align-items: center;
@@ -1242,7 +1352,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         width: 5px;
         height: 5px;
         border-radius: 50%;
-        background: #f59e0b;
+        background: #c9902e;
         flex-shrink: 0;
     }
     .qc-disclaimer {
@@ -1253,7 +1363,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
     .qc-cta {
         display: block;
-        background: linear-gradient(135deg, #f59e0b, #fbbf24);
+        background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
         color: #0a1a4a;
         font-weight: 900;
         font-size: 14px;
@@ -1264,11 +1374,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         width: 100%;
         text-align: center;
         letter-spacing: 0.3px;
-        box-shadow: 0 4px 16px rgba(245,158,11,0.3);
+        box-shadow: 0 4px 16px rgba(117,86,29,0.3);
     }
     .qc-cta:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(245,158,11,0.45);
+        box-shadow: 0 8px 24px rgba(117,86,29,0.45);
     }
     @media (max-width: 580px) {
         .qc-card { grid-template-columns: 1fr; }
@@ -1313,8 +1423,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="qc-divider"></div>
             <div class="qc-result">
                 <div class="qc-result-icon">&#127968;</div>
-                <div class="qc-result-label">Estimated Price Range</div>
-                <div class="qc-price" id="qcPrice">£18,000 – £24,000</div>
+                <div class="qc-result-label">Starting From</div>
+                <div class="qc-price" id="qcPrice">£18,000</div>
                 <div class="qc-includes">
                     <div class="qc-includes-title">Typically Includes</div>
                     <ul>
@@ -1352,8 +1462,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 var base = prices[sel.type][sel.size];
                 var mult = finishMult[sel.finish];
                 var lo = Math.round(base[0] * mult / 500) * 500;
-                var hi = Math.round(base[1] * mult / 500) * 500;
-                priceEl.textContent = fmt(lo) + ' – ' + fmt(hi);
+                priceEl.textContent = fmt(lo);
                 priceEl.classList.remove('updating');
             }, 120);
         }

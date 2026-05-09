@@ -30,7 +30,7 @@
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: #d4af37;
+    background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
 }
 
 .locations-container {
@@ -84,7 +84,7 @@
 
 .where-we {
     display: inline-block;
-    background: #d4af37;
+    background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
     color: white !important;
     text-decoration: none;
     padding: 10px 25px;
@@ -100,7 +100,7 @@
 
 .location-card a:not(.where-we) {
     display: inline-block;
-    background: #d4af37;
+    background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
     color: white !important;
     text-decoration: none;
     padding: 10px 25px;

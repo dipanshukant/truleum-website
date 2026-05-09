@@ -63,7 +63,7 @@
   display: block;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #d4af37;
+  color: #c9902e;
   margin-bottom: 5px;
 }
 
@@ -182,7 +182,7 @@
 }
 
 .featured-post-title a:hover {
-  color: #d4af37;
+  color: #c9902e;
 }
 
 .featured-post-excerpt {
@@ -358,7 +358,7 @@
 }
 
 .post-title a:hover {
-  color: #d4af37;
+  color: #c9902e;
 }
 
 .post-excerpt {
@@ -388,7 +388,7 @@
 }
 
 .read-more:hover {
-  color: #d4af37;
+  color: #c9902e;
 }
 
 /* Load More Section */
@@ -472,7 +472,7 @@
 }
 
 .newsletter-form button {
-  background: #d4af37;
+  background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
   color: white;
   border: none;
   padding: 15px 30px;
@@ -484,7 +484,7 @@
 }
 
 .newsletter-form button:hover {
-  background: #b8941f;
+  background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
   transform: translateY(-2px);
 }
 

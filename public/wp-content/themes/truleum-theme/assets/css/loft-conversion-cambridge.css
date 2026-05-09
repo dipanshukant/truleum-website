@@ -87,7 +87,7 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #facc15;
+  background: #c9902e;
   position: absolute;
   left: 4px;
   top: 9px;
@@ -105,7 +105,7 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #facc15, #f59e0b);
+  background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
   color: #111827;
   box-shadow: 0 10px 25px rgba(251, 191, 36, 0.45);
 }

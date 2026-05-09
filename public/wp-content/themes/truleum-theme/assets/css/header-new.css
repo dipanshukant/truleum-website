@@ -89,9 +89,9 @@
 }
 
 .enquire-btn:hover {
-  background: #d4af37;
+  background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
   color: white !important;
-  border-color: #d4af37;
+  border-color: #c9902e;
   transform: translateY(-2px);
 }
 
@@ -186,7 +186,7 @@
 
 .mobile-menu a:hover,
 .mobile-menu a.active {
-  color: #d4af37;
+  color: #c9902e;
 }
 
 .mobile-menu .enquire-btn {

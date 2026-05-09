@@ -64,7 +64,7 @@
 }
 
 .form-required-note {
-  color: #d4af37;
+  color: #c9902e;
   font-weight: 600;
   font-size: 0.9rem;
 }
@@ -114,7 +114,7 @@
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: #d4af37;
+  border-color: #c9902e;
   background: white;
   box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
   transform: translateY(-2px);
@@ -147,7 +147,7 @@
 }
 
 .radio-option:hover {
-  border-color: #d4af37;
+  border-color: #c9902e;
   background: white;
   transform: translateY(-1px);
 }
@@ -155,7 +155,7 @@
 .radio-option input[type="radio"] {
   width: 20px;
   height: 20px;
-  accent-color: #d4af37;
+  accent-color: #c9902e;
   cursor: pointer;
 }
 
@@ -165,7 +165,7 @@
 }
 
 .radio-option:has(input[type="radio"]:checked) {
-  border-color: #d4af37;
+  border-color: #c9902e;
   background: #fffbf0;
   box-shadow: 0 2px 8px rgba(212, 175, 55, 0.15);
 }
@@ -190,7 +190,7 @@
 
 .other-input:focus {
   outline: none;
-  border-color: #d4af37;
+  border-color: #c9902e;
   box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.1);
 }
 
@@ -389,7 +389,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #d4af37;
+  background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -409,7 +409,7 @@
 }
 
 .contact-content a:hover {
-  color: #d4af37;
+  color: #c9902e;
 }
 
 .contact-content p {
@@ -448,7 +448,7 @@
 }
 
 .hours-note {
-  color: #d4af37;
+  color: #c9902e;
   font-style: italic;
   text-align: center;
   font-weight: 500;

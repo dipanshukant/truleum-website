@@ -29,7 +29,7 @@ h2 span {
     transform: translateX(-50%);
     width: 200px;
     height: 3px;
-    background: #d4af37;
+    background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
 }
 
 

@@ -1,0 +1,667 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Loft Conversion Room Configurator Cambridge | Truleum"
+  description="Visualise your Cambridge loft conversion layout. Pick your loft type and room configuration to see an instant floor plan — free, no registration needed."
+  canonical="https://truleumloftspecialist.com/loft-room-configurator/"
+>
+
+<nav class="rc-breadcrumb" aria-label="Breadcrumb">
+  <div class="rc-breadcrumb-inner">
+    <a href="/">Home</a><span>›</span><span>Loft Room Configurator</span>
+  </div>
+</nav>
+
+<style>
+*{box-sizing:border-box;}
+.rc-breadcrumb{background:#0d1f5c;border-bottom:1px solid rgba(255,255,255,0.08);padding:10px 20px;font-family:'Poppins',Arial,sans-serif;}
+.rc-breadcrumb-inner{max-width:1000px;margin:0 auto;font-size:13px;color:rgba(255,255,255,0.5);display:flex;gap:8px;align-items:center;}
+.rc-breadcrumb a{color:rgba(255,255,255,0.8);text-decoration:none;font-weight:600;}
+.rc-breadcrumb a:hover{color:#c9902e;}
+
+/* Hero */
+.rc-hero{background:linear-gradient(135deg,#060f32 0%,#0f2460 100%);padding:56px 20px 48px;text-align:center;font-family:'Poppins',Arial,sans-serif;}
+.rc-hero h1{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;color:#fff;line-height:1.2;margin-bottom:12px;}
+.rc-hero h1 em{font-style:normal;color:#c9902e;}
+.rc-hero p{color:rgba(255,255,255,0.65);font-size:1rem;max-width:500px;margin:0 auto 36px;}
+
+/* Loft type selector */
+.loft-type-cards{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;max-width:900px;margin:0 auto;}
+.lt-card{background:rgba(255,255,255,0.07);border:1.5px solid rgba(255,255,255,0.12);border-radius:14px;padding:16px 20px;cursor:pointer;transition:all 0.2s ease;text-align:center;min-width:140px;flex:1;font-family:'Poppins',Arial,sans-serif;color:rgba(255,255,255,0.75);user-select:none;}
+.lt-card:hover{background:rgba(255,255,255,0.12);border-color:rgba(201,144,46,0.4);color:#fff;transform:translateY(-2px);}
+.lt-card.active{background:#d97706;border-color:#d97706;color:#fff;transform:translateY(-2px);box-shadow:none;}
+.lt-card-icon{font-size:22px;margin-bottom:8px;display:block;}
+.lt-card-name{font-size:12px;font-weight:700;line-height:1.3;}
+
+/* Main configurator area */
+.rc-wrap{background:#e8ecf5;font-family:'Poppins',Arial,sans-serif;padding:56px 20px 120px;}
+.rc-inner{max-width:1000px;margin:0 auto;}
+.rc-step-label{font-size:11px;font-weight:800;color:#9ca3af;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;}
+
+/* Room config selector */
+.room-config-cards{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;}
+.rc-card{background:#fff;border:1.5px solid #d1d5db;border-radius:12px;padding:12px 18px;cursor:pointer;transition:all 0.18s ease;font-size:13px;font-weight:600;color:#374151;font-family:'Poppins',Arial,sans-serif;}
+.rc-card:hover{border-color:#0a1a4a;color:#0a1a4a;transform:translateY(-1px);}
+.rc-card.active{background:#0a1a4a;border-color:#0a1a4a;color:#fff;}
+
+/* Floor plan display */
+.floorplan-display{display:grid;grid-template-columns:1fr 280px;gap:24px;align-items:start;}
+.floorplan-svg-wrap{background:#fff;border-radius:20px;border:1px solid #d1d5db;box-shadow:0 8px 40px rgba(10,26,74,0.1);padding:28px;overflow:hidden;}
+.floorplan-svg-wrap svg{width:100%;height:auto;display:block;}
+.floorplan-svg-wrap .fp-label{display:block;text-align:center;font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:1.5px;margin-top:16px;}
+
+/* Info panel */
+.fp-info{background:#fff;border-radius:20px;border:1px solid #d1d5db;box-shadow:0 8px 40px rgba(10,26,74,0.1);padding:28px;}
+.fp-info-title{font-size:1.1rem;font-weight:800;color:#0a1a4a;margin-bottom:6px;}
+.fp-info-type{font-size:11px;font-weight:700;color:#c9902e;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;}
+.fp-stats{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
+.fp-stat{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#f3f4f6;border-radius:8px;font-size:13px;}
+.fp-stat-key{color:#6b7280;font-weight:600;}
+.fp-stat-val{color:#0a1a4a;font-weight:800;}
+.fp-rooms-title{font-size:11px;font-weight:800;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.fp-room-list{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-direction:column;gap:7px;}
+.fp-room-list li{display:flex;align-items:center;gap:8px;font-size:13px;color:#374151;font-weight:600;}
+.fp-room-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0;}
+.fp-desc{font-size:13px;color:#6b7280;line-height:1.6;margin-bottom:20px;}
+.fp-cta{display:block;background:linear-gradient(135deg, #ffe89f 0%, #75561d 100%);color:#0a1a4a;font-weight:800;font-size:13px;border-radius:50px;padding:13px 20px;text-decoration:none;transition:all 0.2s ease;text-align:center;letter-spacing:0.3px;}
+.fp-cta:hover{background:#d97706;transform:translateY(-2px);}
+
+/* Legend */
+.fp-legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;}
+.fp-legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:#6b7280;font-weight:600;}
+.fp-legend-dot{width:10px;height:10px;border-radius:2px;}
+
+@media(max-width:720px){
+  .floorplan-display{grid-template-columns:1fr;}
+  .loft-type-cards{gap:8px;}
+  .lt-card{min-width:calc(50% - 8px);flex:unset;}
+}
+</style>
+
+<!-- Hero -->
+<section class="rc-hero">
+  <h1>Loft <em>Room Configurator</em></h1>
+  <p>Pick your loft type and room layout to instantly see a floor plan — before you speak to anyone.</p>
+  <div class="loft-type-cards">
+    <div class="lt-card active" data-loft="velux"><span class="lt-card-icon">🏠</span><div class="lt-card-name">Velux / Roof Light</div></div>
+    <div class="lt-card" data-loft="dormer"><span class="lt-card-icon">🏗️</span><div class="lt-card-name">Dormer</div></div>
+    <div class="lt-card" data-loft="hipgable"><span class="lt-card-icon">🏡</span><div class="lt-card-name">Hip-to-Gable</div></div>
+    <div class="lt-card" data-loft="mansard"><span class="lt-card-icon">🏢</span><div class="lt-card-name">Mansard</div></div>
+    <div class="lt-card" data-loft="lshaped"><span class="lt-card-icon">📐</span><div class="lt-card-name">L-Shaped Dormer</div></div>
+  </div>
+</section>
+
+<div class="rc-wrap">
+  <div class="rc-inner">
+    <div class="rc-step-label">Step 2 — Choose your room layout</div>
+    <div class="room-config-cards" id="roomConfigCards"></div>
+    <div class="floorplan-display">
+      <div class="floorplan-svg-wrap">
+        <div id="svgContainer"></div>
+        <span class="fp-label">Not to scale — indicative layout only</span>
+        <div class="fp-legend">
+          <div class="fp-legend-item"><div class="fp-legend-dot" style="background:#bfdbfe;"></div>Bedroom</div>
+          <div class="fp-legend-item"><div class="fp-legend-dot" style="background:#bbf7d0;"></div>Bathroom</div>
+          <div class="fp-legend-item"><div class="fp-legend-dot" style="background:#fde68a;"></div>Office/Study</div>
+          <div class="fp-legend-item"><div class="fp-legend-dot" style="background:#e9d5ff;"></div>Wardrobe/Storage</div>
+          <div class="fp-legend-item"><div class="fp-legend-dot" style="background:#f1f5f9;"></div>Landing/Stairs</div>
+        </div>
+      </div>
+      <div class="fp-info" id="fpInfo"></div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+(function(){
+
+/* ── DATA ── */
+var configs = {
+  velux: {
+    label: 'Velux / Roof Light',
+    options: [
+      {
+        id:'v1', label:'Single Bedroom',
+        rooms:['Bedroom','Wardrobe','Landing/Stairs'],
+        colors:['#bfdbfe','#e9d5ff','#f1f5f9'],
+        sqm:'14–18 m²', height:'Max 2.4m (centre)', planning:'Usually not required',
+        desc:'A Velux conversion works well as a single bedroom or home office. Full-height space is limited to the centre ridge — eave storage runs along both sides.',
+        svg: `<svg viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg" font-family="Poppins,Arial,sans-serif">
+          <!-- Eave zones -->
+          <rect x="20" y="20" width="60" height="240" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,4"/>
+          <rect x="340" y="20" width="60" height="240" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,4"/>
+          <!-- Outer wall -->
+          <rect x="20" y="20" width="380" height="240" fill="none" stroke="#0a1a4a" stroke-width="6" rx="2"/>
+          <!-- Bedroom -->
+          <rect x="80" y="20" width="200" height="180" fill="#bfdbfe" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="180" y="115" text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af">BEDROOM</text>
+          <text x="180" y="132" text-anchor="middle" font-size="10" fill="#3b82f6">Double bed fits</text>
+          <!-- Wardrobe -->
+          <rect x="280" y="20" width="60" height="180" fill="#e9d5ff" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="310" y="112" text-anchor="middle" font-size="10" font-weight="700" fill="#7c3aed" transform="rotate(-90 310 112)">WARDROBE</text>
+          <!-- Landing/Stairs -->
+          <rect x="80" y="200" width="260" height="60" fill="#f1f5f9" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="210" y="234" text-anchor="middle" font-size="12" font-weight="700" fill="#64748b">LANDING / STAIRS ▼</text>
+          <!-- Velux windows -->
+          <rect x="110" y="28" width="50" height="30" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <rect x="200" y="28" width="50" height="30" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <text x="135" y="47" text-anchor="middle" font-size="9" fill="#60a5fa">VELUX</text>
+          <text x="225" y="47" text-anchor="middle" font-size="9" fill="#60a5fa">VELUX</text>
+          <!-- Eave labels -->
+          <text x="50" y="140" text-anchor="middle" font-size="9" fill="#94a3b8" transform="rotate(-90 50 140)">EAVE STORAGE</text>
+          <text x="370" y="140" text-anchor="middle" font-size="9" fill="#94a3b8" transform="rotate(90 370 140)">EAVE STORAGE</text>
+        </svg>`
+      },
+      {
+        id:'v2', label:'Bedroom + En-suite',
+        rooms:['Bedroom','En-suite','Landing/Stairs'],
+        colors:['#bfdbfe','#bbf7d0','#f1f5f9'],
+        sqm:'16–22 m²', height:'Max 2.4m (centre)', planning:'Usually not required',
+        desc:'En-suite carved from one end of the habitable zone. Works best with a ridge height of 2.5m+. Shower, basin and WC fit comfortably in 4–5m².',
+        svg: `<svg viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg" font-family="Poppins,Arial,sans-serif">
+          <rect x="20" y="20" width="60" height="240" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,4"/>
+          <rect x="340" y="20" width="60" height="240" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,4"/>
+          <rect x="20" y="20" width="380" height="240" fill="none" stroke="#0a1a4a" stroke-width="6" rx="2"/>
+          <!-- Bedroom -->
+          <rect x="80" y="20" width="160" height="180" fill="#bfdbfe" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="160" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af">BEDROOM</text>
+          <!-- En-suite -->
+          <rect x="240" y="20" width="100" height="180" fill="#bbf7d0" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="290" y="95" text-anchor="middle" font-size="11" font-weight="700" fill="#059669">EN-SUITE</text>
+          <text x="290" y="110" text-anchor="middle" font-size="9" fill="#059669">WC + Shower</text>
+          <text x="290" y="123" text-anchor="middle" font-size="9" fill="#059669">+ Basin</text>
+          <!-- Bath symbols -->
+          <rect x="253" y="30" width="30" height="50" fill="none" stroke="#059669" stroke-width="1.5" rx="4"/>
+          <ellipse cx="268" cy="74" rx="8" ry="5" fill="none" stroke="#059669" stroke-width="1"/>
+          <circle cx="311" cy="42" r="8" fill="none" stroke="#059669" stroke-width="1.5"/>
+          <!-- Landing -->
+          <rect x="80" y="200" width="260" height="60" fill="#f1f5f9" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="210" y="234" text-anchor="middle" font-size="12" font-weight="700" fill="#64748b">LANDING / STAIRS ▼</text>
+          <!-- Velux -->
+          <rect x="100" y="28" width="50" height="28" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <text x="125" y="46" text-anchor="middle" font-size="9" fill="#60a5fa">VELUX</text>
+          <text x="50" y="140" text-anchor="middle" font-size="9" fill="#94a3b8" transform="rotate(-90 50 140)">EAVE STORAGE</text>
+          <text x="370" y="140" text-anchor="middle" font-size="9" fill="#94a3b8" transform="rotate(90 370 140)">EAVE STORAGE</text>
+        </svg>`
+      },
+      {
+        id:'v3', label:'Home Office',
+        rooms:['Office/Study','Storage','Landing/Stairs'],
+        colors:['#fde68a','#e9d5ff','#f1f5f9'],
+        sqm:'14–18 m²', height:'Max 2.4m (centre)', planning:'Usually not required',
+        desc:'Velux lofts make excellent home offices — natural light from roof windows, quiet, away from household noise. Eave space used for built-in storage and shelving.',
+        svg: `<svg viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg" font-family="Poppins,Arial,sans-serif">
+          <rect x="20" y="20" width="60" height="240" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,4"/>
+          <rect x="340" y="20" width="60" height="240" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,4"/>
+          <rect x="20" y="20" width="380" height="240" fill="none" stroke="#0a1a4a" stroke-width="6" rx="2"/>
+          <!-- Office -->
+          <rect x="80" y="20" width="200" height="180" fill="#fde68a" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="180" y="108" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">HOME OFFICE</text>
+          <text x="180" y="125" text-anchor="middle" font-size="10" fill="#b45309">Desk + shelving</text>
+          <!-- Desk symbol -->
+          <rect x="95" y="35" width="80" height="25" fill="none" stroke="#b45309" stroke-width="1.5" rx="2"/>
+          <rect x="105" y="42" width="20" height="12" fill="none" stroke="#b45309" stroke-width="1"/>
+          <!-- Storage -->
+          <rect x="280" y="20" width="60" height="180" fill="#e9d5ff" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="310" y="112" text-anchor="middle" font-size="10" font-weight="700" fill="#7c3aed" transform="rotate(-90 310 112)">STORAGE</text>
+          <!-- Landing -->
+          <rect x="80" y="200" width="260" height="60" fill="#f1f5f9" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="210" y="234" text-anchor="middle" font-size="12" font-weight="700" fill="#64748b">LANDING / STAIRS ▼</text>
+          <!-- 2 Velux -->
+          <rect x="100" y="28" width="50" height="28" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <rect x="185" y="28" width="50" height="28" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <text x="125" y="46" text-anchor="middle" font-size="9" fill="#60a5fa">VELUX</text>
+          <text x="210" y="46" text-anchor="middle" font-size="9" fill="#60a5fa">VELUX</text>
+          <text x="50" y="140" text-anchor="middle" font-size="9" fill="#94a3b8" transform="rotate(-90 50 140)">EAVE STORAGE</text>
+          <text x="370" y="140" text-anchor="middle" font-size="9" fill="#94a3b8" transform="rotate(90 370 140)">EAVE STORAGE</text>
+        </svg>`
+      }
+    ]
+  },
+
+  dormer: {
+    label: 'Dormer',
+    options: [
+      {
+        id:'d1', label:'Bedroom + En-suite',
+        rooms:['Bedroom','En-suite','Wardrobe','Landing/Stairs'],
+        colors:['#bfdbfe','#bbf7d0','#e9d5ff','#f1f5f9'],
+        sqm:'20–30 m²', height:'Full height in dormer zone', planning:'Usually not required',
+        desc:'Most popular dormer layout. Dormer box gives full standing height across the main bedroom. En-suite and wardrobe neatly contained at rear.',
+        svg: `<svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" font-family="Poppins,Arial,sans-serif">
+          <!-- Outer wall -->
+          <rect x="20" y="20" width="380" height="260" fill="none" stroke="#0a1a4a" stroke-width="6" rx="2"/>
+          <!-- Dormer zone indicator -->
+          <rect x="20" y="20" width="380" height="160" fill="#f0f9ff" stroke="none"/>
+          <text x="210" y="14" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="700">◀── DORMER ZONE (FULL HEIGHT) ──▶</text>
+          <!-- Bedroom -->
+          <rect x="20" y="20" width="240" height="160" fill="#bfdbfe" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="140" y="103" text-anchor="middle" font-size="14" font-weight="700" fill="#1e40af">BEDROOM</text>
+          <text x="140" y="120" text-anchor="middle" font-size="10" fill="#3b82f6">King bed fits</text>
+          <!-- Wardrobe -->
+          <rect x="260" y="20" width="140" height="80" fill="#e9d5ff" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="330" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#7c3aed">WARDROBE</text>
+          <!-- En-suite -->
+          <rect x="260" y="100" width="140" height="80" fill="#bbf7d0" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="330" y="138" text-anchor="middle" font-size="11" font-weight="700" fill="#059669">EN-SUITE</text>
+          <text x="330" y="153" text-anchor="middle" font-size="9" fill="#059669">WC+Shower+Basin</text>
+          <!-- Landing -->
+          <rect x="20" y="180" width="380" height="100" fill="#f1f5f9" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="210" y="234" text-anchor="middle" font-size="12" font-weight="700" fill="#64748b">LANDING / STAIRS ▼</text>
+          <!-- Dormer window -->
+          <rect x="60" y="28" width="120" height="40" fill="none" stroke="#60a5fa" stroke-width="2" rx="3"/>
+          <line x1="120" y1="28" x2="120" y2="68" stroke="#60a5fa" stroke-width="1"/>
+          <text x="120" y="54" text-anchor="middle" font-size="9" fill="#60a5fa">DORMER WINDOW</text>
+        </svg>`
+      },
+      {
+        id:'d2', label:'Bedroom + Office',
+        rooms:['Bedroom','Home Office','Landing/Stairs'],
+        colors:['#bfdbfe','#fde68a','#f1f5f9'],
+        sqm:'22–32 m²', height:'Full height in dormer zone', planning:'Usually not required',
+        desc:'Split the dormer into two distinct spaces — a bedroom at the front with natural light, and a quiet home office at the rear. Perfect for working from home.',
+        svg: `<svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" font-family="Poppins,Arial,sans-serif">
+          <rect x="20" y="20" width="380" height="260" fill="none" stroke="#0a1a4a" stroke-width="6" rx="2"/>
+          <rect x="20" y="20" width="380" height="160" fill="#f0f9ff" stroke="none"/>
+          <text x="210" y="14" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="700">◀── DORMER ZONE (FULL HEIGHT) ──▶</text>
+          <!-- Bedroom -->
+          <rect x="20" y="20" width="200" height="160" fill="#bfdbfe" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="120" y="103" text-anchor="middle" font-size="14" font-weight="700" fill="#1e40af">BEDROOM</text>
+          <text x="120" y="120" text-anchor="middle" font-size="10" fill="#3b82f6">Double bed fits</text>
+          <!-- Office -->
+          <rect x="220" y="20" width="180" height="160" fill="#fde68a" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="310" y="100" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">HOME</text>
+          <text x="310" y="117" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">OFFICE</text>
+          <!-- Desk -->
+          <rect x="232" y="30" width="70" height="22" fill="none" stroke="#b45309" stroke-width="1.5" rx="2"/>
+          <!-- Landing -->
+          <rect x="20" y="180" width="380" height="100" fill="#f1f5f9" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="210" y="234" text-anchor="middle" font-size="12" font-weight="700" fill="#64748b">LANDING / STAIRS ▼</text>
+          <!-- Dormer windows -->
+          <rect x="40" y="28" width="90" height="35" fill="none" stroke="#60a5fa" stroke-width="2" rx="3"/>
+          <rect x="235" y="28" width="90" height="35" fill="none" stroke="#60a5fa" stroke-width="2" rx="3"/>
+          <text x="85" y="50" text-anchor="middle" font-size="9" fill="#60a5fa">DORMER</text>
+          <text x="280" y="50" text-anchor="middle" font-size="9" fill="#60a5fa">DORMER</text>
+        </svg>`
+      },
+      {
+        id:'d3', label:'Two Bedrooms',
+        rooms:['Bedroom 1','Bedroom 2','Shared Bathroom','Landing/Stairs'],
+        colors:['#bfdbfe','#bfdbfe','#bbf7d0','#f1f5f9'],
+        sqm:'28–40 m²', height:'Full height in dormer zone', planning:'Usually not required',
+        desc:'Two bedrooms from a large dormer conversion — ideal for growing families. Shared bathroom between both rooms with private access from the landing.',
+        svg: `<svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" font-family="Poppins,Arial,sans-serif">
+          <rect x="20" y="20" width="380" height="260" fill="none" stroke="#0a1a4a" stroke-width="6" rx="2"/>
+          <rect x="20" y="20" width="380" height="160" fill="#f0f9ff" stroke="none"/>
+          <text x="210" y="14" text-anchor="middle" font-size="9" fill="#3b82f6" font-weight="700">◀── DORMER ZONE (FULL HEIGHT) ──▶</text>
+          <!-- Bed 1 -->
+          <rect x="20" y="20" width="170" height="160" fill="#bfdbfe" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="105" y="103" text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af">BEDROOM 1</text>
+          <!-- Bathroom -->
+          <rect x="190" y="20" width="100" height="160" fill="#bbf7d0" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="240" y="100" text-anchor="middle" font-size="11" font-weight="700" fill="#059669">BATH</text>
+          <text x="240" y="114" text-anchor="middle" font-size="9" fill="#059669">ROOM</text>
+          <!-- Bath symbol -->
+          <rect x="205" y="30" width="35" height="60" fill="none" stroke="#059669" stroke-width="1.5" rx="6"/>
+          <ellipse cx="222" cy="84" rx="10" ry="6" fill="none" stroke="#059669" stroke-width="1"/>
+          <!-- Bed 2 -->
+          <rect x="290" y="20" width="110" height="160" fill="#bfdbfe" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="345" y="103" text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af">BEDROOM 2</text>
+          <!-- Landing -->
+          <rect x="20" y="180" width="380" height="100" fill="#f1f5f9" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="210" y="234" text-anchor="middle" font-size="12" font-weight="700" fill="#64748b">LANDING / STAIRS ▼</text>
+          <!-- Windows -->
+          <rect x="35" y="28" width="70" height="30" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <rect x="310" y="28" width="70" height="30" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <text x="70" y="47" text-anchor="middle" font-size="9" fill="#60a5fa">DORMER</text>
+          <text x="345" y="47" text-anchor="middle" font-size="9" fill="#60a5fa">DORMER</text>
+        </svg>`
+      }
+    ]
+  },
+
+  hipgable: {
+    label: 'Hip-to-Gable',
+    options: [
+      {
+        id:'h1', label:'Master Suite',
+        rooms:['Master Bedroom','En-suite','Dressing Room','Landing/Stairs'],
+        colors:['#bfdbfe','#bbf7d0','#e9d5ff','#f1f5f9'],
+        sqm:'25–38 m²', height:'Full height throughout', planning:'Sometimes required',
+        desc:'Hip-to-Gable gives a wide, open floor plan. Perfect for a luxury master suite with separate dressing room and en-suite. Feels spacious and hotel-like.',
+        svg: `<svg viewBox="0 0 440 290" xmlns="http://www.w3.org/2000/svg" font-family="Poppins,Arial,sans-serif">
+          <rect x="20" y="20" width="400" height="260" fill="none" stroke="#0a1a4a" stroke-width="6" rx="2"/>
+          <!-- Master bedroom -->
+          <rect x="20" y="20" width="230" height="180" fill="#bfdbfe" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="135" y="112" text-anchor="middle" font-size="14" font-weight="700" fill="#1e40af">MASTER BEDROOM</text>
+          <text x="135" y="129" text-anchor="middle" font-size="10" fill="#3b82f6">King size + seating</text>
+          <!-- Dressing room -->
+          <rect x="250" y="20" width="170" height="90" fill="#e9d5ff" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="335" y="69" text-anchor="middle" font-size="12" font-weight="700" fill="#7c3aed">DRESSING ROOM</text>
+          <!-- En-suite -->
+          <rect x="250" y="110" width="170" height="90" fill="#bbf7d0" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="335" y="152" text-anchor="middle" font-size="12" font-weight="700" fill="#059669">EN-SUITE</text>
+          <text x="335" y="167" text-anchor="middle" font-size="10" fill="#059669">Bath+Shower+WC</text>
+          <!-- Landing -->
+          <rect x="20" y="200" width="400" height="80" fill="#f1f5f9" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="220" y="244" text-anchor="middle" font-size="12" font-weight="700" fill="#64748b">LANDING / STAIRS ▼</text>
+          <!-- Windows -->
+          <rect x="50" y="28" width="80" height="32" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <rect x="160" y="28" width="60" height="32" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <text x="90" y="48" text-anchor="middle" font-size="9" fill="#60a5fa">WINDOW</text>
+          <text x="190" y="48" text-anchor="middle" font-size="9" fill="#60a5fa">WINDOW</text>
+        </svg>`
+      },
+      {
+        id:'h2', label:'Two Bedrooms',
+        rooms:['Bedroom 1','Bedroom 2','Bathroom','Landing/Stairs'],
+        colors:['#bfdbfe','#bfdbfe','#bbf7d0','#f1f5f9'],
+        sqm:'28–42 m²', height:'Full height throughout', planning:'Sometimes required',
+        desc:'Two good-sized bedrooms with a shared family bathroom. Hip-to-Gable gives enough width for both rooms to comfortably fit double beds.',
+        svg: `<svg viewBox="0 0 440 290" xmlns="http://www.w3.org/2000/svg" font-family="Poppins,Arial,sans-serif">
+          <rect x="20" y="20" width="400" height="260" fill="none" stroke="#0a1a4a" stroke-width="6" rx="2"/>
+          <!-- Bed 1 -->
+          <rect x="20" y="20" width="185" height="180" fill="#bfdbfe" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="112" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af">BEDROOM 1</text>
+          <!-- Bed 2 -->
+          <rect x="235" y="20" width="185" height="180" fill="#bfdbfe" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="327" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af">BEDROOM 2</text>
+          <!-- Bathroom strip -->
+          <rect x="20" y="200" width="280" height="80" fill="#f1f5f9" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="160" y="244" text-anchor="middle" font-size="12" font-weight="700" fill="#64748b">LANDING / STAIRS ▼</text>
+          <rect x="300" y="200" width="120" height="80" fill="#bbf7d0" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="360" y="244" text-anchor="middle" font-size="11" font-weight="700" fill="#059669">BATHROOM</text>
+          <!-- Windows -->
+          <rect x="40" y="28" width="80" height="30" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <rect x="280" y="28" width="80" height="30" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <text x="80" y="47" text-anchor="middle" font-size="9" fill="#60a5fa">WINDOW</text>
+          <text x="320" y="47" text-anchor="middle" font-size="9" fill="#60a5fa">WINDOW</text>
+        </svg>`
+      },
+      {
+        id:'h3', label:'Bedroom + Office',
+        rooms:['Bedroom','En-suite','Home Office','Landing/Stairs'],
+        colors:['#bfdbfe','#bbf7d0','#fde68a','#f1f5f9'],
+        sqm:'26–38 m²', height:'Full height throughout', planning:'Sometimes required',
+        desc:'Generous bedroom with en-suite plus a dedicated home office — the ideal layout for remote workers who want to keep work and sleep completely separate.',
+        svg: `<svg viewBox="0 0 440 290" xmlns="http://www.w3.org/2000/svg" font-family="Poppins,Arial,sans-serif">
+          <rect x="20" y="20" width="400" height="260" fill="none" stroke="#0a1a4a" stroke-width="6" rx="2"/>
+          <!-- Bedroom -->
+          <rect x="20" y="20" width="200" height="180" fill="#bfdbfe" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="120" y="112" text-anchor="middle" font-size="14" font-weight="700" fill="#1e40af">BEDROOM</text>
+          <!-- En-suite -->
+          <rect x="220" y="20" width="100" height="180" fill="#bbf7d0" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="270" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#059669">EN-SUITE</text>
+          <!-- Office -->
+          <rect x="320" y="20" width="100" height="180" fill="#fde68a" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="370" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#92400e">OFFICE</text>
+          <!-- Landing -->
+          <rect x="20" y="200" width="400" height="80" fill="#f1f5f9" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="220" y="244" text-anchor="middle" font-size="12" font-weight="700" fill="#64748b">LANDING / STAIRS ▼</text>
+          <!-- Windows -->
+          <rect x="40" y="28" width="100" height="30" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <text x="90" y="47" text-anchor="middle" font-size="9" fill="#60a5fa">WINDOW</text>
+        </svg>`
+      }
+    ]
+  },
+
+  mansard: {
+    label: 'Mansard',
+    options: [
+      {
+        id:'m1', label:'Master Suite + Dressing',
+        rooms:['Master Bedroom','En-suite','Dressing Room','Landing/Stairs'],
+        colors:['#bfdbfe','#bbf7d0','#e9d5ff','#f1f5f9'],
+        sqm:'35–55 m²', height:'Full height throughout', planning:'Usually required',
+        desc:'Mansard gives the most usable floor space of any loft type. A luxury master suite with walk-in dressing room and large en-suite bathroom feels genuinely hotel-quality.',
+        svg: `<svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" font-family="Poppins,Arial,sans-serif">
+          <rect x="10" y="20" width="440" height="260" fill="none" stroke="#0a1a4a" stroke-width="6" rx="2"/>
+          <!-- Master -->
+          <rect x="10" y="20" width="250" height="180" fill="#bfdbfe" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="135" y="110" text-anchor="middle" font-size="14" font-weight="700" fill="#1e40af">MASTER BEDROOM</text>
+          <text x="135" y="127" text-anchor="middle" font-size="10" fill="#3b82f6">Super-king + seating area</text>
+          <!-- Dressing -->
+          <rect x="260" y="20" width="190" height="90" fill="#e9d5ff" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="355" y="68" text-anchor="middle" font-size="12" font-weight="700" fill="#7c3aed">DRESSING ROOM</text>
+          <text x="355" y="83" text-anchor="middle" font-size="10" fill="#7c3aed">Walk-in</text>
+          <!-- En-suite -->
+          <rect x="260" y="110" width="190" height="90" fill="#bbf7d0" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="355" y="151" text-anchor="middle" font-size="12" font-weight="700" fill="#059669">EN-SUITE</text>
+          <text x="355" y="166" text-anchor="middle" font-size="10" fill="#059669">Bath + Walk-in shower</text>
+          <!-- Landing -->
+          <rect x="10" y="200" width="440" height="80" fill="#f1f5f9" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="230" y="244" text-anchor="middle" font-size="12" font-weight="700" fill="#64748b">LANDING / STAIRS ▼</text>
+          <!-- Windows -->
+          <rect x="30" y="28" width="90" height="32" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <rect x="150" y="28" width="80" height="32" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <text x="75" y="48" text-anchor="middle" font-size="9" fill="#60a5fa">WINDOW</text>
+          <text x="190" y="48" text-anchor="middle" font-size="9" fill="#60a5fa">WINDOW</text>
+        </svg>`
+      },
+      {
+        id:'m2', label:'Two Beds + Bathrooms',
+        rooms:['Bedroom 1 + En-suite','Bedroom 2 + En-suite','Landing/Stairs'],
+        colors:['#bfdbfe','#bfdbfe','#f1f5f9'],
+        sqm:'40–60 m²', height:'Full height throughout', planning:'Usually required',
+        desc:'Two large bedrooms each with their own en-suite — a genuinely impressive addition. Mansard width accommodates this layout with space to spare.',
+        svg: `<svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" font-family="Poppins,Arial,sans-serif">
+          <rect x="10" y="20" width="440" height="260" fill="none" stroke="#0a1a4a" stroke-width="6" rx="2"/>
+          <!-- Bed 1 -->
+          <rect x="10" y="20" width="190" height="180" fill="#bfdbfe" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="105" y="105" text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af">BEDROOM 1</text>
+          <!-- En-suite 1 -->
+          <rect x="200" y="20" width="120" height="180" fill="#bbf7d0" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="260" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#059669">EN-SUITE 1</text>
+          <!-- Bed 2 -->
+          <rect x="320" y="20" width="130" height="110" fill="#bfdbfe" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="385" y="78" text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af">BED 2</text>
+          <!-- En-suite 2 -->
+          <rect x="320" y="130" width="130" height="70" fill="#bbf7d0" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="385" y="168" text-anchor="middle" font-size="11" font-weight="700" fill="#059669">EN-SUITE 2</text>
+          <!-- Landing -->
+          <rect x="10" y="200" width="310" height="80" fill="#f1f5f9" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="165" y="244" text-anchor="middle" font-size="12" font-weight="700" fill="#64748b">LANDING / STAIRS ▼</text>
+          <!-- Windows -->
+          <rect x="25" y="28" width="80" height="30" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <rect x="330" y="28" width="80" height="30" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <text x="65" y="47" text-anchor="middle" font-size="9" fill="#60a5fa">WINDOW</text>
+          <text x="370" y="47" text-anchor="middle" font-size="9" fill="#60a5fa">WINDOW</text>
+        </svg>`
+      },
+      {
+        id:'m3', label:'Bedroom + Office + WC',
+        rooms:['Bedroom','En-suite','Home Office','WC','Landing/Stairs'],
+        colors:['#bfdbfe','#bbf7d0','#fde68a','#bbf7d0','#f1f5f9'],
+        sqm:'36–52 m²', height:'Full height throughout', planning:'Usually required',
+        desc:'For home workers — a generous bedroom, en-suite, and a proper office with natural light and a separate WC. Keeps all functions neatly separated.',
+        svg: `<svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" font-family="Poppins,Arial,sans-serif">
+          <rect x="10" y="20" width="440" height="260" fill="none" stroke="#0a1a4a" stroke-width="6" rx="2"/>
+          <!-- Bedroom -->
+          <rect x="10" y="20" width="190" height="180" fill="#bfdbfe" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="105" y="112" text-anchor="middle" font-size="14" font-weight="700" fill="#1e40af">BEDROOM</text>
+          <!-- En-suite -->
+          <rect x="200" y="20" width="110" height="180" fill="#bbf7d0" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="255" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#059669">EN-SUITE</text>
+          <!-- Office -->
+          <rect x="310" y="20" width="140" height="130" fill="#fde68a" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="380" y="82" text-anchor="middle" font-size="12" font-weight="700" fill="#92400e">HOME OFFICE</text>
+          <!-- WC -->
+          <rect x="310" y="150" width="140" height="50" fill="#bbf7d0" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="380" y="179" text-anchor="middle" font-size="11" font-weight="700" fill="#059669">WC</text>
+          <!-- Landing -->
+          <rect x="10" y="200" width="300" height="80" fill="#f1f5f9" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="160" y="244" text-anchor="middle" font-size="12" font-weight="700" fill="#64748b">LANDING / STAIRS ▼</text>
+          <!-- Windows -->
+          <rect x="25" y="28" width="80" height="30" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <rect x="320" y="28" width="80" height="30" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <text x="65" y="47" text-anchor="middle" font-size="9" fill="#60a5fa">WINDOW</text>
+          <text x="360" y="47" text-anchor="middle" font-size="9" fill="#60a5fa">WINDOW</text>
+        </svg>`
+      }
+    ]
+  },
+
+  lshaped: {
+    label: 'L-Shaped Dormer',
+    options: [
+      {
+        id:'l1', label:'Bedroom + En-suite',
+        rooms:['Main Bedroom','En-suite','Hallway','Landing/Stairs'],
+        colors:['#bfdbfe','#bbf7d0','#f1f5f9','#f1f5f9'],
+        sqm:'25–38 m²', height:'Full height in both wings', planning:'Sometimes required',
+        desc:'L-shaped dormer suits Victorian and Edwardian terraces perfectly. The main bedroom sits in the rear wing; the front wing provides hall access and en-suite.',
+        svg: `<svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" font-family="Poppins,Arial,sans-serif">
+          <!-- L-shape outer wall -->
+          <polygon points="20,20 280,20 280,140 420,140 420,300 20,300" fill="none" stroke="#0a1a4a" stroke-width="6" stroke-linejoin="round"/>
+          <!-- Main bedroom (rear wing) -->
+          <polygon points="20,140 280,140 280,300 20,300" fill="#bfdbfe" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="150" y="225" text-anchor="middle" font-size="14" font-weight="700" fill="#1e40af">MAIN BEDROOM</text>
+          <text x="150" y="242" text-anchor="middle" font-size="10" fill="#3b82f6">King bed + wardrobes</text>
+          <!-- Front wing - hallway -->
+          <rect x="20" y="20" width="140" height="120" fill="#f1f5f9" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="90" y="84" text-anchor="middle" font-size="11" font-weight="700" fill="#64748b">HALLWAY</text>
+          <!-- Front wing - en-suite -->
+          <rect x="160" y="20" width="120" height="120" fill="#bbf7d0" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="220" y="75" text-anchor="middle" font-size="11" font-weight="700" fill="#059669">EN-SUITE</text>
+          <text x="220" y="90" text-anchor="middle" font-size="9" fill="#059669">Shower+WC+Basin</text>
+          <!-- Rear wing right section -->
+          <rect x="280" y="140" width="140" height="160" fill="#f1f5f9" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="350" y="224" text-anchor="middle" font-size="11" font-weight="700" fill="#64748b">LANDING</text>
+          <text x="350" y="239" text-anchor="middle" font-size="10" fill="#64748b">/ STAIRS ▼</text>
+          <!-- Windows -->
+          <rect x="170" y="28" width="70" height="28" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <text x="205" y="46" text-anchor="middle" font-size="9" fill="#60a5fa">DORMER</text>
+          <rect x="30" y="155" width="70" height="28" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <text x="65" y="173" text-anchor="middle" font-size="9" fill="#60a5fa">DORMER</text>
+        </svg>`
+      },
+      {
+        id:'l2', label:'Two Bedrooms',
+        rooms:['Bedroom 1','Bedroom 2','Bathroom','Landing/Stairs'],
+        colors:['#bfdbfe','#bfdbfe','#bbf7d0','#f1f5f9'],
+        sqm:'28–42 m²', height:'Full height in both wings', planning:'Sometimes required',
+        desc:'Two separate bedrooms in each wing of the L-shape. Shared bathroom sits at the junction point. Works exceptionally well in larger Victorian terraces.',
+        svg: `<svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" font-family="Poppins,Arial,sans-serif">
+          <polygon points="20,20 280,20 280,140 420,140 420,300 20,300" fill="none" stroke="#0a1a4a" stroke-width="6" stroke-linejoin="round"/>
+          <!-- Bed 1 front wing -->
+          <polygon points="20,20 280,20 280,140 20,140" fill="#bfdbfe" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="150" y="85" text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af">BEDROOM 1</text>
+          <!-- Bed 2 rear wing -->
+          <rect x="20" y="140" width="220" height="160" fill="#bfdbfe" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="130" y="224" text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af">BEDROOM 2</text>
+          <!-- Bathroom at junction -->
+          <rect x="240" y="140" width="180" height="80" fill="#bbf7d0" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="330" y="183" text-anchor="middle" font-size="11" font-weight="700" fill="#059669">BATHROOM</text>
+          <!-- Landing -->
+          <rect x="240" y="220" width="180" height="80" fill="#f1f5f9" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="330" y="264" text-anchor="middle" font-size="11" font-weight="700" fill="#64748b">LANDING ▼</text>
+          <!-- Windows -->
+          <rect x="60" y="28" width="80" height="28" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <rect x="180" y="28" width="70" height="28" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <text x="100" y="46" text-anchor="middle" font-size="9" fill="#60a5fa">DORMER</text>
+          <text x="215" y="46" text-anchor="middle" font-size="9" fill="#60a5fa">DORMER</text>
+        </svg>`
+      },
+      {
+        id:'l3', label:'Bedroom + Living Space',
+        rooms:['Bedroom','Living/Lounge','Kitchenette','Landing/Stairs'],
+        colors:['#bfdbfe','#fde68a','#bbf7d0','#f1f5f9'],
+        sqm:'30–44 m²', height:'Full height in both wings', planning:'Sometimes required',
+        desc:'Use one wing as a self-contained living space — ideal for a teenage den, guest suite, or annexe. Bedroom in rear wing, living area in front.',
+        svg: `<svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" font-family="Poppins,Arial,sans-serif">
+          <polygon points="20,20 280,20 280,140 420,140 420,300 20,300" fill="none" stroke="#0a1a4a" stroke-width="6" stroke-linejoin="round"/>
+          <!-- Living space front wing -->
+          <rect x="20" y="20" width="160" height="120" fill="#fde68a" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="100" y="82" text-anchor="middle" font-size="12" font-weight="700" fill="#92400e">LIVING AREA</text>
+          <!-- Kitchenette -->
+          <rect x="180" y="20" width="100" height="120" fill="#bbf7d0" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="230" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#059669">KITCHEN</text>
+          <text x="230" y="97" text-anchor="middle" font-size="9" fill="#059669">-ETTE</text>
+          <!-- Bedroom rear -->
+          <rect x="20" y="140" width="240" height="160" fill="#bfdbfe" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="140" y="224" text-anchor="middle" font-size="14" font-weight="700" fill="#1e40af">BEDROOM</text>
+          <!-- Landing -->
+          <rect x="260" y="140" width="160" height="160" fill="#f1f5f9" stroke="#0a1a4a" stroke-width="3"/>
+          <text x="340" y="224" text-anchor="middle" font-size="11" font-weight="700" fill="#64748b">LANDING ▼</text>
+          <!-- Windows -->
+          <rect x="35" y="28" width="70" height="28" fill="none" stroke="#60a5fa" stroke-width="2" rx="2"/>
+          <text x="70" y="46" text-anchor="middle" font-size="9" fill="#60a5fa">DORMER</text>
+        </svg>`
+      }
+    ]
+  }
+};
+
+/* ── State ── */
+var currentLoft = 'velux';
+var currentConfig = 0;
+
+function renderRoomCards() {
+  var opts = configs[currentLoft].options;
+  var container = document.getElementById('roomConfigCards');
+  container.innerHTML = '';
+  opts.forEach(function(opt, i) {
+    var btn = document.createElement('button');
+    btn.className = 'rc-card' + (i === currentConfig ? ' active' : '');
+    btn.textContent = opt.label;
+    btn.addEventListener('click', function() {
+      currentConfig = i;
+      renderRoomCards();
+      renderPlan();
+    });
+    container.appendChild(btn);
+  });
+}
+
+function renderPlan() {
+  var opt = configs[currentLoft].options[currentConfig];
+  document.getElementById('svgContainer').innerHTML = opt.svg;
+  var info = document.getElementById('fpInfo');
+  var roomsHTML = opt.rooms.map(function(r, i) {
+    return '<li><div class="fp-room-dot" style="background:' + (opt.colors[i] || '#e5e7eb') + ';"></div>' + r + '</li>';
+  }).join('');
+  info.innerHTML = '<div class="fp-info-type">' + configs[currentLoft].label + '</div>' +
+    '<div class="fp-info-title">' + opt.label + '</div>' +
+    '<div class="fp-stats">' +
+      '<div class="fp-stat"><span class="fp-stat-key">Floor area</span><span class="fp-stat-val">' + opt.sqm + '</span></div>' +
+      '<div class="fp-stat"><span class="fp-stat-key">Ceiling height</span><span class="fp-stat-val">' + opt.height + '</span></div>' +
+      '<div class="fp-stat"><span class="fp-stat-key">Planning</span><span class="fp-stat-val">' + opt.planning + '</span></div>' +
+    '</div>' +
+    '<div class="fp-rooms-title">Rooms in this layout</div>' +
+    '<ul class="fp-room-list">' + roomsHTML + '</ul>' +
+    '<p class="fp-desc">' + opt.desc + '</p>' +
+    '<a href="/contact/" class="fp-cta">Get a Free Quote for This Layout</a>';
+}
+
+/* ── Init ── */
+renderRoomCards();
+renderPlan();
+
+/* ── Loft type switching ── */
+document.querySelectorAll('.lt-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    document.querySelectorAll('.lt-card').forEach(function(c) { c.classList.remove('active'); });
+    card.classList.add('active');
+    currentLoft = card.dataset.loft;
+    currentConfig = 0;
+    renderRoomCards();
+    renderPlan();
+  });
+});
+
+})();
+</script>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://truleumloftspecialist.com/"},
+    {"@type":"ListItem","position":2,"name":"Loft Room Configurator","item":"https://truleumloftspecialist.com/loft-room-configurator/"}
+  ]
+})} />
+
+</BaseLayout>

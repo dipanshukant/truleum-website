@@ -108,12 +108,12 @@
 }
 
 .btn-primary {
-  background: #d4af37;
+  background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
   color: white;
 }
 
 .btn-primary:hover {
-  background: #b8941f;
+  background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
 }
@@ -237,7 +237,7 @@
 .page-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-  border-color: #d4af37;
+  border-color: #c9902e;
 }
 
 .page-icon {
@@ -260,7 +260,7 @@
 }
 
 .page-card h4 a:hover {
-  color: #d4af37;
+  color: #c9902e;
 }
 
 .page-card p {
@@ -336,7 +336,7 @@
 }
 
 .recent-post-card h4 a:hover {
-  color: #d4af37;
+  color: #c9902e;
 }
 
 .recent-post-card .post-meta {
@@ -359,7 +359,7 @@
 }
 
 .recent-post-card .read-more:hover {
-  color: #d4af37;
+  color: #c9902e;
 }
 
 .no-posts {
@@ -372,7 +372,7 @@
 }
 
 .no-posts a {
-  color: #d4af37;
+  color: #c9902e;
   text-decoration: none;
   font-weight: 600;
 }
@@ -422,12 +422,12 @@
 }
 
 .help-btn.primary {
-  background: #d4af37;
+  background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
   color: white;
 }
 
 .help-btn.primary:hover {
-  background: #b8941f;
+  background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
 }

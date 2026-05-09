@@ -52,7 +52,7 @@
 }
 
 .privacy-breadcrumb a:hover {
-  color: #d4af37;
+  color: #c9902e;
 }
 
 .breadcrumb-separator {
@@ -104,7 +104,7 @@
 
 .update-date {
   font-weight: 600;
-  color: #d4af37;
+  color: #c9902e;
 }
 
 /* Privacy Policy Content Section */
@@ -168,7 +168,7 @@
 .toc-link.active {
   background: #f8f9fa;
   color: #0a1a4a;
-  border-left-color: #d4af37;
+  border-left-color: #c9902e;
   transform: translateX(5px);
 }
 
@@ -200,7 +200,7 @@
   font-weight: 700;
   margin-bottom: 30px;
   padding-bottom: 15px;
-  border-bottom: 3px solid #d4af37;
+  border-bottom: 3px solid #c9902e;
   position: relative;
 }
 
@@ -254,7 +254,7 @@
   border-radius: 10px;
   padding: 25px;
   margin-bottom: 20px;
-  border-left: 4px solid #d4af37;
+  border-left: 4px solid #c9902e;
   transition: all 0.3s ease;
 }
 
@@ -307,14 +307,14 @@
 }
 
 .contact-item a {
-  color: #d4af37;
+  color: #c9902e;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .contact-item a:hover {
-  color: #b8941f;
+  color: #c9902e;
   text-decoration: underline;
 }
 

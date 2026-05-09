@@ -148,9 +148,9 @@ body {
 }
 
 .enquire-btn:hover {
-  background: #d4af37;
+  background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
   color: white !important;
-  border-color: #d4af37;
+  border-color: #c9902e;
   transform: translateY(-2px);
 }
 
@@ -239,7 +239,7 @@ body {
 
 .mobile-menu a:hover,
 .mobile-menu a.active {
-  color: #d4af37;
+  color: #c9902e;
 }
 
 .mobile-menu .enquire-btn {
@@ -466,7 +466,7 @@ body {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: #d4af37;
+    background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
 }
 
 .features-container {
@@ -508,7 +508,7 @@ body {
 }
 
 .feature-card:hover .feature-icon {
-    background: #d4af37;
+    background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
 }
 
 .feature-text {
@@ -551,7 +551,7 @@ body {
 }
 
 .why-tru:last-child {
-    background: #d4af37;
+    background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
     color: #fff !important;
     box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
 }
@@ -673,7 +673,7 @@ body {
 }
 
 .renovation-services li i {
-    color: #d4af37;
+    color: #c9902e;
     font-size: 16px;
     width: 20px;
     height: 20px;
@@ -706,7 +706,7 @@ body {
 
 .renovation-services a:first-of-type {
     display: inline-block;
-    background: #d4af37;
+    background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
     color: white !important;
     text-decoration: none;
     border: 2px;
@@ -780,7 +780,7 @@ body {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: #d4af37;
+    background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
 }
 
 .locations-container {
@@ -834,7 +834,7 @@ body {
 
 .where-we {
     display: inline-block;
-    background: #d4af37;
+    background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
     color: white !important;
     text-decoration: none;
     padding: 10px 25px;
@@ -850,7 +850,7 @@ body {
 
 .location-card a:not(.where-we) {
     display: inline-block;
-    background: #d4af37;
+    background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
     color: white !important;
     text-decoration: none;
     padding: 10px 25px;
@@ -937,7 +937,7 @@ body {
 
 .dont-delay {
     display: inline-block;
-    background: #d4af37;
+    background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
     color: #fff !important;
     text-decoration: none;
     font-weight: 600;
@@ -1066,7 +1066,7 @@ body {
 }
 
 .site-footer a:hover {
-    color: #d4af37 !important;
+    color: #c9902e !important;
 }
 
 @media (max-width: 768px) {
@@ -1289,7 +1289,7 @@ body {
     transform: translateX(-50%);
     width: 200px;
     height: 3px;
-    background: #d4af37;
+    background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
 }
 
 .trustindex-reviews {

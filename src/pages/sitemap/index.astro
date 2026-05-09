@@ -1,0 +1,228 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Sitemap | Truleum Loft Specialist Cambridge"
+  description="Full sitemap of Truleum Loft Specialist — browse all pages including loft conversion services, area guides, tools and resources."
+  canonical="https://truleumloftspecialist.com/sitemap/"
+>
+
+<style>
+* { box-sizing: border-box; }
+.sm-hero {
+  background: linear-gradient(135deg, #060f32 0%, #0f2460 100%);
+  padding: 60px 20px 50px;
+  text-align: center;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+.sm-breadcrumb {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 20px;
+}
+.sm-breadcrumb a { color: rgba(255,255,255,0.75); text-decoration: none; font-weight: 600; }
+.sm-breadcrumb a:hover { color: #c9902e; }
+.sm-hero h1 {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 900;
+  color: #fff;
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+.sm-hero h1 em { font-style: normal; color: #c9902e; }
+.sm-hero p {
+  color: rgba(255,255,255,0.6);
+  font-size: 1rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.sm-body {
+  background: #f0f4f8;
+  padding: 60px 20px 200px;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+.sm-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.sm-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 26px 24px;
+  box-shadow: 0 4px 20px rgba(10,26,74,0.07);
+  border-top: 4px solid #c9902e;
+}
+.sm-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.sm-card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0a1a4a 0%, #1f3a8a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.sm-card-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #0a1a4a;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.sm-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.sm-links li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: #374151;
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+  line-height: 1.4;
+}
+.sm-links li a::before {
+  content: '›';
+  color: #c9902e;
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.sm-links li a:hover {
+  background: #f0f4f8;
+  color: #0a1a4a;
+}
+
+
+@media (max-width: 900px) { .sm-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 580px) { .sm-grid { grid-template-columns: 1fr; } }
+</style>
+
+<!-- Hero -->
+<div class="sm-hero">
+  <div class="sm-breadcrumb">
+    <a href="/">Home</a> › <span>Sitemap</span>
+  </div>
+  <h1>Website <em>Sitemap</em></h1>
+  <p>Every page on the Truleum website, organised by category.</p>
+</div>
+
+<!-- Sitemap grid -->
+<div class="sm-body">
+  <div class="sm-grid">
+
+    <!-- Main Pages -->
+    <div class="sm-card">
+      <div class="sm-card-header">
+        <div class="sm-card-icon">🏠</div>
+        <div class="sm-card-title">Main Pages</div>
+      </div>
+      <ul class="sm-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about-us/">About Us</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/gallery/">Gallery</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contact/">Contact Us</a></li>
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Our Services -->
+    <div class="sm-card">
+      <div class="sm-card-header">
+        <div class="sm-card-icon">🏗️</div>
+        <div class="sm-card-title">Our Services</div>
+      </div>
+      <ul class="sm-links">
+        <li><a href="/loft-conversion-cambridge/">Loft Conversion Cambridge</a></li>
+        <li><a href="/services/loft-conversion-cambridge-service/">Loft Conversion Service</a></li>
+        <li><a href="/services/house-extension-cambridge/">House Extension Cambridge</a></li>
+      </ul>
+    </div>
+
+    <!-- Areas We Cover -->
+    <div class="sm-card">
+      <div class="sm-card-header">
+        <div class="sm-card-icon">📍</div>
+        <div class="sm-card-title">Areas We Cover</div>
+      </div>
+      <ul class="sm-links">
+        <li><a href="/loft-conversion-ely/">Loft Conversion Ely</a></li>
+        <li><a href="/loft-conversion-huntingdon/">Loft Conversion Huntingdon</a></li>
+        <li><a href="/loft-conversion-peterborough/">Loft Conversion Peterborough</a></li>
+        <li><a href="/loft-conversion-st-ives-cambridgeshire/">Loft Conversion St Ives</a></li>
+        <li><a href="/loft-conversion-st-neots/">Loft Conversion St Neots</a></li>
+        <li><a href="/loft-conversion-march-cambridgeshire/">Loft Conversion March</a></li>
+        <li><a href="/loft-conversion-wisbech/">Loft Conversion Wisbech</a></li>
+        <li><a href="/loft-conversion-soham/">Loft Conversion Soham</a></li>
+      </ul>
+    </div>
+
+    <!-- Cost & Planning -->
+    <div class="sm-card">
+      <div class="sm-card-header">
+        <div class="sm-card-icon">💷</div>
+        <div class="sm-card-title">Cost &amp; Planning</div>
+      </div>
+      <ul class="sm-links">
+        <li><a href="/loft-conversion-cost-cambridge/">Loft Conversion Cost Cambridge</a></li>
+        <li><a href="/loft-conversion-glossary/">Loft Conversion Glossary</a></li>
+        <li><a href="/loft-conversion-cambridge-calculator/">Loft Conversion Calculator</a></li>
+      </ul>
+    </div>
+
+    <!-- Guides & Articles -->
+    <div class="sm-card">
+      <div class="sm-card-header">
+        <div class="sm-card-icon">📖</div>
+        <div class="sm-card-title">Guides &amp; Articles</div>
+      </div>
+      <ul class="sm-links">
+        <li><a href="/loft-conversion-cambridge-guide/">Loft Conversion Cambridge Guide</a></li>
+        <li><a href="/loft-conversion-cambridge-guide-for-homeowners/">Guide for Homeowners</a></li>
+        <li><a href="/loft-conversion-in-cambridge-mistakes/">Common Loft Conversion Mistakes</a></li>
+        <li><a href="/loft-conversion-in-cambridge-worth-it/">Is a Loft Conversion Worth It?</a></li>
+        <li><a href="/questions-to-ask-loft-conversion-company/">Questions to Ask a Loft Company</a></li>
+        <li><a href="/loft-conversion-cambridge-before-after/">Before &amp; After Transformations</a></li>
+        <li><a href="/loft-conversion-company-in-cambridge/">Loft Conversion Company Cambridge</a></li>
+        <li><a href="/cambridge-loft-conversions/">Cambridge Loft Conversions</a></li>
+        <li><a href="/designs-for-cambridge-loft-conversions/">Designs for Loft Conversions</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://truleumloftspecialist.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Sitemap", "item": "https://truleumloftspecialist.com/sitemap/" }
+  ]
+})} />
+
+</BaseLayout>
