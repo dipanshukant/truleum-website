@@ -29,8 +29,8 @@ body > main > main[class*="area-"][class$="-page"] {
     padding-bottom: 170px;
 }
 
-body > main > main.loft-service-page,
-body > main > main.ext-service-page {
+body > main > .loft-service-page,
+body > main > .ext-service-page {
     padding-bottom: 170px;
 }
 
@@ -88,8 +88,8 @@ body > main > main > div.gallery-hero-gallery > div { margin-top: -45px; }
     body > footer > div > div.footer-company-info > img { margin-left: -16px !important; }
     .logo-container img { margin-left: -15px !important; }
     body > main > main[class*="area-"][class$="-page"] { padding-bottom: 210px; }
-    body > main > main.loft-service-page,
-    body > main > main.ext-service-page { padding-bottom: 210px; }
+    body > main > .loft-service-page,
+    body > main > .ext-service-page { padding-bottom: 210px; }
 }
 @media (max-width: 768px) {
     .locations-grid { margin-left: 15px; }
