@@ -406,80 +406,88 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <pattern id="mapgrid2" width="60" height="60" patternUnits="userSpaceOnUse">
             <path d="M60 0L0 0 0 60" fill="none" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
           </pattern>
+          <clipPath id="mapCircleClip">
+            <circle cx="300" cy="370" r="340"/>
+          </clipPath>
         </defs>
         <rect width="600" height="720" fill="url(#mapgrid2)"/>
-        <circle class="county-fill" cx="300" cy="370" r="340"/>
+        <image href="/wp-content/uploads/2026/05/cambridgeshire-map.jpg"
+               x="-40" y="30" width="680" height="680"
+               preserveAspectRatio="xMidYMid slice"
+               clip-path="url(#mapCircleClip)"
+               opacity="0.9"/>
+        <circle cx="300" cy="370" r="340" fill="rgba(13,31,82,0.58)" stroke="rgba(100,150,255,0.22)" stroke-width="1.5"/>
         <!-- connectors from Cambridge hub -->
-        <line class="connector-line" x1="354" y1="580" x2="78"  y2="190"/>
-        <line class="connector-line" x1="354" y1="580" x2="382" y2="93"/>
-        <line class="connector-line" x1="354" y1="580" x2="328" y2="212"/>
-        <line class="connector-line" x1="354" y1="580" x2="121" y2="450"/>
-        <line class="connector-line" x1="354" y1="580" x2="208" y2="450"/>
-        <line class="connector-line" x1="354" y1="580" x2="459" y2="378"/>
-        <line class="connector-line" x1="354" y1="580" x2="515" y2="445"/>
-        <line class="connector-line" x1="354" y1="580" x2="62"  y2="558"/>
+        <line class="connector-line" x1="225" y1="513" x2="108" y2="318"/>
+        <line class="connector-line" x1="225" y1="513" x2="238" y2="269"/>
+        <line class="connector-line" x1="225" y1="513" x2="216" y2="327"/>
+        <line class="connector-line" x1="225" y1="513" x2="129" y2="446"/>
+        <line class="connector-line" x1="225" y1="513" x2="162" y2="445"/>
+        <line class="connector-line" x1="225" y1="513" x2="271" y2="410"/>
+        <line class="connector-line" x1="225" y1="513" x2="296" y2="446"/>
+        <line class="connector-line" x1="225" y1="513" x2="100" y2="501"/>
         <!-- PETERBOROUGH -->
         <a href="/loft-conversion-peterborough/" class="area-pin" aria-label="Loft Conversion Peterborough">
-          <circle class="pin-pulse" cx="78" cy="190" r="7"/>
-          <circle class="pin-dot"   cx="78" cy="190" r="5.5"/>
-          <text class="pin-label"   x="78"  y="209">Peterborough</text>
-          <g class="pin-tooltip"><rect class="tooltip-bg" x="14" y="157" width="128" height="19" rx="4"/><text class="tooltip-txt" x="78" y="171">Loft Conversion →</text></g>
+          <circle class="pin-pulse" cx="108" cy="318" r="7"/>
+          <circle class="pin-dot"   cx="108" cy="318" r="5.5"/>
+          <text class="pin-label"   x="108"  y="337">Peterborough</text>
+          <g class="pin-tooltip"><rect class="tooltip-bg" x="44" y="285" width="128" height="19" rx="4"/><text class="tooltip-txt" x="108" y="299">Loft Conversion →</text></g>
         </a>
         <!-- WISBECH -->
         <a href="/loft-conversion-wisbech/" class="area-pin" aria-label="Loft Conversion Wisbech">
-          <circle class="pin-pulse" cx="382" cy="93" r="7"/>
-          <circle class="pin-dot"   cx="382" cy="93" r="5.5"/>
-          <text class="pin-label"   x="382"  y="112">Wisbech</text>
-          <g class="pin-tooltip"><rect class="tooltip-bg" x="324" y="60" width="116" height="19" rx="4"/><text class="tooltip-txt" x="382" y="74">Loft Conversion →</text></g>
+          <circle class="pin-pulse" cx="238" cy="269" r="7"/>
+          <circle class="pin-dot"   cx="238" cy="269" r="5.5"/>
+          <text class="pin-label"   x="238" y="288">Wisbech</text>
+          <g class="pin-tooltip"><rect class="tooltip-bg" x="180" y="236" width="116" height="19" rx="4"/><text class="tooltip-txt" x="238" y="250">Loft Conversion →</text></g>
         </a>
         <!-- MARCH -->
         <a href="/loft-conversion-march-cambridgeshire/" class="area-pin" aria-label="Loft Conversion March">
-          <circle class="pin-pulse" cx="328" cy="212" r="7"/>
-          <circle class="pin-dot"   cx="328" cy="212" r="5.5"/>
-          <text class="pin-label"   x="328"  y="231">March</text>
-          <g class="pin-tooltip"><rect class="tooltip-bg" x="270" y="179" width="116" height="19" rx="4"/><text class="tooltip-txt" x="328" y="193">Loft Conversion →</text></g>
+          <circle class="pin-pulse" cx="216" cy="327" r="7"/>
+          <circle class="pin-dot"   cx="216" cy="327" r="5.5"/>
+          <text class="pin-label"   x="216" y="346">March</text>
+          <g class="pin-tooltip"><rect class="tooltip-bg" x="158" y="294" width="116" height="19" rx="4"/><text class="tooltip-txt" x="216" y="308">Loft Conversion →</text></g>
         </a>
         <!-- HUNTINGDON -->
         <a href="/loft-conversion-huntingdon/" class="area-pin" aria-label="Loft Conversion Huntingdon">
-          <circle class="pin-pulse" cx="121" cy="450" r="7"/>
-          <circle class="pin-dot"   cx="121" cy="450" r="5.5"/>
-          <text class="pin-label"   x="121"  y="469">Huntingdon</text>
-          <g class="pin-tooltip"><rect class="tooltip-bg" x="63" y="417" width="116" height="19" rx="4"/><text class="tooltip-txt" x="121" y="431">Loft Conversion →</text></g>
+          <circle class="pin-pulse" cx="129" cy="446" r="7"/>
+          <circle class="pin-dot"   cx="129" cy="446" r="5.5"/>
+          <text class="pin-label"   x="129" y="465">Huntingdon</text>
+          <g class="pin-tooltip"><rect class="tooltip-bg" x="71" y="413" width="116" height="19" rx="4"/><text class="tooltip-txt" x="129" y="427">Loft Conversion →</text></g>
         </a>
         <!-- ST IVES -->
         <a href="/loft-conversion-st-ives-cambridgeshire/" class="area-pin" aria-label="Loft Conversion St Ives">
-          <circle class="pin-pulse" cx="208" cy="450" r="7"/>
-          <circle class="pin-dot"   cx="208" cy="450" r="5.5"/>
-          <text class="pin-label"   x="208"  y="469">St Ives</text>
-          <g class="pin-tooltip"><rect class="tooltip-bg" x="150" y="417" width="116" height="19" rx="4"/><text class="tooltip-txt" x="208" y="431">Loft Conversion →</text></g>
+          <circle class="pin-pulse" cx="162" cy="445" r="7"/>
+          <circle class="pin-dot"   cx="162" cy="445" r="5.5"/>
+          <text class="pin-label"   x="162" y="431">St Ives</text>
+          <g class="pin-tooltip"><rect class="tooltip-bg" x="104" y="412" width="116" height="19" rx="4"/><text class="tooltip-txt" x="162" y="426">Loft Conversion →</text></g>
         </a>
         <!-- ELY -->
         <a href="/loft-conversion-ely/" class="area-pin" aria-label="Loft Conversion Ely">
-          <circle class="pin-pulse" cx="459" cy="378" r="7"/>
-          <circle class="pin-dot"   cx="459" cy="378" r="5.5"/>
-          <text class="pin-label"   x="459"  y="397">Ely</text>
-          <g class="pin-tooltip"><rect class="tooltip-bg" x="401" y="345" width="116" height="19" rx="4"/><text class="tooltip-txt" x="459" y="359">Loft Conversion →</text></g>
+          <circle class="pin-pulse" cx="271" cy="410" r="7"/>
+          <circle class="pin-dot"   cx="271" cy="410" r="5.5"/>
+          <text class="pin-label"   x="271" y="429">Ely</text>
+          <g class="pin-tooltip"><rect class="tooltip-bg" x="213" y="377" width="116" height="19" rx="4"/><text class="tooltip-txt" x="271" y="391">Loft Conversion →</text></g>
         </a>
         <!-- SOHAM -->
         <a href="/loft-conversion-soham/" class="area-pin" aria-label="Loft Conversion Soham">
-          <circle class="pin-pulse" cx="515" cy="445" r="7"/>
-          <circle class="pin-dot"   cx="515" cy="445" r="5.5"/>
-          <text class="pin-label"   x="515"  y="464">Soham</text>
-          <g class="pin-tooltip"><rect class="tooltip-bg" x="457" y="412" width="116" height="19" rx="4"/><text class="tooltip-txt" x="515" y="426">Loft Conversion →</text></g>
+          <circle class="pin-pulse" cx="296" cy="446" r="7"/>
+          <circle class="pin-dot"   cx="296" cy="446" r="5.5"/>
+          <text class="pin-label"   x="296" y="465">Soham</text>
+          <g class="pin-tooltip"><rect class="tooltip-bg" x="238" y="413" width="116" height="19" rx="4"/><text class="tooltip-txt" x="296" y="427">Loft Conversion →</text></g>
         </a>
         <!-- ST NEOTS -->
         <a href="/loft-conversion-st-neots/" class="area-pin" aria-label="Loft Conversion St Neots">
-          <circle class="pin-pulse" cx="62" cy="558" r="7"/>
-          <circle class="pin-dot"   cx="62" cy="558" r="5.5"/>
-          <text class="pin-label"   x="62"  y="577">St Neots</text>
-          <g class="pin-tooltip"><rect class="tooltip-bg" x="8" y="525" width="108" height="19" rx="4"/><text class="tooltip-txt" x="62" y="539">Loft Conversion →</text></g>
+          <circle class="pin-pulse" cx="100" cy="501" r="7"/>
+          <circle class="pin-dot"   cx="100" cy="501" r="5.5"/>
+          <text class="pin-label"   x="100" y="520">St Neots</text>
+          <g class="pin-tooltip"><rect class="tooltip-bg" x="46" y="468" width="108" height="19" rx="4"/><text class="tooltip-txt" x="100" y="482">Loft Conversion →</text></g>
         </a>
         <!-- CAMBRIDGE hub -->
         <a href="/loft-conversion-cambridge/" class="area-pin" aria-label="Loft Conversion Cambridge">
-          <circle class="pin-pulse" cx="354" cy="580" r="10"/>
-          <circle class="pin-hub"   cx="354" cy="580" r="8"/>
-          <text class="pin-label-hub" x="354" y="602">Cambridge</text>
-          <g class="pin-tooltip"><rect class="tooltip-bg" x="288" y="546" width="132" height="21" rx="4"/><text class="tooltip-txt" x="354" y="561" style="font-size:9.5px">Loft Conversion →</text></g>
+          <circle class="pin-pulse" cx="225" cy="513" r="10"/>
+          <circle class="pin-hub"   cx="225" cy="513" r="8"/>
+          <text class="pin-label-hub" x="225" y="535">Cambridge</text>
+          <g class="pin-tooltip"><rect class="tooltip-bg" x="159" y="479" width="132" height="21" rx="4"/><text class="tooltip-txt" x="225" y="494" style="font-size:9.5px">Loft Conversion →</text></g>
         </a>
       </svg>
     </div>
