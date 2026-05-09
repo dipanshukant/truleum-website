@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Gallery Bathroom - Truleum Loft Specialist"
+  description="Explore our stunning bathroom renovation projects showcasing modern designs, luxury finishes, and expert craftsmanship."
+>
+
+  <main class="main-content">
+    <main class="main-content gallery-category-page">
+
+      <!-- Hero Section -->
+      <section class="gallery-hero-gallery">
+        <div class="gallery-hero-container">
+          <h1 class="gallery-hero-title">Bathroom Renovation Gallery</h1>
+          <p class="gallery-hero-description">
+            Explore our stunning bathroom renovation projects showcasing modern designs, luxury finishes, and expert craftsmanship.
+          </p>
+        </div>
+      </section>
+
+      <!-- Gallery Album Section -->
+      <div class="gallery-album-section">
+        <div class="gallery-album-container">
+
+          <!-- Gallery Grid -->
+          <div class="gallery-modal is-open" style="position: relative; display: block; opacity: 1; transform: translateY(0); background: #f8f9fa;">
+            <div class="modal-content" style="padding: 50px;">
+              <div class="gallery-grid" id="bathroom-gallery-grid">
+                <!-- Images will be loaded by JavaScript -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Lightbox Modal -->
+          <div class="lightbox-modal" id="lightboxModal">
+            <span class="lightbox-close">×</span>
+            <div class="lightbox-content">
+              <!-- Content will be dynamically inserted -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <section class="dont-delay-section section">
+        <div class="contact-cta">
+          <div>
+            <h2>DON'T DELAY CONTACT US TODAY</h2>
+            <p>Contact us today for more information and a free no-obligation quote tailored to your requirements and ideas.</p>
+            <a href="/contact/" class="dont-delay">ENQUIRE NOW</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Bathroom renovation images - using correct URLs from main gallery
+        const bathroomImages = [
+            '/wp-content/uploads/Bathroom-Renovation/london-renovation-bathroom.webp',
+            '/wp-content/uploads/Bathroom-Renovation/bathroom-renovation-cambridge.webp',
+            '/wp-content/uploads/Bathroom-Renovation/bathroom-services-london.webp',
+            '/wp-content/uploads/Bathroom-Renovation/renovating-bathroom-services.webp',
+            '/wp-content/uploads/Bathroom-Renovation/luxury-bathroom-cambridge-service.webp',
+            '/wp-content/uploads/Bathroom-Renovation/renovation-cambridge-bathroom.webp',
+            '/wp-content/uploads/Bathroom-Renovation/cambridgehsire-services-bathroom.webp',
+            '/wp-content/uploads/Bathroom-Renovation/bathroom-building-cambridge.webp',
+            '/wp-content/uploads/Bathroom-Renovation/bathroom-building-service.webp',
+            '/wp-content/uploads/Bathroom-Renovation/cambridgeshire-loft-conversion-scaffolding-1.webp',
+            '/wp-content/uploads/Bathroom-Renovation/cambridge-house-extension-construction-progress-1.webp',
+            '/wp-content/uploads/Bathroom-Renovation/cambridge-renovation-building-materials-1.webp'
+        ];
+
+        const galleryGrid = document.getElementById('bathroom-gallery-grid');
+        const lightboxModal = document.getElementById('lightboxModal');
+        const lightboxContent = document.querySelector('.lightbox-content');
+        const lightboxClose = document.querySelector('.lightbox-close');
+
+        // Create gallery items with proper styling
+        bathroomImages.forEach(src => {
+            const galleryItem = document.createElement('div');
+            galleryItem.className = 'gallery-item';
+
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = 'Bathroom Renovation Project';
+            img.loading = 'lazy';
+
+            const overlay = document.createElement('div');
+            overlay.className = 'image-overlay';
+
+            const zoomIcon = document.createElement('div');
+            zoomIcon.className = 'zoom-icon';
+            zoomIcon.innerHTML = '<i class="fas fa-search-plus"></i>';
+
+            galleryItem.appendChild(img);
+            galleryItem.appendChild(overlay);
+            galleryItem.appendChild(zoomIcon);
+            galleryGrid.appendChild(galleryItem);
+
+            // Add click event for lightbox
+            galleryItem.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openLightbox(src, 'Bathroom Renovation Project');
+            });
+        });
+
+        // Simple lightbox functions
+        function openLightbox(src, alt) {
+            lightboxContent.innerHTML = '';
+            const img = document.createElement('img');
+            img.className = 'lightbox-image';
+            img.src = src;
+            img.alt = alt;
+            lightboxContent.appendChild(img);
+
+            lightboxModal.style.display = 'block';
+            lightboxModal.style.opacity = '1';
+        }
+
+        function closeLightbox() {
+            lightboxModal.style.opacity = '0';
+            lightboxModal.style.display = 'none';
+            lightboxContent.innerHTML = '';
+        }
+
+        // Event listeners
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxModal.addEventListener('click', (e) => {
+            if (e.target === lightboxModal) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightboxModal.style.display === 'block') {
+                closeLightbox();
+            }
+        });
+    });
+    </script>
+
+  </main>
+</BaseLayout>

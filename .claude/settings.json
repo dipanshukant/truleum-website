@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -n \"^</section>$\\\\|^<!-- Before\\\\|^<!-- Quote\\\\|^<!-- Don\" \"c:/Users/acer/Desktop/truleum-astro/src/pages/index.astro\")",
+      "Bash(grep -n 'Groups\\\\|scriptblock\\\\|$p =\\\\|review-text-wrap\\\\|review-read-more\\\\|review-text-fade' c:/Users/acer/Desktop/truleum-astro/src/pages/index.astro)",
+      "Bash(grep -n 'Groups\\\\|$p =\\\\|BaseLayout from\\\\|review-text-wrap\\\\|review-read-more' c:/Users/acer/Desktop/truleum-astro/src/pages/index.astro)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\acer\\Downloads"
+    ]
+  }
+}

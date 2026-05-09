@@ -1,0 +1,411 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Loft Conversion Glossary Cambridge | Truleum"
+  description="Loft conversion glossary for Cambridge homeowners. Understand planning terms, build language and costs with clear definitions and practical examples."
+>
+
+  <main class="main-content">
+    <style>
+      .glossary-page {
+        --gl-blue: #0a1a4a;
+        --gl-blue-2: #1c347f;
+        --gl-gold: #d4af37;
+        --gl-soft: #f5f7fb;
+        --gl-text: #334155;
+        font-family: 'Poppins', Arial, sans-serif;
+        color: var(--gl-text);
+        overflow-x: hidden;
+      }
+
+      .gl-wrap {
+        width: min(1160px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .glossary-page section,
+      .glossary-page h1,
+      .glossary-page h2,
+      .glossary-page h3,
+      .glossary-page p,
+      .glossary-page a {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .gl-hero {
+        padding: 110px 0 88px;
+        background:
+          radial-gradient(circle at 88% 15%, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0) 45%),
+          linear-gradient(130deg, #08163d 0%, #0a1a4a 45%, #1c347f 100%);
+        color: #fff;
+      }
+
+      .gl-hero h1 {
+        margin: 0 0 14px;
+        font-size: clamp(34px, 5vw, 56px);
+        line-height: 1.1;
+        max-width: 17ch;
+        color: #fff;
+      }
+
+      .gl-hero p {
+        margin: 0;
+        max-width: 70ch;
+        color: rgba(255, 255, 255, 0.92);
+        line-height: 1.8;
+        font-size: 17px;
+      }
+
+      .gl-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 18px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: #ffe89f;
+        color: #0a1a4a;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+      }
+
+      .gl-nav {
+        background: var(--gl-soft);
+        border-top: 1px solid #e2e8f0;
+        border-bottom: 1px solid #e2e8f0;
+        padding: 16px 0;
+      }
+
+      .gl-nav-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .gl-nav-list a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 38px;
+        text-decoration: none;
+        border-radius: 8px;
+        background: #fff;
+        border: 1px solid #dbe3f0;
+        color: var(--gl-blue);
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      .gl-section {
+        padding: 78px 0;
+      }
+
+      .gl-section h2 {
+        color: var(--gl-blue);
+        margin: 0 0 18px;
+        font-size: clamp(28px, 4vw, 40px);
+      }
+
+      .gl-intro {
+        line-height: 1.8;
+        font-size: 17px;
+        color: #475569;
+        max-width: 74ch;
+        margin-bottom: 18px;
+      }
+
+      .gl-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .gl-link-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        border-radius: 999px;
+        padding: 12px 18px;
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      .gl-link-primary {
+        background: linear-gradient(135deg, #ffe89f 0%, #9f7628 100%);
+        color: #111827;
+      }
+
+      .gl-link-ghost {
+        border: 1px solid #cbd5e1;
+        color: var(--gl-blue);
+        background: #fff;
+      }
+
+      .gl-group {
+        margin-top: 38px;
+      }
+
+      .gl-group h3 {
+        color: var(--gl-blue);
+        font-size: 24px;
+        margin: 0 0 12px;
+        border-bottom: 2px solid #e5e7eb;
+        padding-bottom: 8px;
+      }
+
+      .gl-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .gl-card {
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 18px;
+      }
+
+      .gl-card h4 {
+        margin: 0 0 8px;
+        font-size: 18px;
+        color: var(--gl-blue);
+      }
+
+      .gl-card p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.75;
+        color: #334155;
+      }
+
+      .gl-card p + p {
+        margin-top: 10px;
+      }
+
+      .gl-card a {
+        color: var(--gl-blue-2);
+        font-weight: 600;
+      }
+
+      .gl-cta {
+        margin-top: 42px;
+        background: linear-gradient(135deg, #0a1a4a 0%, #18367f 100%);
+        border-radius: 16px;
+        padding: 30px;
+        color: #fff;
+      }
+
+      .gl-cta h3 {
+        margin: 0 0 10px;
+        color: #fff;
+        font-size: 28px;
+      }
+
+      .gl-cta p {
+        margin: 0 0 16px;
+        color: rgba(255,255,255,0.9);
+        line-height: 1.8;
+      }
+
+      @media (max-width: 860px) {
+        .gl-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .gl-section {
+          padding: 58px 0;
+        }
+      }
+    </style>
+
+    <section class="gl-hero glossary-page">
+      <div class="gl-wrap">
+        <span class="gl-badge"><i class="fas fa-book"></i> Cambridge Homeowner Resource</span>
+        <h1>Loft Conversion Glossary for Cambridge Homeowners</h1>
+        <p>This glossary explains the terms you will see when planning a loft conversion in Cambridge. It is written in plain English so you can make informed decisions on design, planning, regulations and cost.</p>
+      </div>
+    </section>
+
+    <section class="gl-nav glossary-page">
+      <div class="gl-wrap">
+        <ul class="gl-nav-list">
+          <li><a href="#a">A</a></li>
+          <li><a href="#b">B</a></li>
+          <li><a href="#d">D</a></li>
+          <li><a href="#h">H</a></li>
+          <li><a href="#l">L</a></li>
+          <li><a href="#m">M</a></li>
+          <li><a href="#p">P</a></li>
+          <li><a href="#r">R</a></li>
+          <li><a href="#v">V</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="gl-section glossary-page">
+      <div class="gl-wrap">
+        <h2>Quick Start</h2>
+        <p class="gl-intro">If you are new to loft conversions, begin with your local service page and area page, then explore the guides below. These pages are connected so you can move from basic definitions to planning, cost and company selection.</p>
+        <div class="gl-links">
+          <a class="gl-link-btn gl-link-primary" href="/services/loft-conversion-cambridge-service/"><i class="fas fa-tools"></i> Loft Conversion Service Page</a>
+          <a class="gl-link-btn gl-link-ghost" href="/loft-conversion-cambridge/"><i class="fas fa-location-dot"></i> Cambridge Area Page</a>
+          <a class="gl-link-btn gl-link-ghost" href="/loft-conversion-cost-cambridge/"><i class="fas fa-sterling-sign"></i> Cost Guide</a>
+          <a class="gl-link-btn gl-link-ghost" href="/loft-conversion-cambridge-guide/"><i class="fas fa-map"></i> Planning Guide</a>
+        </div>
+
+        <div class="gl-group" id="a">
+          <h3>A</h3>
+          <div class="gl-grid">
+            <article class="gl-card">
+              <h4>Attic Conversion</h4>
+              <p>Another term for loft conversion. In the UK, most homeowners use loft conversion when discussing roof space projects.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="gl-group" id="b">
+          <h3>B</h3>
+          <div class="gl-grid">
+            <article class="gl-card">
+              <h4>Building Regulations</h4>
+              <p>Mandatory technical standards for structural strength, fire safety, insulation, stairs and electrics.</p>
+              <p>External reference: <a href="https://www.gov.uk/building-regulations-approval" target="_blank" rel="noopener nofollow">UK building regulations approval</a>.</p>
+            </article>
+            <article class="gl-card">
+              <h4>Building Control Sign Off</h4>
+              <p>Final approval confirming the works comply with regulations. This is important for resale and mortgage checks.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="gl-group" id="d">
+          <h3>D</h3>
+          <div class="gl-grid">
+            <article class="gl-card">
+              <h4>Dormer Loft Conversion</h4>
+              <p>A roof extension that creates extra headroom and floor area, often the most practical option in Cambridge terraces.</p>
+              <p>Related internal guide: <a href="/loft-conversion-cost-cambridge/">Cambridge loft conversion costs by type</a>.</p>
+            </article>
+            <article class="gl-card">
+              <h4>Design and Access Statement</h4>
+              <p>A planning document sometimes required in sensitive locations, such as conservation areas.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="gl-group" id="h">
+          <h3>H</h3>
+          <div class="gl-grid">
+            <article class="gl-card">
+              <h4>Head Height</h4>
+              <p>Usable vertical clearance in the loft. Low head height affects design choices and staircase placement.</p>
+            </article>
+            <article class="gl-card">
+              <h4>Hip to Gable</h4>
+              <p>A conversion that straightens a sloping side roof into a vertical wall to increase internal space.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="gl-group" id="l">
+          <h3>L</h3>
+          <div class="gl-grid">
+            <article class="gl-card">
+              <h4>Loft Conversion Specialist</h4>
+              <p>A contractor focused on roof space conversions, planning support and structural delivery.</p>
+              <p>Compare firms here: <a href="/loft-conversion-company-in-cambridge/">Choosing a loft conversion company in Cambridge</a>.</p>
+            </article>
+            <article class="gl-card">
+              <h4>Lawful Development Certificate</h4>
+              <p>A certificate proving your project was lawful under permitted development rules, useful during property sale.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="gl-group" id="m">
+          <h3>M</h3>
+          <div class="gl-grid">
+            <article class="gl-card">
+              <h4>Mansard Conversion</h4>
+              <p>A larger structural roof alteration that creates significant additional space but usually needs planning permission.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="gl-group" id="p">
+          <h3>P</h3>
+          <div class="gl-grid">
+            <article class="gl-card">
+              <h4>Permitted Development</h4>
+              <p>Rights that allow certain loft works without full planning permission, subject to limits and conditions.</p>
+              <p>External reference: <a href="https://www.planningportal.co.uk/permission/common-projects/loft-conversion" target="_blank" rel="noopener nofollow">Planning Portal loft conversion rules</a>.</p>
+            </article>
+            <article class="gl-card">
+              <h4>Party Wall Notice</h4>
+              <p>A legal notice served to neighbours when works affect shared walls in terraced and semi detached properties.</p>
+              <p>External reference: <a href="https://www.gov.uk/party-walls-building-works" target="_blank" rel="noopener nofollow">Party wall process on GOV.UK</a>.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="gl-group" id="r">
+          <h3>R</h3>
+          <div class="gl-grid">
+            <article class="gl-card">
+              <h4>RSJ (Rolled Steel Joist)</h4>
+              <p>A steel beam used to support altered roof loads and floor structures during loft conversion works.</p>
+            </article>
+            <article class="gl-card">
+              <h4>Rooflight Conversion</h4>
+              <p>Often called a Velux conversion. It uses roof windows without major external roof extension.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="gl-group" id="v">
+          <h3>V</h3>
+          <div class="gl-grid">
+            <article class="gl-card">
+              <h4>Velux Loft Conversion</h4>
+              <p>A simpler conversion using roof windows, often lower cost than dormer options.</p>
+              <p>See real examples in our <a href="/gallery/?category=loft-conversion">loft conversion gallery</a>.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="gl-cta">
+          <h3>Need Help Applying These Terms To Your Home?</h3>
+          <p>We can review your roof space and explain the right loft conversion route for your Cambridge property in plain language.</p>
+          <a class="gl-link-btn gl-link-primary" href="/contact/"><i class="fas fa-calendar-check"></i> Book Free Consultation</a>
+        </div>
+      </div>
+    </section>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Loft Conversion Glossary for Cambridge Homeowners",
+      "url": "/loft-conversion-glossary/",
+      "inDefinedTermSet": [
+        {"@type":"DefinedTerm","name":"Permitted Development","description":"Rights that allow certain loft works without a full planning application."},
+        {"@type":"DefinedTerm","name":"Dormer Loft Conversion","description":"A roof extension that adds headroom and usable floor space."},
+        {"@type":"DefinedTerm","name":"Party Wall Notice","description":"A legal notice for works affecting shared walls with neighbours."},
+        {"@type":"DefinedTerm","name":"Building Regulations","description":"Technical standards for structural safety, fire protection, insulation and more."}
+      ]
+    }
+    </script>
+
+  </main>
+</BaseLayout>

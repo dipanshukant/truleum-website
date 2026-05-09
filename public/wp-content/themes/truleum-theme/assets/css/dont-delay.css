@@ -1,0 +1,61 @@
+/* Don't Delay Section - Exact styles extracted from inline styles */
+.contact-cta {
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', Arial, sans-serif;
+    max-width: 3000px;
+    width: 100vw;
+    margin: 60px 0;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    box-sizing: border-box;
+    /* Full-width gradient background container */
+    overflow-x: hidden;
+    background: #0a1a4a;
+}
+
+.contact-cta > div {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.contact-cta h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-cta p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 35px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.9);
+}
+
+.dont-delay {
+    display: inline-block;
+    background: #d4af37;
+    color: #fff !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 16px 40px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.dont-delay:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}

@@ -1,0 +1,472 @@
+/* Thank You Page Styles */
+
+/* Thank You Hero Section */
+.thank-you-hero {
+  background: linear-gradient(135deg, #0a1a4a 0%, #1e3a8a 100%);
+  color: white;
+  padding: 100px 0 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.thank-you-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(/wp-content/themes/truleum-theme/assets/css/)"/></svg>');
+  opacity: 0.3;
+}
+
+.thank-you-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Success Animation */
+.success-animation {
+  margin-bottom: 40px;
+}
+
+.checkmark-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0 auto 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: scaleIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.checkmark {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.checkmark::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 35px;
+  width: 15px;
+  height: 25px;
+  border: solid white;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
+  animation: checkmarkDraw 0.6s ease-in-out 0.3s both;
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes checkmarkDraw {
+  0% { height: 0; opacity: 0; }
+  100% { height: 25px; opacity: 1; }
+}
+
+.thank-you-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.thank-you-subtitle {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  opacity: 0.95;
+  line-height: 1.6;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* Thank You Details */
+.thank-you-details {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 50px;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 15px 25px;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.detail-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.detail-icon {
+  font-size: 1.2rem;
+}
+
+.detail-text {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Thank You Content Section */
+.thank-you-content {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.thank-you-content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+.content-card {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: 1px solid #e5e7eb;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.content-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: inline-block;
+  padding: 20px;
+  background: linear-gradient(135deg, #0a1a4a 0%, #1e3a8a 100%);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+}
+
+.card-icon span {
+  filter: grayscale(1) brightness(0) invert(1);
+  font-size: 2.5rem;
+}
+
+.content-card h3 {
+  font-size: 1.5rem;
+  color: #0a1a4a;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.process-list,
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.process-list li,
+.benefits-list li {
+  padding: 8px 0;
+  position: relative;
+  padding-left: 25px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.process-list li::before,
+.benefits-list li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.contact-details {
+  text-align: left;
+}
+
+.contact-details p {
+  margin: 10px 0;
+  color: #666;
+}
+
+.contact-details a {
+  color: #1e3a8a;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+  color: #d4af37;
+}
+
+/* Next Steps Section */
+.thank-you-next-steps {
+  padding: 80px 0;
+  background: white;
+}
+
+.next-steps-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 150px;
+}
+
+.thank-you-next-steps h2 {
+  font-size: 2.5rem;
+  color: #0a1a4a;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.next-steps-intro {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  min-width: 200px;
+  border: 2px solid transparent;
+}
+
+.action-btn.primary {
+  background: linear-gradient(135deg, #0a1a4a 0%, #1e3a8a 100%);
+  color: white;
+}
+
+.action-btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(10, 26, 74, 0.3);
+}
+
+.action-btn.secondary {
+  background: white;
+  color: #0a1a4a;
+  border-color: #e5e7eb;
+}
+
+.action-btn.secondary:hover {
+  border-color: #d4af37;
+  background: #fffbf0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.btn-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.btn-content {
+  text-align: left;
+}
+
+.btn-content strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.btn-content small {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Social Proof */
+.social-proof {
+  background: #f8f9fa;
+  padding: 40px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  border-left: 4px solid #d4af37;
+}
+
+.social-proof h3 {
+  font-size: 1.3rem;
+  color: #0a1a4a;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.testimonial-preview p {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.testimonial-preview cite {
+  color: #d4af37;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Return Home */
+.return-home {
+  margin-top: 40px;
+}
+
+.home-link {
+  color: #666;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.home-link:hover {
+  color: #0a1a4a;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .thank-you-title {
+    font-size: 2.5rem;
+  }
+  
+  .thank-you-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .thank-you-details {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .detail-item {
+    justify-content: center;
+  }
+  
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .content-card {
+    padding: 30px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .action-btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .thank-you-hero {
+    padding: 80px 0 60px;
+  }
+  
+  .thank-you-title {
+    font-size: 2rem;
+  }
+  
+  .checkmark-circle {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .checkmark {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .checkmark::after {
+    left: 17px;
+    top: 30px;
+    width: 12px;
+    height: 20px;
+  }
+  
+  .content-card {
+    padding: 25px;
+  }
+  
+  .card-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2.5rem;
+  }
+}

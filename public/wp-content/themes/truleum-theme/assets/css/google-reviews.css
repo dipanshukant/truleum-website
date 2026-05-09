@@ -1,0 +1,339 @@
+/* Google Reviews Section Styles */
+.google-reviews-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 80px 20px;
+    font-family: 'Poppins', Arial, sans-serif;
+    margin-top: -180px;
+    margin-bottom: 0;
+}
+
+.reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.reviews-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+h2 {
+    font-size: 44px !important;
+}
+
+h2 span {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 3px;
+    background: #d4af37;
+}
+
+
+
+.trustindex-reviews {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.trustindex-reviews .trustindex-widget {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.reviews-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #0c1b4d;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.reviews-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.google-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.google-rating .stars {
+    display: flex;
+    gap: 5px;
+}
+
+.google-rating .stars i {
+    color: #ffc107;
+    font-size: 1.5rem;
+}
+
+.rating-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0c1b4d;
+}
+
+.reviews-carousel {
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.reviews-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease;
+}
+
+.review-card {
+    flex: 0 0 auto;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    width: 100%;
+    min-width: 450px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.reviewer-avatar {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #0c1b4d, #1e3a8a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.reviewer-details h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0c1b4d;
+    margin: 0 0 5px 0;
+}
+
+.review-stars {
+    display: flex;
+    gap: 3px;
+}
+
+.review-stars i {
+    color: #ffc107;
+    font-size: 0.9rem;
+}
+
+.google-icon {
+    color: #4285f4;
+    font-size: 1.5rem;
+}
+
+.review-content {
+    flex-grow: 1;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.review-content p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 1rem;
+    margin: 0;
+    font-style: italic;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 9.6em; /* 6 lines * 1.6 line-height */
+}
+
+.review-date {
+    color: #999;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+.reviews-cta {
+    text-align: center;
+}
+
+.view-all-reviews-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(117, 86, 29, 0.3);
+}
+
+.view-all-reviews-btn:hover {
+    background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(117, 86, 29, 0.4);
+    color: white !important;
+}
+
+.view-all-reviews-btn i {
+    font-size: 1.2rem;
+}
+
+/* Carousel Navigation */
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.carousel-btn {
+    background: #0c1b4d;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.carousel-btn:hover {
+    background: #1e3a8a;
+    transform: scale(1.1);
+}
+
+.carousel-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: #0c1b4d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .google-reviews-section {
+        padding: 60px 15px;
+    }
+    
+    .reviews-title {
+        font-size: 2.2rem;
+    }
+    
+    .review-card {
+        padding: 25px;
+        min-width: 300px;
+    }
+    
+    .reviews-carousel {
+        max-width: 350px;
+    }
+    
+    .google-rating {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .carousel-nav {
+        gap: 15px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .reviews-title {
+        font-size: 1.8rem;
+    }
+    
+    .review-card {
+        padding: 20px;
+        min-width: 280px;
+    }
+    
+    .reviews-carousel {
+        max-width: 320px;
+    }
+    
+    .reviewer-info {
+        gap: 10px;
+    }
+    
+    .reviewer-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}

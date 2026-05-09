@@ -1,0 +1,279 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Loft Conversion Peterborough | Truleum Cambridgeshire Specialists"
+  description="Expert loft conversion services in Peterborough, Cambridgeshire. Local team for dormer, Velux and bespoke loft builds across Peterborough and surrounding areas."
+>
+
+  <main class="main-content area-peterborough-page" style="font-family: 'Poppins', Arial, sans-serif;">
+
+    <style>
+      .area-peterborough-page {
+        --area-blue: #0a1a4a;
+        --area-blue-2: #162b70;
+        --area-gold: #d4af37;
+        --area-soft: #f5f7fb;
+        --area-text: #334155;
+        overflow-x: hidden;
+      }
+      .area-wrap { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+      .area-peterborough-page section,
+      .area-peterborough-page h1,
+      .area-peterborough-page h2,
+      .area-peterborough-page h3,
+      .area-peterborough-page p,
+      .area-peterborough-page img,
+      .area-peterborough-page a { opacity: 1 !important; transform: none !important; }
+      .area-hero { padding: 112px 0 96px; color: #fff; background: radial-gradient(circle at 85% 15%, rgba(212,175,55,0.24) 0%, rgba(212,175,55,0) 45%), linear-gradient(132deg, #08163d 0%, #0a1a4a 45%, #1c347f 100%); }
+      .area-hero-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 40px; align-items: center; }
+      .area-kicker { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,232,159,0.98); color: #0a1a4a; border-radius: 999px; padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; margin-bottom: 20px; }
+      .area-hero h1 { font-size: clamp(36px, 5vw, 58px); line-height: 1.1; color: #fff; margin: 0 0 18px; max-width: 15ch; }
+      .area-hero p { font-size: 18px; line-height: 1.8; color: rgba(255,255,255,0.92); margin: 0 0 26px; max-width: 60ch; }
+      .area-hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
+      .area-btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; border-radius: 999px; font-weight: 700; font-size: 15px; padding: 14px 24px; }
+      .area-btn-primary { background: linear-gradient(135deg, #ffe89f 0%, #9f7628 100%); color: #111827; }
+      .area-btn-ghost { color: #fff; border: 1px solid rgba(255,255,255,0.4); background: rgba(255,255,255,0.08); }
+      .lc-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 8px; }
+      .lc-metric { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); border-radius: 14px; padding: 16px; text-align: center; }
+      .lc-metric strong { display: block; font-size: 24px; line-height: 1; color: #ffe89f; margin-bottom: 6px; }
+      .lc-metric span { font-size: 13px; color: rgba(255,255,255,0.84); }
+      .area-hero-card { background: rgba(255,255,255,0.11); border: 1px solid rgba(255,255,255,0.16); border-radius: 20px; padding: 18px; backdrop-filter: blur(8px); }
+      .area-hero-card img { width: 100%; border-radius: 12px; aspect-ratio: 4 / 3; object-fit: cover; }
+      .area-price { margin-top: 14px; background: #fff; border-radius: 12px; padding: 12px 14px; color: #0a1a4a; display: flex; justify-content: space-between; align-items: center; font-size: 14px; font-weight: 600; }
+      .area-price strong { color: #111827; font-size: 19px; }
+      .area-section { padding: 86px 0; }
+      .area-head { text-align: center; max-width: 830px; margin: 0 auto 34px; }
+      .area-head h2 { color: var(--area-blue); font-size: clamp(30px, 4vw, 44px); line-height: 1.2; margin: 0 0 12px; }
+      .area-head p { color: #475569; font-size: 17px; line-height: 1.8; margin: 0; }
+      .area-intro { background: var(--area-soft); }
+      .area-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+      .area-panel { background: #fff; border: 1px solid #e4e9f2; border-radius: 16px; padding: 24px; box-shadow: 0 10px 24px rgba(15,23,42,0.05); }
+      .area-panel h3 { color: var(--area-blue); font-size: 24px; margin: 0 0 10px; }
+      .area-panel p { color: var(--area-text); line-height: 1.8; margin: 0 0 14px; }
+      .area-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+      .area-list li { display: flex; align-items: flex-start; gap: 9px; color: #1f2937; line-height: 1.7; font-size: 15px; }
+      .area-list i { color: var(--area-gold); margin-top: 3px; }
+      .area-types-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+      .area-type { border: 1px solid #e5e7eb; border-radius: 14px; background: #fff; padding: 20px; }
+      .area-type h3 { font-size: 21px; color: var(--area-blue); margin: 0 0 8px; }
+      .area-type p { margin: 0; color: var(--area-text); line-height: 1.75; font-size: 15px; }
+      .area-zone { background: linear-gradient(180deg, #0a1a4a 0%, #102559 100%); }
+      .area-zone .area-head h2, .area-zone .area-head p { color: #fff; }
+      .area-zone-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+      .area-zone-item { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 16px; }
+      .area-zone-item h3 { color: #ffe89f; font-size: 20px; margin: 0 0 8px; }
+      .area-zone-item h3 a { color: #ffe89f; text-decoration: none; }
+      .area-zone-item h3 a:hover { text-decoration: underline; }
+      .area-zone-item p { color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.7; margin: 0; }
+      .area-proof-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+      .area-proof { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; text-align: center; padding: 20px; }
+      .area-proof i { color: var(--area-gold); font-size: 24px; margin-bottom: 10px; }
+      .area-proof h3 { color: var(--area-blue); font-size: 18px; margin: 0 0 7px; }
+      .area-proof p { margin: 0; color: #475569; font-size: 14px; line-height: 1.7; }
+      .area-faq { background: var(--area-soft); }
+      .area-faq-grid { max-width: 920px; margin: 0 auto; display: grid; gap: 12px; }
+      .area-faq-item { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px; }
+      .area-faq-item h3 { color: var(--area-blue); margin: 0 0 8px; font-size: 19px; }
+      .area-faq-item p { margin: 0; color: #334155; line-height: 1.75; font-size: 15px; }
+      .area-cta { padding: 88px 0; text-align: center; background: linear-gradient(135deg, #0a1a4a 0%, #1f3a8a 100%); }
+      .area-cta h2 { color: #fff; margin: 0 0 12px; font-size: clamp(30px, 4vw, 46px); }
+      .area-cta p { color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto 24px; line-height: 1.8; font-size: 17px; }
+      @media (max-width: 1080px) { .area-types-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .area-zone-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .area-proof-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @media (max-width: 900px) { .area-hero { padding: 86px 0 70px; } .area-hero-grid, .area-columns { grid-template-columns: 1fr; } .area-hero h1 { max-width: 100%; } }
+      @media (max-width: 680px) { .lc-metrics { grid-template-columns: 1fr; } .area-section, .area-cta { padding: 64px 0; } .area-types-grid, .area-zone-grid, .area-proof-grid { grid-template-columns: 1fr; } .area-head p, .area-hero p, .area-cta p { font-size: 16px; } }
+    </style>
+
+    <section class="area-hero">
+      <div class="area-wrap area-hero-grid">
+        <div>
+          <span class="area-kicker"><i class="fas fa-location-dot"></i> Peterborough, Cambridgeshire</span>
+          <h1>Loft Conversion Peterborough Built For Local Homes</h1>
+          <p>Looking for a loft conversion in Peterborough? We design and build loft rooms across Peterborough's wide range of housing, from Victorian terraces and Edwardian semis to postwar estates and modern new builds across the city. Every project is planned around your specific roof and goals. See our full <a href="/services/loft-conversion-cambridge-service/" style="color:#ffe89f; font-weight:600;">Loft Conversion Service page</a>.</p>
+          <div class="area-hero-actions">
+            <a href="/contact/" class="area-btn area-btn-primary">Get Free Survey <i class="fas fa-arrow-right"></i></a>
+            <a href="/gallery/" class="area-btn area-btn-ghost">View Our Work</a>
+          </div>
+          <div class="lc-metrics">
+            <div class="lc-metric"><strong><i class="fas fa-check-circle"></i></strong><span>Free Site Survey</span></div>
+            <div class="lc-metric"><strong><i class="fas fa-shield-alt"></i></strong><span>Fully Insured</span></div>
+            <div class="lc-metric"><strong><i class="fas fa-award"></i></strong><span>Quality Assured</span></div>
+          </div>
+        </div>
+        <div class="area-hero-card">
+          <img src="/wp-content/uploads/Loft-Conversion/loft-building-cambridgeshire.webp" alt="Loft conversion in Peterborough Cambridgeshire by Truleum">
+          <div class="area-price">
+            <span>Typical project budget</span>
+            <strong>From £27,000</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-section area-intro">
+      <div class="area-wrap">
+        <div class="area-head">
+          <h2>Local Approach For Every Loft Conversion In Peterborough</h2>
+          <p>Peterborough has one of the most varied housing stocks in Cambridgeshire. We tailor every loft conversion to the specific property type, roof structure and planning situation. Our <a href="/loft-conversion-cambridge-guide-for-homeowners/" style="color: var(--area-blue); font-weight:600;">homeowner guide</a> explains what to expect at every stage.</p>
+        </div>
+        <div class="area-columns">
+          <article class="area-panel">
+            <h3>What You Get</h3>
+            <p>Your Peterborough loft conversion includes structural build, insulation, new windows or dormers, electrics and a complete quality finish from start to handover.</p>
+            <ul class="area-list">
+              <li><i class="fas fa-check-circle"></i> Detailed written quotes with clear stage pricing</li>
+              <li><i class="fas fa-check-circle"></i> Consistent communication throughout the project</li>
+              <li><i class="fas fa-check-circle"></i> Room layouts designed for bedrooms, offices and ensuites</li>
+              <li><i class="fas fa-check-circle"></i> Building regulations compliance managed from start to finish</li>
+            </ul>
+          </article>
+          <article class="area-panel">
+            <h3>Why Peterborough Homes Need Specialist Input</h3>
+            <p>Peterborough includes a huge range of property types across different eras of construction. Victorian terraces, interwar semis, 1960s estates and modern builds all need different loft conversion approaches. See the <a href="https://www.planningportal.co.uk/permission/common-projects/loft-conversion" target="_blank" rel="noopener nofollow">Planning Portal</a> for guidance on permitted development.</p>
+            <ul class="area-list">
+              <li><i class="fas fa-check-circle"></i> Experience across all Peterborough property generations</li>
+              <li><i class="fas fa-check-circle"></i> Accurate roof assessment before any commitment is made</li>
+              <li><i class="fas fa-check-circle"></i> Staircase options that work within your existing home layout</li>
+              <li><i class="fas fa-check-circle"></i> Planning advice specific to your Peterborough postcode</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-section">
+      <div class="area-wrap">
+        <div class="area-head">
+          <h2>Popular Loft Conversion Types For Peterborough Homes</h2>
+          <p>We choose the best option for your roof shape, budget and how you want to use the space. Our <a href="/loft-conversion-glossary/" style="color: var(--area-blue); font-weight:600;">glossary</a> explains all the main loft conversion types.</p>
+        </div>
+        <div class="area-types-grid">
+          <article class="area-type">
+            <h3>Dormer Conversion</h3>
+            <p>Most popular across Peterborough terraces and semis. Adds strong headroom and maximum floor area for a new bedroom, ensuite or home office.</p>
+          </article>
+          <article class="area-type">
+            <h3>Velux Conversion</h3>
+            <p>Roof windows add light and usable space without altering the roofline. Often the most cost effective route and widely permitted development.</p>
+          </article>
+          <article class="area-type">
+            <h3>Hip To Gable</h3>
+            <p>Works well for Peterborough end of terrace and semi detached homes, converting the hip to a full gable and creating wider, more practical rooms.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-section area-zone">
+      <div class="area-wrap">
+        <div class="area-head">
+          <h2>Areas We Cover In And Around Peterborough</h2>
+          <p>We serve all major Peterborough districts and surrounding Cambridgeshire areas with the same standards and project management on every job.</p>
+        </div>
+        <div class="area-zone-grid">
+          <article class="area-zone-item"><h3>Peterborough City</h3><p>City centre streets, Victorian terraces and established inner city residential areas.</p></article>
+          <article class="area-zone-item"><h3>Bretton and Werrington</h3><p>Large postwar and modern estates north of the city with a wide range of semi detached homes.</p></article>
+          <article class="area-zone-item"><h3>Orton and Hampton</h3><p>Substantial southern townships with varied modern housing stock and family sized properties.</p></article>
+          <article class="area-zone-item"><h3>Paston and Dogsthorpe</h3><p>Established residential areas east of the city centre with postwar and modern housing.</p></article>
+          <article class="area-zone-item"><h3><a href="/loft-conversion-march-cambridgeshire/">March</a> and Fenland</h3><p>Serving the wider Fenland district south of Peterborough including March and Chatteris.</p></article>
+          <article class="area-zone-item"><h3><a href="/loft-conversion-wisbech/">Wisbech</a></h3><p>Port town to the north with period and 20th century housing across the area.</p></article>
+          <article class="area-zone-item"><h3><a href="/loft-conversion-huntingdon/">Huntingdon</a></h3><p>Market town coverage southeast of Peterborough across all property types.</p></article>
+          <article class="area-zone-item"><h3><a href="/loft-conversion-ely/">Ely</a> Area</h3><p>Cathedral city and surrounding Fenland communities within our Cambridgeshire service area.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-section">
+      <div class="area-wrap">
+        <div class="area-head">
+          <h2>Why Peterborough Homeowners Choose Truleum</h2>
+          <p>Homeowners across Peterborough and Cambridgeshire choose us for dependable delivery, clear pricing and genuine quality at every stage of the project.</p>
+        </div>
+        <div class="area-proof-grid">
+          <article class="area-proof"><i class="fas fa-map-marked-alt"></i><h3>Local Team</h3><p>We know Peterborough property types, planning rules and how to manage builds across the city.</p></article>
+          <article class="area-proof"><i class="fas fa-file-signature"></i><h3>Transparent Quotes</h3><p>Full written quotes with clear inclusions. No hidden costs, no surprises once work starts.</p></article>
+          <article class="area-proof"><i class="fas fa-shield-alt"></i><h3>Fully Insured</h3><p>Complete professional liability insurance throughout every stage of the project.</p></article>
+          <article class="area-proof"><i class="fas fa-award"></i><h3>Quality Finish</h3><p>High standards at every stage mean a finished space that feels right and is built to last.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-section area-faq">
+      <div class="area-wrap">
+        <div class="area-head">
+          <h2>Peterborough Loft Conversion FAQs</h2>
+          <p>Common questions from Peterborough homeowners. See our full <a href="/loft-conversion-cost-cambridge/" style="color: var(--area-blue); font-weight:600;">2026 cost guide</a> for detailed Cambridgeshire pricing.</p>
+        </div>
+        <div class="area-faq-grid">
+          <article class="area-faq-item">
+            <h3>How much does a loft conversion in Peterborough cost?</h3>
+            <p>Most projects in Peterborough range from £27,000 to £62,000 depending on the type of conversion, structural requirements and finishing level. We provide a clear written quote after a free site survey with no obligation.</p>
+          </article>
+          <article class="area-faq-item">
+            <h3>Are 1960s and 1970s semis in Peterborough good for loft conversions?</h3>
+            <p>Yes, they are often excellent candidates. Hip to gable and dormer conversions work particularly well for this era of housing across Peterborough. We confirm suitability during the survey before any work is committed to.</p>
+          </article>
+          <article class="area-faq-item">
+            <h3>Do I need planning permission for a loft conversion in Peterborough?</h3>
+            <p>Most loft conversions in Peterborough fall under permitted development and do not require planning permission. Conservation areas or major structural roof changes may need an application. We advise on this clearly from the outset.</p>
+          </article>
+          <article class="area-faq-item">
+            <h3>How long does a Peterborough loft conversion take?</h3>
+            <p>A typical build takes between 6 and 10 weeks from start, depending on conversion type and the level of specification required.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-cta">
+      <div class="area-wrap">
+        <p style="margin:0 0 12px; color: rgba(255,255,255,0.82);">Useful links: <a href="/loft-conversion-glossary/" style="color:#ffe89f; font-weight:600;">Loft Conversion Glossary</a> | <a href="/loft-conversion-cost-cambridge/" style="color:#ffe89f; font-weight:600;">Cost Guide</a> | <a href="/loft-conversion-cambridge-guide-for-homeowners/" style="color:#ffe89f; font-weight:600;">Homeowner Guide</a> | <a href="/loft-conversion-cambridge/" style="color:#ffe89f; font-weight:600;">Cambridge Area Page</a></p>
+        <h2>Plan Your Peterborough Loft Conversion Today</h2>
+        <p>Book a free site survey to explore layout options, understand costs and get a clear plan for your Peterborough loft project.</p>
+        <a href="/contact/" class="area-btn area-btn-primary">Book Free Consultation <i class="fas fa-calendar-check"></i></a>
+      </div>
+    </section>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a loft conversion in Peterborough cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most projects in Peterborough range from £27,000 to £62,000 depending on conversion type, structural requirements and finishing level."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are 1960s and 1970s semis in Peterborough good for loft conversions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Hip to gable and dormer conversions work particularly well for this era of Peterborough housing. We confirm suitability during the free survey."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need planning permission for a loft conversion in Peterborough?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most loft conversions in Peterborough are permitted development. Conservation areas or major roof changes may need a planning application."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a Peterborough loft conversion take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A typical Peterborough loft conversion takes between 6 and 10 weeks from start, depending on type and specification."
+          }
+        }
+      ]
+    }
+    </script>
+
+  </main>
+</BaseLayout>

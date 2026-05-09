@@ -1,0 +1,104 @@
+/* Popup Contact Form Styles (matches quote form) */
+.popup-contact-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(12,27,77,0.75);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup-contact-modal {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(12,27,77,0.18);
+  padding: 40px 32px 32px;
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+.popup-contact-close {
+  position: absolute;
+  top: 18px; right: 18px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #0c1b4d;
+  cursor: pointer;
+  z-index: 2;
+}
+.popup-contact-form h2 {
+  font-size: 18px;
+  color: #0c1b4d;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.popup-contact-form .form-group {
+  margin-bottom: 18px;
+}
+.popup-contact-form label {
+  font-weight: 600;
+  color: #0c1b4d;
+  margin-bottom: 6px;
+  display: block;
+}
+.popup-contact-form .form-input,
+.popup-contact-form .form-textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1.5px solid #bfc8da;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  margin-top: 3px;
+  margin-bottom: 0;
+  background: #f8f9fa;
+  color: #0c1b4d;
+  outline: none;
+  transition: border 0.2s;
+}
+.popup-contact-form .form-input:focus,
+.popup-contact-form .form-textarea:focus {
+  border-color: #1e3a8a;
+}
+.popup-contact-form .form-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+.popup-contact-form .required {
+  color: #e63946;
+}
+.popup-contact-form .submit-btn {
+  width: 100%;
+  padding: 14px 0;
+  background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 10px;
+}
+.popup-contact-form .submit-btn:hover {
+  background: linear-gradient(135deg, #ffed9f 0%, #8a6423 100%);
+  transform: translateY(-2px);
+}
+.popup-contact-form .form-success {
+  background: #e4f8e4;
+  color: #0c1b4d;
+  border-radius: 8px;
+  text-align: center;
+  padding: 18px 10px;
+  margin-top: 18px;
+}
+.popup-contact-form .success-icon {
+  font-size: 2rem;
+  color: #2ecc71;
+  margin-bottom: 8px;
+}
+@media (max-width: 600px) {
+  .popup-contact-modal { padding: 18px 6px; }
+}

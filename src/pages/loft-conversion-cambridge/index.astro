@@ -1,0 +1,647 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Cambridge Loft Conversion | Truleum Loft Specialist"
+  description="Cambridge loft conversion experts for dormer, Velux and bespoke loft builds. Trusted local team, quality finish, clear quotes and planning support."
+>
+
+  <main class="main-content area-cambridge-page" style="font-family: 'Poppins', Arial, sans-serif;">
+
+    <style>
+      .area-cambridge-page {
+        --area-blue: #0a1a4a;
+        --area-blue-2: #162b70;
+        --area-gold: #d4af37;
+        --area-soft: #f5f7fb;
+        --area-text: #334155;
+        overflow-x: hidden;
+      }
+
+      .area-wrap {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .area-cambridge-page section,
+      .area-cambridge-page h1,
+      .area-cambridge-page h2,
+      .area-cambridge-page h3,
+      .area-cambridge-page p,
+      .area-cambridge-page img,
+      .area-cambridge-page a {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .area-hero {
+        padding: 112px 0 96px;
+        color: #fff;
+        background:
+          radial-gradient(circle at 85% 15%, rgba(212,175,55,0.24) 0%, rgba(212,175,55,0) 45%),
+          linear-gradient(132deg, #08163d 0%, #0a1a4a 45%, #1c347f 100%);
+      }
+
+      .area-hero-grid {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .area-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 232, 159, 0.98);
+        color: #0a1a4a;
+        border-radius: 999px;
+        padding: 10px 18px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+
+      .area-hero h1 {
+        font-size: clamp(36px, 5vw, 58px);
+        line-height: 1.1;
+        color: #fff;
+        margin: 0 0 18px;
+        max-width: 15ch;
+      }
+
+      .area-hero p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: rgba(255,255,255,0.92);
+        margin: 0 0 26px;
+        max-width: 60ch;
+      }
+
+      .area-hero-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+      }
+
+      .area-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 15px;
+        padding: 14px 24px;
+      }
+
+      .area-btn-primary {
+        background: linear-gradient(135deg, #ffe89f 0%, #9f7628 100%);
+        color: #111827;
+      }
+
+      .area-btn-ghost {
+        color: #fff;
+        border: 1px solid rgba(255,255,255,0.4);
+        background: rgba(255,255,255,0.08);
+      }
+
+      .area-stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .area-stat {
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 14px;
+        padding: 14px;
+        text-align: center;
+      }
+
+      .area-stat strong {
+        display: block;
+        color: #ffe89f;
+        font-size: 28px;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+
+      .area-stat span {
+        font-size: 12px;
+        color: rgba(255,255,255,0.85);
+      }
+
+      .area-hero-card {
+        background: rgba(255,255,255,0.11);
+        border: 1px solid rgba(255,255,255,0.16);
+        border-radius: 20px;
+        padding: 18px;
+        backdrop-filter: blur(8px);
+      }
+
+      .area-hero-card img {
+        width: 100%;
+        border-radius: 12px;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+      }
+
+      .area-price {
+        margin-top: 14px;
+        background: #fff;
+        border-radius: 12px;
+        padding: 12px 14px;
+        color: #0a1a4a;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .area-price strong {
+        color: #111827;
+        font-size: 19px;
+      }
+
+      .area-section {
+        padding: 86px 0;
+      }
+
+      .area-head {
+        text-align: center;
+        max-width: 830px;
+        margin: 0 auto 34px;
+      }
+
+      .area-head h2 {
+        color: var(--area-blue);
+        font-size: clamp(30px, 4vw, 44px);
+        line-height: 1.2;
+        margin: 0 0 12px;
+      }
+
+      .area-head p {
+        color: #475569;
+        font-size: 17px;
+        line-height: 1.8;
+        margin: 0;
+      }
+
+      .area-intro {
+        background: var(--area-soft);
+      }
+
+      .area-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 26px;
+      }
+
+      .area-panel {
+        background: #fff;
+        border: 1px solid #e4e9f2;
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+      }
+
+      .area-panel h3 {
+        color: var(--area-blue);
+        font-size: 24px;
+        margin: 0 0 10px;
+      }
+
+      .area-panel p {
+        color: var(--area-text);
+        line-height: 1.8;
+        margin: 0 0 14px;
+      }
+
+      .area-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 9px;
+      }
+
+      .area-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+        color: #1f2937;
+        line-height: 1.7;
+        font-size: 15px;
+      }
+
+      .area-list i {
+        color: var(--area-gold);
+        margin-top: 3px;
+      }
+
+      .area-types-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .area-type {
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        background: #fff;
+        padding: 20px;
+      }
+
+      .area-type h3 {
+        font-size: 21px;
+        color: var(--area-blue);
+        margin: 0 0 8px;
+      }
+
+      .area-type p {
+        margin: 0;
+        color: var(--area-text);
+        line-height: 1.75;
+        font-size: 15px;
+      }
+
+      .area-zone {
+        background: linear-gradient(180deg, #0a1a4a 0%, #102559 100%);
+      }
+
+      .area-zone .area-head h2,
+      .area-zone .area-head p {
+        color: #fff;
+      }
+
+      .area-zone-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .area-zone-item {
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 12px;
+        padding: 16px;
+      }
+
+      .area-zone-item h3 {
+        color: #ffe89f;
+        font-size: 20px;
+        margin: 0 0 8px;
+      }
+
+      .area-zone-item p {
+        color: rgba(255,255,255,0.9);
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      .area-proof-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .area-proof {
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .area-proof i {
+        color: var(--area-gold);
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .area-proof h3 {
+        color: var(--area-blue);
+        font-size: 18px;
+        margin: 0 0 7px;
+      }
+
+      .area-proof p {
+        margin: 0;
+        color: #475569;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .area-faq {
+        background: var(--area-soft);
+      }
+
+      .area-faq-grid {
+        max-width: 920px;
+        margin: 0 auto;
+        display: grid;
+        gap: 12px;
+      }
+
+      .area-faq-item {
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 18px;
+      }
+
+      .area-faq-item h3 {
+        color: var(--area-blue);
+        margin: 0 0 8px;
+        font-size: 19px;
+      }
+
+      .area-faq-item p {
+        margin: 0;
+        color: #334155;
+        line-height: 1.75;
+        font-size: 15px;
+      }
+
+      .area-cta {
+        padding: 88px 0;
+        text-align: center;
+        background: linear-gradient(135deg, #0a1a4a 0%, #1f3a8a 100%);
+      }
+
+      .area-cta h2 {
+        color: #fff;
+        margin: 0 0 12px;
+        font-size: clamp(30px, 4vw, 46px);
+      }
+
+      .area-cta p {
+        color: rgba(255,255,255,0.9);
+        max-width: 700px;
+        margin: 0 auto 24px;
+        line-height: 1.8;
+        font-size: 17px;
+      }
+
+      @media (max-width: 1080px) {
+        .area-types-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .area-zone-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .area-proof-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      }
+
+      @media (max-width: 900px) {
+        .area-hero { padding: 86px 0 70px; }
+        .area-hero-grid,
+        .area-columns,
+        .area-stats { grid-template-columns: 1fr; }
+        .area-hero h1 { max-width: 100%; }
+      }
+
+      .lc-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 8px;
+      }
+
+      .lc-metric {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 14px;
+        padding: 16px;
+        text-align: center;
+      }
+
+      .lc-metric strong {
+        display: block;
+        font-size: 24px;
+        line-height: 1;
+        color: #ffe89f;
+        margin-bottom: 6px;
+      }
+
+      .lc-metric span {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.84);
+      }
+
+      @media (max-width: 680px) {
+        .lc-metrics {
+          grid-template-columns: 1fr;
+        }
+        .area-section,
+        .area-cta { padding: 64px 0; }
+        .area-types-grid,
+        .area-zone-grid,
+        .area-proof-grid { grid-template-columns: 1fr; }
+        .area-head p,
+        .area-hero p,
+        .area-cta p { font-size: 16px; }
+      }
+    </style>
+
+    <section class="area-hero">
+      <div class="area-wrap area-hero-grid">
+        <div>
+          <span class="area-kicker"><i class="fas fa-location-dot"></i> Cambridge Area Specialists</span>
+          <h1>Cambridge Loft Conversion Built For Local Homes</h1>
+          <p>Need a reliable team for your <strong>cambridge loft conversion</strong> project? We design and build loft rooms that fit Cambridge homes, planning context and family life. Every project is tailored, practical and finished to a high standard. You can also view our dedicated <a href="/services/loft-conversion-cambridge-service/" style="color:#ffe89f; font-weight:600;">Loft Conversion Cambridge service page</a>.</p>
+          <div class="area-hero-actions">
+            <a href="/contact/" class="area-btn area-btn-primary">Get Free Survey <i class="fas fa-arrow-right"></i></a>
+            <a href="/gallery/?category=loft-conversion" class="area-btn area-btn-ghost">View Cambridge Work</a>
+          </div>
+          <div class="lc-metrics">
+            <div class="lc-metric"><strong><i class="fas fa-check-circle"></i></strong><span>Free Site Survey</span></div>
+            <div class="lc-metric"><strong><i class="fas fa-shield-alt"></i></strong><span>Fully Insured</span></div>
+            <div class="lc-metric"><strong><i class="fas fa-award"></i></strong><span>Quality Assured</span></div>
+          </div>
+        </div>
+
+        <div class="area-hero-card">
+          <img src="/wp-content/uploads/Loft-Conversion/best-company-loft-conversion.webp" alt="Cambridge loft conversion project by Truleum">
+          <div class="area-price">
+            <span>Typical project budget</span>
+            <strong>From £30,000</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-section area-intro">
+      <div class="area-wrap">
+        <div class="area-head">
+          <h2>Local Approach For Every Loft Conversion In Cambridge</h2>
+          <p>As a dedicated local team, we plan each loft conversion in Cambridge around roof structure, planning rules and how you want the room to work day to day.</p>
+        </div>
+        <div class="area-columns">
+          <article class="area-panel">
+            <h3>What You Get</h3>
+            <p>Your Cambridge loft conversion includes design guidance, structural build, insulation, windows, electrics and high quality finishing.</p>
+            <ul class="area-list">
+              <li><i class="fas fa-check-circle"></i> Clear scope and fixed stage pricing</li>
+              <li><i class="fas fa-check-circle"></i> Strong communication from survey to handover</li>
+              <li><i class="fas fa-check-circle"></i> Practical layouts for bedrooms, offices and suites</li>
+              <li><i class="fas fa-check-circle"></i> Building control support throughout the project</li>
+            </ul>
+          </article>
+          <article class="area-panel">
+            <h3>Why Cambridge Homes Need Specialist Input</h3>
+            <p>From Victorian terraces to modern estates, a successful <strong>cambridge loft conversion</strong> needs local experience with planning constraints, structural details and access logistics. For formal guidance, see the <a href="https://www.planningportal.co.uk/permission/common-projects/loft-conversion" target="_blank" rel="noopener nofollow">Planning Portal loft conversion rules</a>.</p>
+            <ul class="area-list">
+              <li><i class="fas fa-check-circle"></i> Experience with conservation area requirements</li>
+              <li><i class="fas fa-check-circle"></i> Design options to maximise head height</li>
+              <li><i class="fas fa-check-circle"></i> Smart staircase placement and storage planning</li>
+              <li><i class="fas fa-check-circle"></i> Build sequencing to reduce disruption</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-section">
+      <div class="area-wrap">
+        <div class="area-head">
+          <h2>Popular Cambridge Loft Conversion Types</h2>
+          <p>We recommend the best option for your home shape, budget and long term goals.</p>
+        </div>
+        <div class="area-types-grid">
+          <article class="area-type">
+            <h3>Dormer Conversion</h3>
+            <p>The most common choice for a <strong>cambridge loft conversion</strong>, giving strong headroom and floor area for bedrooms and ensuites.</p>
+          </article>
+          <article class="area-type">
+            <h3>Velux Conversion</h3>
+            <p>A lower impact solution using roof windows. Ideal when you need extra space with minimal external changes.</p>
+          </article>
+          <article class="area-type">
+            <h3>Hip To Gable</h3>
+            <p>Great for end of terrace and semi detached homes where extra width and better room proportions are needed.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-section area-zone">
+      <div class="area-wrap">
+        <div class="area-head">
+          <h2>Cambridge Areas We Cover</h2>
+          <p>We deliver loft conversion services across Cambridge and nearby locations with the same quality standards.</p>
+        </div>
+        <div class="area-zone-grid">
+          <article class="area-zone-item"><h3>Central Cambridge</h3><p>Period homes, compact streets and detail focused refurbishments.</p></article>
+          <article class="area-zone-item"><h3>Cherry Hinton</h3><p>Family homes with practical dormer and office loft layouts.</p></article>
+          <article class="area-zone-item"><h3>Trumpington</h3><p>Newer developments and modern homes needing extra floor space.</p></article>
+          <article class="area-zone-item"><h3><a href="/loft-conversion-ely/">Ely</a></h3><p>Cathedral city loft conversions across Victorian terraces and Fenland estates.</p></article>
+          <article class="area-zone-item"><h3><a href="/loft-conversion-huntingdon/">Huntingdon</a></h3><p>Market town coverage for terraces, semis and modern Huntingdon homes.</p></article>
+          <article class="area-zone-item"><h3><a href="/loft-conversion-st-ives-cambridgeshire/">St Ives</a></h3><p>Ouse Valley town with period and commuter era family housing.</p></article>
+          <article class="area-zone-item"><h3><a href="/loft-conversion-st-neots/">St Neots</a></h3><p>Cambridgeshire's fastest growing town with a wide mix of property types.</p></article>
+          <article class="area-zone-item"><h3><a href="/loft-conversion-peterborough/">Peterborough</a></h3><p>City wide coverage across all Peterborough districts and suburbs.</p></article>
+          <article class="area-zone-item"><h3><a href="/loft-conversion-march-cambridgeshire/">March</a></h3><p>Fenland market town with traditional terraces and 20th century housing.</p></article>
+          <article class="area-zone-item"><h3><a href="/loft-conversion-wisbech/">Wisbech</a></h3><p>Period and Georgian properties alongside 20th century Fenland estates.</p></article>
+          <article class="area-zone-item"><h3><a href="/loft-conversion-soham/">Soham</a></h3><p>East Cambridgeshire village town covering Soham and surrounding communities.</p></article>
+          <article class="area-zone-item"><h3>Cambridgeshire Villages</h3><p>Bespoke loft conversion projects across all remaining rural Cambridgeshire communities.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-section">
+      <div class="area-wrap">
+        <div class="area-head">
+          <h2>Why Homeowners Choose Truleum</h2>
+          <p>Homeowners looking for dependable loft conversions Cambridge can trust choose us for quality workmanship and clear delivery.</p>
+        </div>
+        <div class="area-proof-grid">
+          <article class="area-proof"><i class="fas fa-map-marked-alt"></i><h3>Local Team</h3><p>Strong understanding of Cambridge planning and property types.</p></article>
+          <article class="area-proof"><i class="fas fa-file-signature"></i><h3>Transparent Quotes</h3><p>Clear inclusions and practical options for each budget level.</p></article>
+          <article class="area-proof"><i class="fas fa-shield-alt"></i><h3>Fully Insured</h3><p>Professional delivery with peace of mind from start to finish.</p></article>
+          <article class="area-proof"><i class="fas fa-award"></i><h3>Quality Finish</h3><p>Careful detailing that makes every Cambridge attic conversion feel complete.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-section area-faq">
+      <div class="area-wrap">
+        <div class="area-head">
+          <h2>Cambridge Loft Conversion FAQs</h2>
+          <p>Helpful answers for homeowners planning their project in Cambridge.</p>
+        </div>
+        <div class="area-faq-grid">
+          <article class="area-faq-item">
+            <h3>How much does a cambridge loft conversion cost?</h3>
+            <p>Most projects range from £30,000 to £65,000 based on structure, loft type and finishing level. We provide a clear quote after survey.</p>
+          </article>
+          <article class="area-faq-item">
+            <h3>Do I need planning permission for a loft conversion in Cambridge?</h3>
+            <p>Many projects are covered by permitted development. Homes in conservation zones or with major roof changes may require full planning approval. We also work to standards shown in <a href="https://www.gov.uk/building-regulations-approval" target="_blank" rel="noopener nofollow">UK building regulations</a>.</p>
+          </article>
+          <article class="area-faq-item">
+            <h3>How long does a Cambridge loft conversion take?</h3>
+            <p>A typical build takes 6 to 10 weeks once work starts, depending on design complexity and final specification.</p>
+          </article>
+          <article class="area-faq-item">
+            <h3>Does a loft conversion add value in Cambridge?</h3>
+            <p>In many cases yes. A well designed additional bedroom or office can improve both home value and daily living comfort.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-cta">
+      <div class="area-wrap">
+        <p style="margin:0 0 12px; color: rgba(255,255,255,0.82);">Helpful resources: <a href="/loft-conversion-glossary/" style="color:#ffe89f; font-weight:600;">Loft Conversion Glossary</a> | <a href="/loft-conversion-cost-cambridge/" style="color:#ffe89f; font-weight:600;">Cost Guide</a> | <a href="/loft-conversion-cambridge-guide/" style="color:#ffe89f; font-weight:600;">Planning Guide</a></p>
+        <h2>Plan Your Cambridge Loft Conversion Today</h2>
+        <p>Book a free consultation to discuss layout ideas, timeline and cost. We will help you create extra space that feels right for your home.</p>
+        <a href="/contact/" class="area-btn area-btn-primary">Book Free Consultation <i class="fas fa-calendar-check"></i></a>
+      </div>
+    </section>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a cambridge loft conversion cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most Cambridge loft conversion projects range from around £30,000 to £65,000 depending on loft type, structural work and interior finish."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need planning permission for a loft conversion in Cambridge?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many loft conversions in Cambridge fall under permitted development, but properties in conservation areas or with major roof changes may need planning approval."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a Cambridge loft conversion take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A typical Cambridge loft conversion takes about 6 to 10 weeks from build start to completion, depending on complexity and specification."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a loft conversion add value in Cambridge?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A professionally finished loft conversion can add valuable living space and often improves market appeal for homes across Cambridge."
+          }
+        }
+      ]
+    }
+    </script>
+
+  </main>
+</BaseLayout>

@@ -1,0 +1,104 @@
+/* Global overrides - originally WordPress Customizer CSS */
+
+.renovation-services {
+    width: 100vw !important;
+    position: relative !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    background: #0a1a4a;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+.renovation-services h2 { color: white !important; text-shadow: 0 2px 4px rgba(0,0,0,0.3) !important; }
+.renovation-services p, .renovation-services ul li { color: rgba(255, 255, 255, 0.9) !important; }
+.renovation-services span { backdrop-filter: blur(10px) !important; color: #0A1A4A; }
+
+.locations-section > div { margin-bottom: 80px; }
+
+.logo-container img { width: 180px; height: 180px; margin-top: 30px; }
+.header-container { margin-top: -70px; margin-bottom: -65px; }
+
+body { overflow-x: hidden; }
+
+body > footer { margin-top: -150px; }
+
+#submit-btn { background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%); }
+
+.post-author { display: none !important; }
+.single-post h2 { font-size: 34px !important; }
+
+/* Footer Social Links */
+.footer-social-links { display: flex; gap: 15px; margin-top: 20px; }
+.footer-social-links a {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; color: white; border-radius: 50%;
+    text-decoration: none; transition: all 0.3s ease; font-size: 18px;
+}
+.footer-social-links a[href*="tiktok"] { background: #ff0050 !important; }
+.footer-social-links a[href*="tiktok"]:hover { background: #e6004a; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 0, 80, 0.4); }
+.footer-social-links a[href*="instagram"] { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
+.footer-social-links a[href*="instagram"]:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(188, 24, 136, 0.4); }
+.footer-social-links a[href*="facebook"] { background: #4267B2 !important; }
+.footer-social-links a[href*="facebook"]:hover { background: #365899; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(66, 103, 178, 0.4); }
+
+/* AREAS dropdown */
+.desktop-nav .nav-areas-wrapper { position: relative; display: inline-block; }
+.desktop-nav .nav-areas-submenu {
+    position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+    background: #ffffff; box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    padding: 6px 0; min-width: 140px; display: none; z-index: 1000;
+}
+.desktop-nav .nav-areas-submenu a { display: block; margin: 0; padding: 8px 18px; font-size: 15px; white-space: nowrap; }
+.desktop-nav .nav-areas-wrapper:hover .nav-areas-submenu { display: block; }
+.desktop-nav .nav-areas-arrow { font-size: 1.5em; margin-left: -2px; vertical-align: middle; }
+
+/* Homepage section margin tweaks */
+body > main > section.dont-delay-section.section > div { margin-top: -220px; }
+body > main > section.where-we-operate-section.section > div { margin-top: -170px; }
+body > main > section.who-we-are-section.section > div { margin-top: -100px; }
+body > main > section.why-truleum-section.section > div { margin-top: -50px; }
+body > main > section.why-truleum-section.section { padding-bottom: 30px !important; }
+body > main > main > div.gallery-hero-gallery > div { margin-top: -45px; }
+
+/* Logo margin adjustments */
+@media (min-width: 1024px) {
+    body > header > div.header-container > div { margin-left: -80px !important; }
+    body > header > div.header-container > div > a > img { margin-left: 50px; }
+    body > footer > div > div.footer-company-info { margin-left: -30px; }
+    body > footer > div > div.footer-company-info > img { margin-left: -15px; }
+    body > footer > div { margin-right: 50px; }
+    body > footer > div > div.footer-quick-links { margin-right: 20px; margin-left: 100px; }
+    body > footer > div > div.footer-contact-info { margin-left: 60px; }
+}
+
+@media (max-width: 760px) {
+    .footer-quick-links { margin-left: 0px !important; margin-top: -50px !important; }
+    body > footer > div > div.footer-company-info > img { margin-left: -16px !important; }
+    .logo-container img { margin-left: -15px !important; }
+}
+@media (max-width: 768px) {
+    .locations-grid { margin-left: 15px; }
+    body > main > section.google-reviews-section.animate-in > div > div.reviews-header { margin-bottom: 60px; }
+}
+
+/* Hero text adjustments */
+@media only screen and (max-width: 1023px) {
+    body > main > section.hero-section.section.animate-in > div.hero-text { margin-top: 40px !important; }
+}
+@media only screen and (min-width: 1024px) {
+    body > main > section.hero-section.section.animate-in > div.hero-text { margin-left: -120px !important; }
+}
+
+/* Section span widths */
+body > main > section.where-we-operate-section.section.animate-in > div > div > h2 > span { width: 200px; }
+body > main > section.why-truleum-section.section.animate-in > div > h1 > span { width: 200px; }
+
+/* Google reviews tweaks */
+body > main > section.google-reviews-section.animate-in > div > div.trustindex-reviews > div > div > div.ti-footer.ti-footer-grid.source-Google > div > div:nth-child(3) > span { display: none; }
+body > main > section.google-reviews-section.animate-in > div > div.trustindex-reviews > div > div > div.ti-footer.ti-footer-grid.source-Google > div > div.ti-large-logo > div { margin-top: 10px; }
+
+/* Who we are button */
+body > main > section.who-we-are-section.section.animate-in > div > div > div.about-content-column > div > a:nth-child(2) { background: white; }
+body > main > section.who-we-are-section.section.animate-in > div > div > div.about-content-column > span { background: white; }

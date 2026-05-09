@@ -1,0 +1,159 @@
+---
+const currentPath = Astro.url.pathname;
+
+function isActive(path: string): boolean {
+  const norm = (p: string) => p.endsWith('/') ? p : p + '/';
+  return norm(currentPath) === norm(path);
+}
+---
+
+<style>
+.desktop-nav .nav-services-wrapper,
+.desktop-nav .nav-areas-wrapper {
+    position: relative;
+    display: inline-block;
+}
+.desktop-nav .nav-services-submenu,
+.desktop-nav .nav-areas-submenu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    padding: 6px 0;
+    min-width: 220px;
+    display: none;
+    z-index: 1000;
+}
+.desktop-nav .nav-services-submenu a,
+.desktop-nav .nav-areas-submenu a {
+    display: block;
+    margin: 0;
+    padding: 8px 18px;
+    font-size: 15px;
+    white-space: nowrap;
+}
+.desktop-nav .nav-services-wrapper:hover .nav-services-submenu,
+.desktop-nav .nav-areas-wrapper:hover .nav-areas-submenu {
+    display: block;
+}
+.nav-services-arrow,
+.nav-areas-arrow {
+    font-size: 1.5em;
+    margin-left: -2px;
+    vertical-align: middle;
+}
+.mobile-menu .mobile-submenu {
+    display: none;
+    flex-direction: column;
+    background: rgba(255,255,255,0.05);
+    padding: 0 0 4px 16px;
+}
+.mobile-menu .mobile-submenu a {
+    font-size: 14px !important;
+    padding: 8px 0 !important;
+    opacity: 0.85;
+}
+.mobile-menu .mobile-parent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 100%;
+}
+.mobile-menu .mobile-parent .mobile-arrow {
+    font-size: 12px;
+    padding-right: 16px;
+    transition: transform 0.2s;
+}
+.mobile-menu .mobile-parent.open .mobile-arrow {
+    transform: rotate(180deg);
+}
+.mobile-menu .mobile-parent.open + .mobile-submenu {
+    display: flex;
+}
+</style>
+
+<header class="main-header">
+    <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle">
+
+    <div class="header-container">
+        <div class="logo-container">
+            <a href="/">
+                <img src="/wp-content/uploads/2025/09/truleum-logo.png" alt="Truleum Loft Specialist">
+            </a>
+        </div>
+
+        <nav class="desktop-nav">
+            <a href="/" class={isActive('/') ? 'active' : ''}>HOME</a>
+            <a href="/about-us/" class={isActive('/about-us/') ? 'active' : ''}>ABOUT US</a>
+            <span class="nav-services-wrapper">
+                <a href="/services/" class={isActive('/services/') ? 'active' : ''}>SERVICES<span class="nav-services-arrow">▾</span></a>
+                <div class="nav-services-submenu">
+                    <a href="/services/loft-conversion-cambridge-service/">Loft Conversion Cambridge</a>
+                    <a href="/services/house-extension-cambridge/">House Extension Cambridge</a>
+                </div>
+            </span>
+            <span class="nav-areas-wrapper">
+                <a href="/loft-conversion-cambridge/">AREAS<span class="nav-areas-arrow">▾</span></a>
+                <div class="nav-areas-submenu">
+                    <a href="/loft-conversion-cambridge/">Cambridge</a>
+                    <a href="/loft-conversion-ely/">Ely</a>
+                    <a href="/loft-conversion-huntingdon/">Huntingdon</a>
+                    <a href="/loft-conversion-st-ives-cambridgeshire/">St Ives</a>
+                    <a href="/loft-conversion-st-neots/">St Neots</a>
+                    <a href="/loft-conversion-peterborough/">Peterborough</a>
+                    <a href="/loft-conversion-march-cambridgeshire/">March</a>
+                    <a href="/loft-conversion-wisbech/">Wisbech</a>
+                    <a href="/loft-conversion-soham/">Soham</a>
+                </div>
+            </span>
+            <a href="/gallery/" class={isActive('/gallery/') ? 'active' : ''}>GALLERY</a>
+            <a href="/blog/" class={isActive('/blog/') ? 'active' : ''}>BLOG</a>
+            <a href="/contact/" class={isActive('/contact/') ? 'active' : ''}>FREE QUOTE</a>
+        </nav>
+
+        <a href="/contact/" class="enquire-btn desktop">ENQUIRE NOW</a>
+
+        <label for="mobile-menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+    </div>
+
+    <div class="mobile-menu">
+        <a href="/">HOME</a>
+        <a href="/about-us/">ABOUT US</a>
+        <div class="mobile-parent" onclick="this.classList.toggle('open')">
+            <a href="/services/">SERVICES</a>
+            <span class="mobile-arrow">▾</span>
+        </div>
+        <div class="mobile-submenu">
+            <a href="/services/loft-conversion-cambridge-service/">Loft Conversion Cambridge</a>
+            <a href="/services/house-extension-cambridge/">House Extension Cambridge</a>
+        </div>
+        <div class="mobile-parent" onclick="this.classList.toggle('open')">
+            <a href="/loft-conversion-cambridge/">AREAS</a>
+            <span class="mobile-arrow">▾</span>
+        </div>
+        <div class="mobile-submenu">
+            <a href="/loft-conversion-cambridge/">Cambridge</a>
+            <a href="/loft-conversion-ely/">Ely</a>
+            <a href="/loft-conversion-huntingdon/">Huntingdon</a>
+            <a href="/loft-conversion-st-ives-cambridgeshire/">St Ives</a>
+            <a href="/loft-conversion-st-neots/">St Neots</a>
+            <a href="/loft-conversion-peterborough/">Peterborough</a>
+            <a href="/loft-conversion-march-cambridgeshire/">March</a>
+            <a href="/loft-conversion-wisbech/">Wisbech</a>
+            <a href="/loft-conversion-soham/">Soham</a>
+        </div>
+        <a href="/gallery/">GALLERY</a>
+        <a href="/blog/">BLOG</a>
+        <a href="/contact/">CONTACT US</a>
+        <a href="/contact/" class="enquire-btn">ENQUIRE NOW</a>
+    </div>
+
+    <div class="overlay"></div>
+</header>

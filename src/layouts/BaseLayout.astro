@@ -1,0 +1,119 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  robots?: string;
+  ogType?: string;
+}
+
+const {
+  title,
+  description = 'Truleum Loft Specialist - Cambridge loft conversion and house extension experts. Get a free quote today.',
+  canonical,
+  ogImage = '/wp-content/uploads/2025/10/cropped-truleum-logo-1.png',
+  robots = 'follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large',
+  ogType = 'website',
+} = Astro.props;
+
+const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta name="robots" content={robots}>
+  <link rel="canonical" href={canonicalURL}>
+
+  <link rel="icon" href="/wp-content/uploads/2025/10/cropped-truleum-logo-2-32x32.png" sizes="32x32">
+
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content={ogType}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonicalURL}>
+  <meta property="og:site_name" content="Truleum Loft Specialist">
+  <meta property="og:image" content={ogImage}>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={ogImage}>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="/styles/combined.css">
+  <link rel="stylesheet" href="/styles/global-overrides.css">
+  <link rel="stylesheet" href="/wp-content/themes/truleum-theme/assets/css/popup-contact-form.css">
+
+  <slot name="head" />
+</head>
+<body>
+
+<Header />
+
+<main>
+  <slot />
+</main>
+
+<Footer />
+
+<script>
+  const scrollToTopBtn = document.getElementById('scrollToTop');
+  if (scrollToTopBtn) {
+    window.addEventListener('scroll', () => {
+      scrollToTopBtn.classList.toggle('visible', window.pageYOffset > 300);
+    });
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+</script>
+
+<!-- Popup Contact Form -->
+<div id="popup-contact-overlay" class="popup-contact-overlay" style="display:none;">
+  <div class="popup-contact-modal">
+    <button class="popup-contact-close" onclick="closePopupContactForm()" aria-label="Close form">&times;</button>
+    <form id="popup-contact-form" class="popup-contact-form" method="POST" action="https://api.web3forms.com/submit" autocomplete="off">
+      <input type="hidden" name="access_key" value="3c82342f-1a0f-4f3f-bda5-ea06ac202551">
+      <input type="hidden" name="subject" value="New Enquiry - Truleum Loft Specialist">
+      <input type="hidden" name="to" value="Truleumloftspecialist@gmail.com">
+      <input type="hidden" name="redirect" value="https://truleumloftspecialist.com/thank-you/">
+      <h2>Contact Us</h2>
+      <div class="form-group">
+        <label for="popup-name">Name <span class="required">*</span></label>
+        <input type="text" id="popup-name" name="name" class="form-input" required placeholder="Your name">
+      </div>
+      <div class="form-group">
+        <label for="popup-email">Email <span class="required">*</span></label>
+        <input type="email" id="popup-email" name="email" class="form-input" required placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label for="popup-message">Message <span class="required">*</span></label>
+        <textarea id="popup-message" name="message" class="form-textarea" rows="4" required placeholder="How can we help you?"></textarea>
+      </div>
+      <div class="form-submit">
+        <button type="submit" class="submit-btn">Send Message</button>
+      </div>
+      <div class="form-success" id="popup-form-success" style="display:none;">
+        <div class="success-icon">&#10003;</div>
+        <h3>Thank you!</h3>
+        <p>Your message has been sent. We'll reply soon.</p>
+      </div>
+    </form>
+  </div>
+</div>
+<script is:inline src="/wp-content/themes/truleum-theme/assets/js/popup-contact-form.js"></script>
+<script is:inline src="/wp-content/themes/truleum-theme/assets/js/entrance-animations.js"></script>
+
+</body>
+</html>

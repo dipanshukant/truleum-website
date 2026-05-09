@@ -1,0 +1,279 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Loft Conversion Wisbech | Truleum Cambridgeshire Specialists"
+  description="Expert loft conversion services in Wisbech, Cambridgeshire. Local team for dormer, Velux and bespoke loft builds across Wisbech and surrounding Fenland villages."
+>
+
+  <main class="main-content area-wisbech-page" style="font-family: 'Poppins', Arial, sans-serif;">
+
+    <style>
+      .area-wisbech-page {
+        --area-blue: #0a1a4a;
+        --area-blue-2: #162b70;
+        --area-gold: #d4af37;
+        --area-soft: #f5f7fb;
+        --area-text: #334155;
+        overflow-x: hidden;
+      }
+      .area-wrap { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+      .area-wisbech-page section,
+      .area-wisbech-page h1,
+      .area-wisbech-page h2,
+      .area-wisbech-page h3,
+      .area-wisbech-page p,
+      .area-wisbech-page img,
+      .area-wisbech-page a { opacity: 1 !important; transform: none !important; }
+      .area-hero { padding: 112px 0 96px; color: #fff; background: radial-gradient(circle at 85% 15%, rgba(212,175,55,0.24) 0%, rgba(212,175,55,0) 45%), linear-gradient(132deg, #08163d 0%, #0a1a4a 45%, #1c347f 100%); }
+      .area-hero-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 40px; align-items: center; }
+      .area-kicker { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,232,159,0.98); color: #0a1a4a; border-radius: 999px; padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; margin-bottom: 20px; }
+      .area-hero h1 { font-size: clamp(36px, 5vw, 58px); line-height: 1.1; color: #fff; margin: 0 0 18px; max-width: 15ch; }
+      .area-hero p { font-size: 18px; line-height: 1.8; color: rgba(255,255,255,0.92); margin: 0 0 26px; max-width: 60ch; }
+      .area-hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
+      .area-btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; border-radius: 999px; font-weight: 700; font-size: 15px; padding: 14px 24px; }
+      .area-btn-primary { background: linear-gradient(135deg, #ffe89f 0%, #9f7628 100%); color: #111827; }
+      .area-btn-ghost { color: #fff; border: 1px solid rgba(255,255,255,0.4); background: rgba(255,255,255,0.08); }
+      .lc-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 8px; }
+      .lc-metric { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); border-radius: 14px; padding: 16px; text-align: center; }
+      .lc-metric strong { display: block; font-size: 24px; line-height: 1; color: #ffe89f; margin-bottom: 6px; }
+      .lc-metric span { font-size: 13px; color: rgba(255,255,255,0.84); }
+      .area-hero-card { background: rgba(255,255,255,0.11); border: 1px solid rgba(255,255,255,0.16); border-radius: 20px; padding: 18px; backdrop-filter: blur(8px); }
+      .area-hero-card img { width: 100%; border-radius: 12px; aspect-ratio: 4 / 3; object-fit: cover; }
+      .area-price { margin-top: 14px; background: #fff; border-radius: 12px; padding: 12px 14px; color: #0a1a4a; display: flex; justify-content: space-between; align-items: center; font-size: 14px; font-weight: 600; }
+      .area-price strong { color: #111827; font-size: 19px; }
+      .area-section { padding: 86px 0; }
+      .area-head { text-align: center; max-width: 830px; margin: 0 auto 34px; }
+      .area-head h2 { color: var(--area-blue); font-size: clamp(30px, 4vw, 44px); line-height: 1.2; margin: 0 0 12px; }
+      .area-head p { color: #475569; font-size: 17px; line-height: 1.8; margin: 0; }
+      .area-intro { background: var(--area-soft); }
+      .area-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+      .area-panel { background: #fff; border: 1px solid #e4e9f2; border-radius: 16px; padding: 24px; box-shadow: 0 10px 24px rgba(15,23,42,0.05); }
+      .area-panel h3 { color: var(--area-blue); font-size: 24px; margin: 0 0 10px; }
+      .area-panel p { color: var(--area-text); line-height: 1.8; margin: 0 0 14px; }
+      .area-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+      .area-list li { display: flex; align-items: flex-start; gap: 9px; color: #1f2937; line-height: 1.7; font-size: 15px; }
+      .area-list i { color: var(--area-gold); margin-top: 3px; }
+      .area-types-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+      .area-type { border: 1px solid #e5e7eb; border-radius: 14px; background: #fff; padding: 20px; }
+      .area-type h3 { font-size: 21px; color: var(--area-blue); margin: 0 0 8px; }
+      .area-type p { margin: 0; color: var(--area-text); line-height: 1.75; font-size: 15px; }
+      .area-zone { background: linear-gradient(180deg, #0a1a4a 0%, #102559 100%); }
+      .area-zone .area-head h2, .area-zone .area-head p { color: #fff; }
+      .area-zone-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+      .area-zone-item { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 16px; }
+      .area-zone-item h3 { color: #ffe89f; font-size: 20px; margin: 0 0 8px; }
+      .area-zone-item h3 a { color: #ffe89f; text-decoration: none; }
+      .area-zone-item h3 a:hover { text-decoration: underline; }
+      .area-zone-item p { color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.7; margin: 0; }
+      .area-proof-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+      .area-proof { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; text-align: center; padding: 20px; }
+      .area-proof i { color: var(--area-gold); font-size: 24px; margin-bottom: 10px; }
+      .area-proof h3 { color: var(--area-blue); font-size: 18px; margin: 0 0 7px; }
+      .area-proof p { margin: 0; color: #475569; font-size: 14px; line-height: 1.7; }
+      .area-faq { background: var(--area-soft); }
+      .area-faq-grid { max-width: 920px; margin: 0 auto; display: grid; gap: 12px; }
+      .area-faq-item { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px; }
+      .area-faq-item h3 { color: var(--area-blue); margin: 0 0 8px; font-size: 19px; }
+      .area-faq-item p { margin: 0; color: #334155; line-height: 1.75; font-size: 15px; }
+      .area-cta { padding: 88px 0; text-align: center; background: linear-gradient(135deg, #0a1a4a 0%, #1f3a8a 100%); }
+      .area-cta h2 { color: #fff; margin: 0 0 12px; font-size: clamp(30px, 4vw, 46px); }
+      .area-cta p { color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto 24px; line-height: 1.8; font-size: 17px; }
+      @media (max-width: 1080px) { .area-types-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .area-zone-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .area-proof-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @media (max-width: 900px) { .area-hero { padding: 86px 0 70px; } .area-hero-grid, .area-columns { grid-template-columns: 1fr; } .area-hero h1 { max-width: 100%; } }
+      @media (max-width: 680px) { .lc-metrics { grid-template-columns: 1fr; } .area-section, .area-cta { padding: 64px 0; } .area-types-grid, .area-zone-grid, .area-proof-grid { grid-template-columns: 1fr; } .area-head p, .area-hero p, .area-cta p { font-size: 16px; } }
+    </style>
+
+    <section class="area-hero">
+      <div class="area-wrap area-hero-grid">
+        <div>
+          <span class="area-kicker"><i class="fas fa-location-dot"></i> Wisbech, Cambridgeshire</span>
+          <h1>Loft Conversion Wisbech For Period And Modern Homes</h1>
+          <p>Looking for a loft conversion in Wisbech? The town has a rich mix of Georgian and Victorian architecture alongside 20th century housing estates and modern builds. We plan every project around your specific roof structure and planning situation. See our <a href="/services/loft-conversion-cambridge-service/" style="color:#ffe89f; font-weight:600;">Loft Conversion Service page</a> for full details.</p>
+          <div class="area-hero-actions">
+            <a href="/contact/" class="area-btn area-btn-primary">Get Free Survey <i class="fas fa-arrow-right"></i></a>
+            <a href="/gallery/" class="area-btn area-btn-ghost">View Our Work</a>
+          </div>
+          <div class="lc-metrics">
+            <div class="lc-metric"><strong><i class="fas fa-check-circle"></i></strong><span>Free Site Survey</span></div>
+            <div class="lc-metric"><strong><i class="fas fa-shield-alt"></i></strong><span>Fully Insured</span></div>
+            <div class="lc-metric"><strong><i class="fas fa-award"></i></strong><span>Quality Assured</span></div>
+          </div>
+        </div>
+        <div class="area-hero-card">
+          <img src="/wp-content/uploads/Loft-Conversion/best-company-loft-conversion.webp" alt="Loft conversion in Wisbech Cambridgeshire by Truleum">
+          <div class="area-price">
+            <span>Typical project budget</span>
+            <strong>From £26,000</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-section area-intro">
+      <div class="area-wrap">
+        <div class="area-head">
+          <h2>Local Approach For Every Loft Conversion In Wisbech</h2>
+          <p>We plan each Wisbech loft conversion around the roof structure, planning rules and how you want the new space to work. Our <a href="/loft-conversion-cambridge-guide-for-homeowners/" style="color: var(--area-blue); font-weight:600;">homeowner guide</a> explains each stage from survey to sign off.</p>
+        </div>
+        <div class="area-columns">
+          <article class="area-panel">
+            <h3>What You Get</h3>
+            <p>Your Wisbech loft conversion includes full structural build, insulation, windows, electrics and a complete quality finish throughout.</p>
+            <ul class="area-list">
+              <li><i class="fas fa-check-circle"></i> Clear written scope with transparent stage pricing</li>
+              <li><i class="fas fa-check-circle"></i> Regular updates from the first survey through to handover</li>
+              <li><i class="fas fa-check-circle"></i> Room layouts for bedrooms, offices and ensuites</li>
+              <li><i class="fas fa-check-circle"></i> Building regulations compliance managed throughout</li>
+            </ul>
+          </article>
+          <article class="area-panel">
+            <h3>Why Wisbech Homes Need Specialist Input</h3>
+            <p>Wisbech has a distinctive mix of Georgian town houses, Victorian terraces and 20th century residential estates. Period properties in particular need careful structural assessment and planning consideration. See the <a href="https://www.planningportal.co.uk/permission/common-projects/loft-conversion" target="_blank" rel="noopener nofollow">Planning Portal</a> for permitted development rules.</p>
+            <ul class="area-list">
+              <li><i class="fas fa-check-circle"></i> Experience with period Wisbech properties and conservation areas</li>
+              <li><i class="fas fa-check-circle"></i> Structural assessment before committing to any design</li>
+              <li><i class="fas fa-check-circle"></i> Design options to maximise headroom within existing roof lines</li>
+              <li><i class="fas fa-check-circle"></i> Build management tailored to period and modern homes alike</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-section">
+      <div class="area-wrap">
+        <div class="area-head">
+          <h2>Popular Loft Conversion Types For Wisbech Properties</h2>
+          <p>We recommend the right type for your roof and goals. Our <a href="/loft-conversion-glossary/" style="color: var(--area-blue); font-weight:600;">loft conversion glossary</a> explains all options in plain English.</p>
+        </div>
+        <div class="area-types-grid">
+          <article class="area-type">
+            <h3>Dormer Conversion</h3>
+            <p>Widely used for Wisbech Victorian and Edwardian terraces. Adds usable headroom and floor area for a new bedroom, bathroom or office space.</p>
+          </article>
+          <article class="area-type">
+            <h3>Velux Conversion</h3>
+            <p>Roof windows add light and space without changing the external roofline. Often the simplest approach for properties with conservation restrictions.</p>
+          </article>
+          <article class="area-type">
+            <h3>Hip To Gable</h3>
+            <p>Best suited to Wisbech end of terrace and semi detached homes wanting wider, more proportioned room layouts in the loft space.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-section area-zone">
+      <div class="area-wrap">
+        <div class="area-head">
+          <h2>Areas We Cover Around Wisbech</h2>
+          <p>We serve Wisbech and the surrounding north Cambridgeshire communities with reliable loft conversions and clear project management.</p>
+        </div>
+        <div class="area-zone-grid">
+          <article class="area-zone-item"><h3>Wisbech Town Centre</h3><p>Georgian and Victorian townhouses, riverside terraces and period residential streets.</p></article>
+          <article class="area-zone-item"><h3>Wisbech St Mary</h3><p>Village community southwest of Wisbech with a mix of traditional housing.</p></article>
+          <article class="area-zone-item"><h3>Elm and Leverington</h3><p>Fenland villages adjoining Wisbech with period and 20th century housing.</p></article>
+          <article class="area-zone-item"><h3>Outwell and Upwell</h3><p>Waterway villages on the Norfolk border with traditional Fenland properties.</p></article>
+          <article class="area-zone-item"><h3><a href="/loft-conversion-march-cambridgeshire/">March</a></h3><p>Fenland market town to the south with period terraces and interwar housing.</p></article>
+          <article class="area-zone-item"><h3><a href="/loft-conversion-peterborough/">Peterborough</a></h3><p>City coverage to the west across all Peterborough districts and suburbs.</p></article>
+          <article class="area-zone-item"><h3><a href="/loft-conversion-ely/">Ely</a></h3><p>Cathedral city coverage south of Wisbech across Fenland communities.</p></article>
+          <article class="area-zone-item"><h3><a href="/loft-conversion-cambridge/">Cambridge</a></h3><p>Full Cambridge city and surrounding village coverage within our service area.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-section">
+      <div class="area-wrap">
+        <div class="area-head">
+          <h2>Why Wisbech Homeowners Choose Truleum</h2>
+          <p>Homeowners in Wisbech and across north Cambridgeshire choose us for reliable delivery, honest pricing and consistent quality on every project.</p>
+        </div>
+        <div class="area-proof-grid">
+          <article class="area-proof"><i class="fas fa-map-marked-alt"></i><h3>Local Team</h3><p>Knowledge of Wisbech property types, conservation rules and Fenland planning context.</p></article>
+          <article class="area-proof"><i class="fas fa-file-signature"></i><h3>Transparent Quotes</h3><p>Written quotes with full inclusions so you know exactly what is covered before work starts.</p></article>
+          <article class="area-proof"><i class="fas fa-shield-alt"></i><h3>Fully Insured</h3><p>Complete professional liability cover throughout every stage of the project.</p></article>
+          <article class="area-proof"><i class="fas fa-award"></i><h3>Quality Finish</h3><p>Thorough finishing at every stage creates a space that is well built and feels complete.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-section area-faq">
+      <div class="area-wrap">
+        <div class="area-head">
+          <h2>Wisbech Loft Conversion FAQs</h2>
+          <p>Common questions from Wisbech homeowners. See our <a href="/loft-conversion-cost-cambridge/" style="color: var(--area-blue); font-weight:600;">cost guide</a> for detailed pricing across Cambridgeshire.</p>
+        </div>
+        <div class="area-faq-grid">
+          <article class="area-faq-item">
+            <h3>How much does a loft conversion in Wisbech cost?</h3>
+            <p>Most projects in Wisbech range from £26,000 to £58,000 depending on conversion type, structural requirements and the finishing level. We provide a clear written quote after a free site survey.</p>
+          </article>
+          <article class="area-faq-item">
+            <h3>Can Georgian and Victorian properties in Wisbech have loft conversions?</h3>
+            <p>Yes. Period properties in Wisbech can be strong candidates, though careful structural assessment and conservation area rules may shape the design. We have experience working with this type of property and advise clearly from the start.</p>
+          </article>
+          <article class="area-faq-item">
+            <h3>Do conservation areas in Wisbech affect loft conversion planning?</h3>
+            <p>Some areas near the town centre and riverside may have conservation area designations that restrict certain external alterations. We check this as part of our initial assessment and advise on the best design approach.</p>
+          </article>
+          <article class="area-faq-item">
+            <h3>How long does a loft conversion in Wisbech take?</h3>
+            <p>A typical build runs between 6 and 10 weeks from start, depending on the conversion type and any structural or planning requirements specific to your property.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-cta">
+      <div class="area-wrap">
+        <p style="margin:0 0 12px; color: rgba(255,255,255,0.82);">Useful links: <a href="/loft-conversion-glossary/" style="color:#ffe89f; font-weight:600;">Loft Conversion Glossary</a> | <a href="/loft-conversion-cost-cambridge/" style="color:#ffe89f; font-weight:600;">Cost Guide</a> | <a href="/loft-conversion-cambridge-guide-for-homeowners/" style="color:#ffe89f; font-weight:600;">Homeowner Guide</a> | <a href="/loft-conversion-cambridge/" style="color:#ffe89f; font-weight:600;">Cambridge Area Page</a></p>
+        <h2>Plan Your Wisbech Loft Conversion Today</h2>
+        <p>Book a free site survey to talk through your project, understand the options and get a clear cost picture with no pressure or obligation.</p>
+        <a href="/contact/" class="area-btn area-btn-primary">Book Free Consultation <i class="fas fa-calendar-check"></i></a>
+      </div>
+    </section>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a loft conversion in Wisbech cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most loft conversion projects in Wisbech range from £26,000 to £58,000 depending on type, structural requirements and finishing specification."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Georgian and Victorian properties in Wisbech have loft conversions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Period properties in Wisbech can be strong candidates for loft conversion, though conservation area rules may shape the design approach."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do conservation areas in Wisbech affect loft conversion planning?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some areas near the town centre and riverside may have conservation designations affecting external alterations. We assess and advise on this during the initial survey."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a loft conversion in Wisbech take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A typical Wisbech loft conversion takes 6 to 10 weeks from start, depending on conversion type and specific structural or planning requirements."
+          }
+        }
+      ]
+    }
+    </script>
+
+  </main>
+</BaseLayout>

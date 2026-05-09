@@ -1,0 +1,344 @@
+.cambridge-loft-page {
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.cambridge-loft-page .section {
+  padding: 80px 20px;
+}
+
+.cambridge-loft-hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1e40af 100%);
+  color: #fff;
+}
+
+.cambridge-loft-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.cambridge-loft-hero-text {
+  flex: 1 1 320px;
+}
+
+.cambridge-loft-eyebrow {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 14px;
+}
+
+.cambridge-loft-hero-text h1 {
+  font-size: 2.4rem;
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+
+.cambridge-loft-hero-text p {
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin: 0 0 24px;
+}
+
+.cambridge-loft-hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.cambridge-loft-hero-media {
+  flex: 1 1 280px;
+}
+
+.cambridge-loft-hero-card {
+  background: rgba(15, 23, 42, 0.85);
+  border-radius: 18px;
+  padding: 24px 22px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.55);
+}
+
+.cambridge-loft-hero-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+}
+
+.cambridge-loft-hero-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cambridge-loft-hero-card li {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.cambridge-loft-hero-card li::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #facc15;
+  position: absolute;
+  left: 4px;
+  top: 9px;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #facc15, #f59e0b);
+  color: #111827;
+  box-shadow: 0 10px 25px rgba(251, 191, 36, 0.45);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 35px rgba(251, 191, 36, 0.55);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #e5e7eb;
+  border: 1px solid rgba(229, 231, 235, 0.6);
+}
+
+.btn-secondary:hover {
+  background: rgba(15, 23, 42, 0.35);
+}
+
+.cambridge-loft-intro-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.cambridge-loft-intro-text h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.cambridge-loft-intro-text p {
+  margin: 0;
+  color: #4b5563;
+}
+
+.cambridge-loft-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.cambridge-loft-stat {
+  flex: 1 1 120px;
+  min-width: 120px;
+  border-radius: 16px;
+  padding: 16px 14px;
+  background: #f3f4f6;
+}
+
+.cambridge-loft-stat .stat-number {
+  display: block;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #1f2937;
+}
+
+.cambridge-loft-stat .stat-label {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.cambridge-loft-section-heading {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 32px;
+}
+
+.cambridge-loft-section-heading h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.cambridge-loft-section-heading p {
+  margin: 0;
+  color: #4b5563;
+}
+
+.cambridge-loft-type-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.cambridge-loft-type-card {
+  background: #f9fafb;
+  border-radius: 18px;
+  padding: 22px 20px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+}
+
+.cambridge-loft-type-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.cambridge-loft-type-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.cambridge-loft-timeline {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.cambridge-loft-step {
+  background: #f9fafb;
+  border-radius: 18px;
+  padding: 18px 16px 20px;
+  border: 1px solid #e5e7eb;
+  position: relative;
+}
+
+.cambridge-loft-step .step-number {
+  position: absolute;
+  top: -14px;
+  left: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #1e3a8a;
+  color: #fff;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+}
+
+.cambridge-loft-step h3 {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.cambridge-loft-step p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.cambridge-loft-benefit-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.cambridge-loft-benefit-card {
+  background: #111827;
+  color: #e5e7eb;
+  border-radius: 18px;
+  padding: 22px 20px;
+}
+
+.cambridge-loft-benefit-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.cambridge-loft-benefit-card p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.cambridge-loft-cta {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1e40af 100%);
+}
+
+.cambridge-loft-cta-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+.cambridge-loft-cta-inner h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.cambridge-loft-cta-inner p {
+  margin: 0 0 20px;
+}
+
+.cambridge-loft-cta-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .cambridge-loft-intro-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cambridge-loft-type-grid,
+  .cambridge-loft-timeline,
+  .cambridge-loft-benefit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .cambridge-loft-page .section {
+    padding: 56px 16px;
+  }
+
+  .cambridge-loft-type-grid,
+  .cambridge-loft-timeline,
+  .cambridge-loft-benefit-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cambridge-loft-hero-inner {
+    flex-direction: column;
+  }
+
+  .cambridge-loft-hero-text h1 {
+    font-size: 2rem;
+  }
+}

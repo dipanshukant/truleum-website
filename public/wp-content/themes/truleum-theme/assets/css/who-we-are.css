@@ -1,0 +1,206 @@
+/* Who We Are Section - Exact styles extracted from inline styles */
+.renovation-services {
+    padding: 80px 20px;
+    font-family: 'Poppins', Arial, sans-serif;
+    /* Full-width gradient background container */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: #0a1a4a;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.renovation-services ul li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.renovation-services > div {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Image Column */
+.renovation-services > div > div:first-child {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.renovation-services img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.renovation-services img:hover {
+    transform: scale(1.03);
+}
+
+/* Content Column */
+.renovation-services > div > div:last-child {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.renovation-services span {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.renovation-services h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: white;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.renovation-services p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 30px 0;
+    font-size: 1.1rem;
+}
+
+.renovation-services ul {
+    padding: 0;
+    margin: 0 0 30px 0;
+    list-style: none;
+}
+
+.renovation-services ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.renovation-services li {
+    margin-bottom: 15px;
+    padding-left: 0;
+    position: relative;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.renovation-services li i {
+    color: #d4af37;
+    font-size: 16px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(212, 175, 55, 0.2);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.renovation-services li span {
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    position: static !important;
+    color: white !important;
+    font-size: 16px !important;
+}
+
+.renovation-services > div > div:last-child > div {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.renovation-services a:first-of-type {
+    display: inline-block;
+    background: #d4af37;
+    color: white !important;
+    text-decoration: none;
+    border: 2px;
+    border-color: black;
+    padding: 20px 25px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.renovation-services a:first-of-type:hover {
+    background: #c19b2e;
+}
+
+.renovation-services a:last-of-type {
+    background: transparent;
+    color: #0c1b4d !important;
+    padding: 18px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    border: 2px solid #0c1b4d;
+    display: inline-block;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.renovation-services a:last-of-type:hover {
+    background: #f1f1f1;
+    transform: translateY(-3px);
+}
+
+/* Additional styles from the original file */
+.who-we {
+    all: unset !important;
+    display: revert !important;
+    box-sizing: border-box;
+}
+
+.renovation-services {
+    color: white;
+}
+
+.renovation-services h2,
+.renovation-services p,
+.renovation-services li {
+    color: white !important;
+}
+
+.renovation-services span[style*="color: white"] {
+    color: white !important;
+}

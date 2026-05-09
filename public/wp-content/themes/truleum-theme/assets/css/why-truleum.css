@@ -1,0 +1,132 @@
+/* Why Truleum Section - Exact styles extracted from inline styles */
+.truleum-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    font-family: 'Poppins', Arial, sans-serif;
+    background-size: cover;
+    text-align: center;
+	margin-top: -40px;
+}
+
+.truleum-container h1 {
+    color: #0c1b4d;
+    font-weight: 700;
+    font-size: 48px;
+    letter-spacing: 1px;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.truleum-container h1 span {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #d4af37;
+}
+
+.features-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.feature-card {
+    background: #fff;
+    border-radius: 20px;
+    width: 23%;
+    min-width: 240px;
+    padding: 40px 20px 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 auto;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.feature-icon {
+    background: #0c1b4d;
+    color: #fff;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 32px;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    background: #d4af37;
+}
+
+.feature-text {
+    color: #333;
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 10px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.why-tru {
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.why-tru:first-child {
+    background: #0c1b4d;
+    color: #fff !important;
+    box-shadow: 0 5px 15px rgba(12, 27, 77, 0.2);
+}
+
+.why-tru:first-child:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(12, 27, 77, 0.3);
+}
+
+.why-tru:last-child {
+    background: #d4af37;
+    color: #fff !important;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+}
+
+.why-tru:last-child:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+}
+
+@media (max-width: 768px) {
+	.truleum-container h1 {
+		font-size: 30px !important;
+		margin-top: -50px !important;
+	}
+}

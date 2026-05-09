@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact Truleum | Free Loft Conversion Quote Cambridge"
+  description="Get your free loft conversion quote in Cambridge today. Contact Truleum's expert team for professional advice and competitive pricing. Call 07857 035925."
+>
+  <link slot="head" rel="stylesheet" href="/wp-content/themes/truleum-theme/assets/css/contact.css">
+
+<main class="contact-page">
+
+<section class="contact-hero">
+    <div class="contact-hero-container">
+        <div class="contact-hero-content">
+            <h1 class="contact-hero-title">Get Your Free Quote</h1>
+            <p class="contact-hero-subtitle">Transform your space with expert loft conversions and home extensions. Fill out our form below for a no-obligation quote. It's straightforward and won't take long. Once we have your details, we'll be in touch with your quote.</p>
+            <p class="contact-hero-subtitle" style="font-size:15px; margin-top:12px;">Useful links: <a href="/services/loft-conversion-cambridge-service/" style="font-weight:600; color:#ffe89f;">Service Page</a> | <a href="/loft-conversion-cambridge/" style="font-weight:600; color:#ffe89f;">Cambridge Area Page</a> | <a href="/loft-conversion-glossary/" style="font-weight:600; color:#ffe89f;">Loft Conversion Glossary</a> | <a href="https://www.planningportal.co.uk/permission/common-projects/loft-conversion" target="_blank" rel="noopener nofollow" style="font-weight:600; color:#ffe89f;">Planning Guide</a></p>
+        </div>
+    </div>
+</section>
+
+<section class="contact-form-section">
+    <div class="contact-form-container">
+        <form id="quote-form" class="quote-form" method="POST" action="https://api.web3forms.com/submit" novalidate>
+            <input type="hidden" name="access_key" value="3c82342f-1a0f-4f3f-bda5-ea06ac202551">
+            <input type="hidden" name="subject" value="New Quote Request - Truleum Loft Specialist">
+            <input type="hidden" name="to" value="Truleumloftspecialist@gmail.com">
+            <input type="hidden" name="redirect" value="https://truleumloftspecialist.com/thank-you/">
+            <div style="position: absolute; left: -9999px; opacity: 0; pointer-events: none;">
+                <input type="text" name="website" tabindex="-1" autocomplete="off">
+                <input type="url" name="url" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="full-name" class="form-label">Full Name <span class="required">*</span></label>
+                <input type="text" id="full-name" name="full_name" class="form-input" placeholder="Please enter your full name" required>
+                <span class="error-message" id="full-name-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+                <span class="error-message" id="email-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="Please enter your phone number so we can get in touch with you">
+            </div>
+            <div class="form-group">
+                <label for="address" class="form-label">Address</label>
+                <textarea id="address" name="address" class="form-textarea" rows="3" placeholder="Please provide the location of the property where the work is needed, including the door number &amp; Postcode"></textarea>
+            </div>
+            <div class="form-group">
+                <label class="form-label">What kind of property is this for?</label>
+                <div class="radio-group">
+                    <div class="radio-option"><input type="radio" id="house" name="property_type" value="house"><label for="house" class="radio-label">House</label></div>
+                    <div class="radio-option"><input type="radio" id="flat" name="property_type" value="flat"><label for="flat" class="radio-label">Flat</label></div>
+                    <div class="radio-option"><input type="radio" id="bungalow" name="property_type" value="bungalow"><label for="bungalow" class="radio-label">Bungalow</label></div>
+                    <div class="radio-option"><input type="radio" id="other-property" name="property_type" value="other"><label for="other-property" class="radio-label">Other:</label><input type="text" name="property_type_other" class="other-input" placeholder="Please specify"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="building-works" class="form-label">What type of building works do you need?</label>
+                <textarea id="building-works" name="building_works" class="form-textarea" rows="4" placeholder="Please enter what work you need below"></textarea>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Do you have the plans drawn up?</label>
+                <div class="radio-group">
+                    <div class="radio-option"><input type="radio" id="plans-yes" name="plans_status" value="yes"><label for="plans-yes" class="radio-label">Yes, I have plans</label></div>
+                    <div class="radio-option"><input type="radio" id="plans-no" name="plans_status" value="no"><label for="plans-no" class="radio-label">No - I don't have plans yet</label></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">What is the Planning Permission Status for this job?</label>
+                <div class="radio-group">
+                    <div class="radio-option"><input type="radio" id="permission-granted" name="planning_permission" value="granted"><label for="permission-granted" class="radio-label">Planning Permission already granted</label></div>
+                    <div class="radio-option"><input type="radio" id="permission-none" name="planning_permission" value="none"><label for="permission-none" class="radio-label">No Planning Application made</label></div>
+                    <div class="radio-option"><input type="radio" id="permission-unknown" name="planning_permission" value="unknown"><label for="permission-unknown" class="radio-label">I don't know if Planning Permission is needed or not</label></div>
+                    <div class="radio-option"><input type="radio" id="permission-not-required" name="planning_permission" value="not-required"><label for="permission-not-required" class="radio-label">Planning Permission not required</label></div>
+                    <div class="radio-option"><input type="radio" id="permission-other" name="planning_permission" value="other"><label for="permission-other" class="radio-label">Other:</label><input type="text" name="planning_permission_other" class="other-input" placeholder="Please specify"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Which of these best describe your situation?</label>
+                <div class="radio-group">
+                    <div class="radio-option"><input type="radio" id="own-property" name="ownership_status" value="own"><label for="own-property" class="radio-label">I own the property</label></div>
+                    <div class="radio-option"><input type="radio" id="buying-property" name="ownership_status" value="buying"><label for="buying-property" class="radio-label">I am buying the property</label></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">When do you need the work carried out?</label>
+                <div class="radio-group">
+                    <div class="radio-option"><input type="radio" id="asap" name="timeline" value="asap"><label for="asap" class="radio-label">As soon as possible</label></div>
+                    <div class="radio-option"><input type="radio" id="few-weeks" name="timeline" value="few-weeks"><label for="few-weeks" class="radio-label">In the next few weeks</label></div>
+                    <div class="radio-option"><input type="radio" id="few-months" name="timeline" value="few-months"><label for="few-months" class="radio-label">In the next few months</label></div>
+                    <div class="radio-option"><input type="radio" id="planning" name="timeline" value="planning"><label for="planning" class="radio-label">I'm planning and researching</label></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="additional-details" class="form-label">Additional details:</label>
+                <textarea id="additional-details" name="additional_details" class="form-textarea" rows="5" placeholder="Please provide any additional information that might help us prepare your quote..."></textarea>
+            </div>
+            <div class="form-submit">
+                <button type="submit" class="submit-btn" id="submit-btn">
+                    <span class="btn-text">Get My Free Quote</span>
+                </button>
+            </div>
+            <div class="form-success" id="form-success" style="display: none;">
+                <div class="success-icon">&#10003;</div>
+                <h3>Thank you for your enquiry!</h3>
+                <p>We've received your quote request and will be in touch within 24 hours.</p>
+            </div>
+        </form>
+    </div>
+</section>
+
+</main>
+
+<script is:inline>
+document.getElementById('quote-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.innerHTML = 'Sending...';
+  const formData = new FormData(this);
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData });
+    const data = await res.json();
+    if (data.success) {
+      window.location.href = '/thank-you/';
+    } else {
+      btn.innerHTML = 'Try Again';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again.');
+    }
+  } catch(err) {
+    btn.innerHTML = 'Try Again';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again.');
+  }
+});
+</script>
+</BaseLayout>

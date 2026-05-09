@@ -1,0 +1,311 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Loft Conversion Gallery Cambridge"
+  description="View our stunning loft conversion gallery showcasing completed projects in Cambridge. Kitchen, bathroom, and loft transformation photos from satisfied customers."
+  ogImage="/wp-content/uploads/House-Extension/construction-company-around-cambridge.webp"
+>
+  <link slot="head" rel="stylesheet" href="/wp-content/themes/truleum-theme/assets/css/gallery-filters.css">
+  <link slot="head" rel="stylesheet" href="/wp-content/themes/truleum-theme/assets/css/gallery.css">
+
+  <main class="main-content gallery-page">
+
+    <!-- Gallery Hero Section -->
+    <div class="gallery-hero-gallery">
+      <div class="gallery-hero-container">
+        <h1 class="gallery-hero-title">
+          Our Project Gallery
+        </h1>
+        <p class="gallery-hero-description">
+          Explore our portfolio of stunning loft conversions, home extensions, and renovation projects across Cambridge and Cambridgeshire. Each project showcases our commitment to quality craftsmanship and attention to detail.
+        </p>
+      </div>
+    </div>
+
+    <!-- Gallery Album Section -->
+    <div class="gallery-album-section">
+      <div class="gallery-album-container">
+
+        <!-- Category Albums Grid -->
+        <div class="album-grid">
+
+          <!-- Bathroom Renovation Album -->
+          <div class="album-card" data-category="bathroom-renovation">
+            <div class="album-image">
+              <img src="/wp-content/uploads/Bathroom-Renovation/london-renovation-bathroom.webp" alt="Bathroom Renovation">
+            </div>
+            <div class="album-overlay"></div>
+            <div class="album-info">
+              <h3>Bathroom Renovation</h3>
+              <span class="album-count">12 Pictures</span>
+              <span class="view-gallery-btn">View Gallery <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Kitchen Refurbishment Album -->
+          <div class="album-card" data-category="kitchen-refurbishment">
+            <div class="album-image">
+              <img src="/wp-content/uploads/Kitchen-Refurbishment/kitchen-renovation-cambridge.webp" alt="Kitchen Refurbishment">
+            </div>
+            <div class="album-overlay"></div>
+            <div class="album-info">
+              <h3>Kitchen Refurbishment</h3>
+              <span class="album-count">16 Pictures</span>
+              <span class="view-gallery-btn">View Gallery <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Loft Conversion Album -->
+          <div class="album-card" data-category="loft-conversion">
+            <div class="album-image">
+              <img src="/wp-content/uploads/Loft-Conversion/loft-conversion-cambridge.webp" alt="Loft Conversion">
+            </div>
+            <div class="album-overlay"></div>
+            <div class="album-info">
+              <h3>Loft Conversion</h3>
+              <span class="album-count">8 Pictures</span>
+              <span class="view-gallery-btn">View Gallery <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- House Extension Album -->
+          <div class="album-card" data-category="house-extension">
+            <div class="album-image">
+              <img src="/wp-content/uploads/House-Extension/construction-company-cambridge.webp" alt="House Extension">
+            </div>
+            <div class="album-overlay"></div>
+            <div class="album-info">
+              <h3>House Extension</h3>
+              <span class="album-count">24 Pictures</span>
+              <span class="view-gallery-btn">View Gallery <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Garage Conversion Album -->
+          <div class="album-card" data-category="garage-conversion">
+            <div class="album-image">
+              <img src="/wp-content/uploads/Garage-Conversion/garages-conversion-in-milton.webp" alt="Garage Conversion">
+            </div>
+            <div class="album-overlay"></div>
+            <div class="album-info">
+              <h3>Garage Conversion</h3>
+              <span class="album-count">6 Pictures</span>
+              <span class="view-gallery-btn">View Gallery <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Roofing Album -->
+          <div class="album-card" data-category="roofing">
+            <div class="album-image">
+              <img src="/wp-content/uploads/House-Extension/cambridge-loft-extension.webp" alt="Roofing">
+            </div>
+            <div class="album-overlay"></div>
+            <div class="album-info">
+              <h3>Roofing</h3>
+              <span class="album-count">12 Pictures</span>
+              <span class="view-gallery-btn">View Gallery <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Driveways Album -->
+          <div class="album-card" data-category="driveways">
+            <div class="album-image">
+              <img src="/wp-content/uploads/Driveways/driveways-loft-conversion-cambridge-pattern-imprinted.webp" alt="Driveways">
+            </div>
+            <div class="album-overlay"></div>
+            <div class="album-info">
+              <h3>Driveways</h3>
+              <span class="album-count">6 Pictures</span>
+              <span class="view-gallery-btn">View Gallery <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+          <!-- Glass Transitions Album -->
+          <div class="album-card" data-category="glass-transitions">
+            <div class="album-image">
+              <img src="/wp-content/uploads/Glass-Transitions/glass-transitions-cambridge-loft-conversion-glass-roof.webp" alt="Glass Transitions">
+            </div>
+            <div class="album-overlay"></div>
+            <div class="album-info">
+              <h3>Glass Transitions</h3>
+              <span class="album-count">1 Picture</span>
+              <span class="view-gallery-btn">View Gallery <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Gallery Modal for Images -->
+        <div class="gallery-modal" id="galleryModal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title"></h2>
+              <a class="close-modal">×</a>
+            </div>
+            <div class="gallery-grid"></div>
+          </div>
+        </div>
+
+        <!-- Lightbox Modal for Individual Images -->
+        <div class="lightbox-modal" id="lightboxModal">
+          <span class="lightbox-close">×</span>
+          <div class="lightbox-content">
+          </div>
+        </div>
+
+        <!-- Hidden Image Data -->
+        <div class="gallery-data" style="display: none;">
+
+          <!-- House Extension Images (24) -->
+          <div class="category-images" data-category="house-extension">
+            <img src="/wp-content/uploads/House-Extension/home-extension-cambridge-area.webp" alt="Home Extension Cambridge Area">
+            <img src="/wp-content/uploads/House-Extension/construction-company-cambridge.webp" alt="Construction Company Cambridge">
+            <img src="/wp-content/uploads/House-Extension/house-extension-cambridge.webp" alt="House Extension Cambridge">
+            <img src="/wp-content/uploads/House-Extension/house-extension-cambridgeshire.webp" alt="House Extension Cambridgeshire">
+            <img src="/wp-content/uploads/House-Extension/house-extension-london-area.webp" alt="House Extension London Area">
+            <img src="/wp-content/uploads/House-Extension/house-extension-london.webp" alt="House Extension London">
+            <img src="/wp-content/uploads/House-Extension/house-construction-service-cambridge.webp" alt="House Construction Service Cambridge">
+            <img src="/wp-content/uploads/House-Extension/construction-company-around-cambridge.webp" alt="Construction Company Around Cambridge">
+            <img src="/wp-content/uploads/House-Extension/house-construction-service-cambridgeshire.webp" alt="House Construction Service Cambridgeshire">
+            <img src="/wp-content/uploads/House-Extension/cambridge-loft-extension.webp" alt="Extension House Cambridge Company">
+            <img src="/wp-content/uploads/House-Extension/cambridge-milton-loft.webp" alt="Cambridge Loft Company Extension">
+            <img src="/wp-content/uploads/House-Extension/cambridge-area-extension-house.webp" alt="Cambridge Area Extension House">
+            <img src="/wp-content/uploads/House-Extension/best-company-cambridge-loft.webp" alt="Cambridge Area Extension Home">
+            <img src="/wp-content/uploads/House-Extension/house-extension-milton.webp" alt="Cambridge Area Loft Home">
+            <img src="/wp-content/uploads/House-Extension/house-extension-loft-conversion-cambridge-rear-extension.webp" alt="House Extension Loft Conversion Cambridge Rear Extension">
+            <img src="/wp-content/uploads/House-Extension/house-extension-cambridge-loft-conversion-side-return.webp" alt="House Extension Cambridge Loft Conversion Side Return">
+            <img src="/wp-content/uploads/House-Extension/house-extension-loft-conversion-cambridge-wrap-around.webp" alt="House Extension Loft Conversion Cambridge Wrap Around">
+            <img src="/wp-content/uploads/House-Extension/house-extension-cambridge-loft-conversion-two-storey.webp" alt="House Extension Cambridge Loft Conversion Two Storey">
+            <img src="/wp-content/uploads/House-Extension/house-extension-loft-conversion-cambridge-single-storey.webp" alt="House Extension Loft Conversion Cambridge Single Storey">
+            <img src="/wp-content/uploads/House-Extension/house-extension-cambridge-loft-conversion-kitchen-extension.webp" alt="House Extension Cambridge Loft Conversion Kitchen Extension">
+            <img src="/wp-content/uploads/House-Extension/house-extension-loft-conversion-cambridge-dormer-extension.webp" alt="House Extension Loft Conversion Cambridge Dormer Extension">
+            <img src="/wp-content/uploads/House-Extension/house-extension-cambridge-loft-conversion-modern-extension.webp" alt="House Extension Cambridge Loft Conversion Modern Extension">
+            <img src="/wp-content/uploads/House-Extension/house-extension-cambridge-loft-conversion-contemporary.webp" alt="House Extension Cambridge Loft Conversion Contemporary">
+            <img src="/wp-content/uploads/House-Extension/house-extension-loft-conversion-cambridge-aerial.webp" alt="House Extension Loft Conversion Cambridge Aerial">
+          </div>
+
+          <!-- Loft Conversion Images (8) -->
+          <div class="category-images" data-category="loft-conversion">
+            <img src="/wp-content/uploads/Loft-Conversion/loft-conversion-cambridge.webp" alt="Loft Conversion Cambridge">
+            <img src="/wp-content/uploads/Loft-Conversion/best-company-loft-conversion.webp" alt="Best Company Loft Conversion">
+            <img src="/wp-content/uploads/Loft-Conversion/cambridge-area-loft-conversion.webp" alt="Cambridge Area Loft Conversion">
+            <img src="/wp-content/uploads/Loft-Conversion/loft-services-london.webp" alt="Loft Services London">
+            <img src="/wp-content/uploads/Loft-Conversion/loft-building-cambridgeshire.webp" alt="Loft Building Cambridgeshire">
+            <img src="/wp-content/uploads/Loft-Conversion/loft-service-cambridgeshire.webp" alt="Loft Service Cambridgeshire">
+            <img src="/wp-content/uploads/Loft-Conversion/loft-company-around-cambridge.webp" alt="Loft Company Around Cambridge">
+            <video src="/wp-content/uploads/Loft-Conversion/loft-conversion-in-cambridge-area.mp4" alt="Loft Conversion in Cambridge Area"></video>
+          </div>
+
+          <!-- Kitchen Refurbishment Images (16) -->
+          <div class="category-images" data-category="kitchen-refurbishment">
+            <img src="/wp-content/uploads/Kitchen-Refurbishment/renovation-kitchen-service-cambridgeshire.webp" alt="Renovation Kitchen Service Cambridgeshire">
+            <img src="/wp-content/uploads/Kitchen-Refurbishment/renovation-service-kitchen.webp" alt="Renovation Service Kitchen">
+            <img src="/wp-content/uploads/Kitchen-Refurbishment/kitchen-renovation-cambridge.webp" alt="Kitchen Renovation Cambridge">
+            <img src="/wp-content/uploads/Kitchen-Refurbishment/refurbishment-kitchen-cambridge.webp" alt="Refurbishment Kitchen Cambridge">
+            <img src="/wp-content/uploads/Kitchen-Refurbishment/renovating-kitchen-cambridge.webp" alt="Renovating Kitchen Cambridge">
+            <img src="/wp-content/uploads/Kitchen-Refurbishment/renovating-kitchen-london.webp" alt="Renovating Kitchen London">
+            <img src="/wp-content/uploads/Kitchen-Refurbishment/best-service-kitchen-cambridge.webp" alt="Best Service Kitchen Cambridge">
+            <img src="/wp-content/uploads/Kitchen-Refurbishment/kitchen-servicing-in-london.webp" alt="Kitchen Servicing In London">
+            <img src="/wp-content/uploads/Kitchen-Refurbishment/kitchen-renovation-cambridge-area.webp" alt="Kitchen Renovation Cambridge Area">
+            <img src="/wp-content/uploads/Kitchen-Refurbishment/renovation-kitchen-london-area.webp" alt="Renovation Kitchen London Area">
+            <img src="/wp-content/uploads/Kitchen-Refurbishment/best-company-kitchen-renovation.webp" alt="Best Company Kitchen Renovation">
+            <img src="/wp-content/uploads/Kitchen-Refurbishment/kitchen-company-renovation-cambridge.webp" alt="Kitchen Company Renovation Cambridge">
+            <img src="/wp-content/uploads/Kitchen-Refurbishment/kitchen-renovating-best-company.webp" alt="Kitchen Renovating Best Company">
+            <img src="/wp-content/uploads/Kitchen-Refurbishment/cambirdgeshire-best-kitchen-renovation.webp" alt="Cambridgeshire Best Kitchen Renovation">
+            <img src="/wp-content/uploads/Kitchen-Refurbishment/cambridge-area-kitchen-renovation.webp" alt="Cambridge Area Kitchen Renovation">
+            <img src="/wp-content/uploads/Kitchen-Refurbishment/london-area-best-renovation.webp" alt="London Area Best Renovation">
+          </div>
+
+          <!-- Bathroom Renovation Images (12) -->
+          <div class="category-images" data-category="bathroom-renovation">
+            <img src="/wp-content/uploads/Bathroom-Renovation/london-renovation-bathroom.webp" alt="London Renovation Bathroom">
+            <img src="/wp-content/uploads/Bathroom-Renovation/bathroom-renovation-cambridge.webp" alt="Bathroom Renovation Cambridge">
+            <img src="/wp-content/uploads/Bathroom-Renovation/bathroom-services-london.webp" alt="Bathroom Services London">
+            <img src="/wp-content/uploads/Bathroom-Renovation/renovating-bathroom-services.webp" alt="Renovating Bathroom Services">
+            <img src="/wp-content/uploads/Bathroom-Renovation/luxury-bathroom-cambridge-service.webp" alt="Luxury Bathroom Cambridge Service">
+            <img src="/wp-content/uploads/Bathroom-Renovation/renovation-cambridge-bathroom.webp" alt="Renovation Cambridge Bathroom">
+            <img src="/wp-content/uploads/Bathroom-Renovation/cambridgehsire-services-bathroom.webp" alt="Cambridgeshire Services Bathroom">
+            <img src="/wp-content/uploads/Bathroom-Renovation/bathroom-building-cambridge.webp" alt="Bathroom Building Cambridge">
+            <img src="/wp-content/uploads/Bathroom-Renovation/bathroom-building-service.webp" alt="Bathroom Building Service">
+            <img src="/wp-content/uploads/Bathroom-Renovation/cambridgeshire-loft-conversion-scaffolding-1.webp" alt="Cambridgeshire Loft Conversion Scaffolding">
+            <img src="/wp-content/uploads/Bathroom-Renovation/cambridge-house-extension-construction-progress-1.webp" alt="Cambridge House Extension Construction Progress">
+            <img src="/wp-content/uploads/Bathroom-Renovation/cambridge-renovation-building-materials-1.webp" alt="Cambridge Renovation Building Materials">
+          </div>
+
+          <!-- Garage Conversion Images (6) -->
+          <div class="category-images" data-category="garage-conversion">
+            <img src="/wp-content/uploads/Garage-Conversion/garages-around-cambridge.webp" alt="garages in cambridge">
+            <img src="/wp-content/uploads/Garage-Conversion/garage-convert-cambridge.webp" alt="garages in cambridgeshire">
+            <img src="/wp-content/uploads/Garage-Conversion/garages-conversion-in-milton.webp" alt="garage conversion in cambridge">
+            <img src="/wp-content/uploads/Garage-Conversion/best-company-garage-conversions.webp" alt="garages in cambridge conversion">
+            <img src="/wp-content/uploads/Garage-Conversion/garage-conversion-cambridge.webp" alt="garages in cambridge conversion">
+            <img src="/wp-content/uploads/Garage-Conversion/garages-in-cambridge.webp" alt="garages in cambridge">
+          </div>
+
+          <!-- Roofing Images (12) -->
+          <div class="category-images" data-category="roofing">
+            <img src="/wp-content/uploads/House-Extension/house-extension-milton.webp" alt="roofing in cambridge">
+            <img src="/wp-content/uploads/House-Extension/cambridge-loft-extension.webp" alt="roofing in cambridge">
+            <img src="/wp-content/uploads/roofing/roofing-expert-cambridge.webp" alt="roofs in cambridge">
+            <img src="/wp-content/uploads/roofing/roofs-expert-in-cambridge.webp" alt="roofing construction cambridge">
+            <img src="/wp-content/uploads/roofing/roof-construction-cambridge.webp" alt="roofing in cambridgeshire">
+            <img src="/wp-content/uploads/roofing/best-roofing-company.webp" alt="roofing in cambridge">
+            <img src="/wp-content/uploads/roofing/roofing-cambridge-loft-conversion-tiled-roof.webp" alt="Roofing Cambridge Loft Conversion Tiled Roof">
+            <img src="/wp-content/uploads/roofing/roofing-loft-conversion-cambridge-slate-roof.webp" alt="Roofing Loft Conversion Cambridge Slate Roof">
+            <img src="/wp-content/uploads/roofing/roofing-cambridge-loft-conversion-flat-roof.webp" alt="Roofing Cambridge Loft Conversion Flat Roof">
+            <img src="/wp-content/uploads/roofing/roofing-loft-conversion-cambridge-pitched-roof.webp" alt="Roofing Loft Conversion Cambridge Pitched Roof">
+            <img src="/wp-content/uploads/roofing/roofing-cambridge-loft-conversion-roof-repair.webp" alt="Roofing Cambridge Loft Conversion Roof Repair">
+            <img src="/wp-content/uploads/roofing/roofing-loft-conversion-cambridge-metal-roofing.webp" alt="Roofing Loft Conversion Cambridge Metal Roofing">
+          </div>
+
+          <!-- Driveways Images (6) -->
+          <div class="category-images" data-category="driveways">
+            <img src="/wp-content/uploads/Driveways/driveways-loft-conversion-cambridge-block-paving.webp" alt="Driveways Loft Conversion Cambridge Block Paving">
+            <img src="/wp-content/uploads/Driveways/driveways-cambridge-loft-conversion-resin-bound.webp" alt="Driveways Cambridge Loft Conversion Resin Bound">
+            <img src="/wp-content/uploads/Driveways/driveways-loft-conversion-cambridge-gravel-drive.webp" alt="Driveways Loft Conversion Cambridge Gravel Drive">
+            <img src="/wp-content/uploads/Driveways/driveways-cambridge-loft-conversion-tarmac.webp" alt="Driveways Cambridge Loft Conversion Tarmac">
+            <img src="/wp-content/uploads/Driveways/driveways-loft-conversion-cambridge-pattern-imprinted.webp" alt="Driveways Loft Conversion Cambridge Pattern Imprinted">
+            <img src="/wp-content/uploads/Driveways/driveways-cambridge-loft-conversion-concrete.webp" alt="Driveways Cambridge Loft Conversion Concrete">
+          </div>
+
+          <!-- Glass Transitions Images (1) -->
+          <div class="category-images" data-category="glass-transitions">
+            <img src="/wp-content/uploads/Glass-Transitions/glass-transitions-cambridge-loft-conversion-glass-roof.webp" alt="Glass Transitions Cambridge Loft Conversion Glass Roof">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+      <div class="lightbox-content">
+        <span class="lightbox-close">×</span>
+        <img class="lightbox-image" src="" alt="">
+        <div class="lightbox-info">
+          <h3 class="lightbox-title"></h3>
+          <p class="lightbox-description"></p>
+        </div>
+        <div class="lightbox-nav">
+          <button class="lightbox-prev">‹</button>
+          <button class="lightbox-next">›</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="dont-delay-section section">
+      <div class="contact-cta">
+        <div>
+          <h2>DON'T DELAY CONTACT US TODAY</h2>
+          <p>Contact us today for more information and a free no-obligation quote tailored to your requirements and ideas.</p>
+          <a href="/contact/" class="dont-delay">ENQUIRE NOW</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script is:inline src="/wp-content/themes/truleum-theme/assets/js/gallery-filters.js"></script>
+
+</BaseLayout>

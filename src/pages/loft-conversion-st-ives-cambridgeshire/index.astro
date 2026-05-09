@@ -1,0 +1,279 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Loft Conversion St Ives Cambridgeshire | Truleum Specialists"
+  description="Expert loft conversion services in St Ives, Cambridgeshire. Local team for dormer, Velux and bespoke loft builds across St Ives and the Ouse Valley area."
+>
+
+  <main class="main-content area-stives-page" style="font-family: 'Poppins', Arial, sans-serif;">
+
+    <style>
+      .area-stives-page {
+        --area-blue: #0a1a4a;
+        --area-blue-2: #162b70;
+        --area-gold: #d4af37;
+        --area-soft: #f5f7fb;
+        --area-text: #334155;
+        overflow-x: hidden;
+      }
+      .area-wrap { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+      .area-stives-page section,
+      .area-stives-page h1,
+      .area-stives-page h2,
+      .area-stives-page h3,
+      .area-stives-page p,
+      .area-stives-page img,
+      .area-stives-page a { opacity: 1 !important; transform: none !important; }
+      .area-hero { padding: 112px 0 96px; color: #fff; background: radial-gradient(circle at 85% 15%, rgba(212,175,55,0.24) 0%, rgba(212,175,55,0) 45%), linear-gradient(132deg, #08163d 0%, #0a1a4a 45%, #1c347f 100%); }
+      .area-hero-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 40px; align-items: center; }
+      .area-kicker { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,232,159,0.98); color: #0a1a4a; border-radius: 999px; padding: 10px 18px; font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; margin-bottom: 20px; }
+      .area-hero h1 { font-size: clamp(36px, 5vw, 58px); line-height: 1.1; color: #fff; margin: 0 0 18px; max-width: 15ch; }
+      .area-hero p { font-size: 18px; line-height: 1.8; color: rgba(255,255,255,0.92); margin: 0 0 26px; max-width: 60ch; }
+      .area-hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
+      .area-btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; border-radius: 999px; font-weight: 700; font-size: 15px; padding: 14px 24px; }
+      .area-btn-primary { background: linear-gradient(135deg, #ffe89f 0%, #9f7628 100%); color: #111827; }
+      .area-btn-ghost { color: #fff; border: 1px solid rgba(255,255,255,0.4); background: rgba(255,255,255,0.08); }
+      .lc-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 8px; }
+      .lc-metric { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); border-radius: 14px; padding: 16px; text-align: center; }
+      .lc-metric strong { display: block; font-size: 24px; line-height: 1; color: #ffe89f; margin-bottom: 6px; }
+      .lc-metric span { font-size: 13px; color: rgba(255,255,255,0.84); }
+      .area-hero-card { background: rgba(255,255,255,0.11); border: 1px solid rgba(255,255,255,0.16); border-radius: 20px; padding: 18px; backdrop-filter: blur(8px); }
+      .area-hero-card img { width: 100%; border-radius: 12px; aspect-ratio: 4 / 3; object-fit: cover; }
+      .area-price { margin-top: 14px; background: #fff; border-radius: 12px; padding: 12px 14px; color: #0a1a4a; display: flex; justify-content: space-between; align-items: center; font-size: 14px; font-weight: 600; }
+      .area-price strong { color: #111827; font-size: 19px; }
+      .area-section { padding: 86px 0; }
+      .area-head { text-align: center; max-width: 830px; margin: 0 auto 34px; }
+      .area-head h2 { color: var(--area-blue); font-size: clamp(30px, 4vw, 44px); line-height: 1.2; margin: 0 0 12px; }
+      .area-head p { color: #475569; font-size: 17px; line-height: 1.8; margin: 0; }
+      .area-intro { background: var(--area-soft); }
+      .area-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+      .area-panel { background: #fff; border: 1px solid #e4e9f2; border-radius: 16px; padding: 24px; box-shadow: 0 10px 24px rgba(15,23,42,0.05); }
+      .area-panel h3 { color: var(--area-blue); font-size: 24px; margin: 0 0 10px; }
+      .area-panel p { color: var(--area-text); line-height: 1.8; margin: 0 0 14px; }
+      .area-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+      .area-list li { display: flex; align-items: flex-start; gap: 9px; color: #1f2937; line-height: 1.7; font-size: 15px; }
+      .area-list i { color: var(--area-gold); margin-top: 3px; }
+      .area-types-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+      .area-type { border: 1px solid #e5e7eb; border-radius: 14px; background: #fff; padding: 20px; }
+      .area-type h3 { font-size: 21px; color: var(--area-blue); margin: 0 0 8px; }
+      .area-type p { margin: 0; color: var(--area-text); line-height: 1.75; font-size: 15px; }
+      .area-zone { background: linear-gradient(180deg, #0a1a4a 0%, #102559 100%); }
+      .area-zone .area-head h2, .area-zone .area-head p { color: #fff; }
+      .area-zone-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+      .area-zone-item { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 16px; }
+      .area-zone-item h3 { color: #ffe89f; font-size: 20px; margin: 0 0 8px; }
+      .area-zone-item h3 a { color: #ffe89f; text-decoration: none; }
+      .area-zone-item h3 a:hover { text-decoration: underline; }
+      .area-zone-item p { color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.7; margin: 0; }
+      .area-proof-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+      .area-proof { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; text-align: center; padding: 20px; }
+      .area-proof i { color: var(--area-gold); font-size: 24px; margin-bottom: 10px; }
+      .area-proof h3 { color: var(--area-blue); font-size: 18px; margin: 0 0 7px; }
+      .area-proof p { margin: 0; color: #475569; font-size: 14px; line-height: 1.7; }
+      .area-faq { background: var(--area-soft); }
+      .area-faq-grid { max-width: 920px; margin: 0 auto; display: grid; gap: 12px; }
+      .area-faq-item { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px; }
+      .area-faq-item h3 { color: var(--area-blue); margin: 0 0 8px; font-size: 19px; }
+      .area-faq-item p { margin: 0; color: #334155; line-height: 1.75; font-size: 15px; }
+      .area-cta { padding: 88px 0; text-align: center; background: linear-gradient(135deg, #0a1a4a 0%, #1f3a8a 100%); }
+      .area-cta h2 { color: #fff; margin: 0 0 12px; font-size: clamp(30px, 4vw, 46px); }
+      .area-cta p { color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto 24px; line-height: 1.8; font-size: 17px; }
+      @media (max-width: 1080px) { .area-types-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .area-zone-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .area-proof-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @media (max-width: 900px) { .area-hero { padding: 86px 0 70px; } .area-hero-grid, .area-columns { grid-template-columns: 1fr; } .area-hero h1 { max-width: 100%; } }
+      @media (max-width: 680px) { .lc-metrics { grid-template-columns: 1fr; } .area-section, .area-cta { padding: 64px 0; } .area-types-grid, .area-zone-grid, .area-proof-grid { grid-template-columns: 1fr; } .area-head p, .area-hero p, .area-cta p { font-size: 16px; } }
+    </style>
+
+    <section class="area-hero">
+      <div class="area-wrap area-hero-grid">
+        <div>
+          <span class="area-kicker"><i class="fas fa-location-dot"></i> St Ives, Cambridgeshire</span>
+          <h1>Loft Conversion St Ives Cambridgeshire Homes</h1>
+          <p>Looking for a loft conversion in St Ives, Cambridgeshire? We handle projects across St Ives and the Ouse Valley, from period homes in the market town centre to modern detached and semi detached houses on newer estates. See our full <a href="/services/loft-conversion-cambridge-service/" style="color:#ffe89f; font-weight:600;">Loft Conversion Service page</a> for everything we offer.</p>
+          <div class="area-hero-actions">
+            <a href="/contact/" class="area-btn area-btn-primary">Get Free Survey <i class="fas fa-arrow-right"></i></a>
+            <a href="/gallery/" class="area-btn area-btn-ghost">View Our Work</a>
+          </div>
+          <div class="lc-metrics">
+            <div class="lc-metric"><strong><i class="fas fa-check-circle"></i></strong><span>Free Site Survey</span></div>
+            <div class="lc-metric"><strong><i class="fas fa-shield-alt"></i></strong><span>Fully Insured</span></div>
+            <div class="lc-metric"><strong><i class="fas fa-award"></i></strong><span>Quality Assured</span></div>
+          </div>
+        </div>
+        <div class="area-hero-card">
+          <img src="/wp-content/uploads/Loft-Conversion/cambridge-area-loft-conversion.webp" alt="Loft conversion in St Ives Cambridgeshire by Truleum">
+          <div class="area-price">
+            <span>Typical project budget</span>
+            <strong>From £28,000</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-section area-intro">
+      <div class="area-wrap">
+        <div class="area-head">
+          <h2>Local Approach For Every Loft Conversion In St Ives</h2>
+          <p>We plan each St Ives loft conversion around the specific roof structure, planning context and how you need the room to work for your household. Our <a href="/loft-conversion-cambridge-guide-for-homeowners/" style="color: var(--area-blue); font-weight:600;">homeowner guide</a> covers the full process from survey to final sign off.</p>
+        </div>
+        <div class="area-columns">
+          <article class="area-panel">
+            <h3>What You Get</h3>
+            <p>Your St Ives loft conversion includes structural build, insulation, windows, electrics, plastering and a complete quality finish ready for decoration.</p>
+            <ul class="area-list">
+              <li><i class="fas fa-check-circle"></i> Clear written scope and stage pricing</li>
+              <li><i class="fas fa-check-circle"></i> Consistent updates from survey through to handover</li>
+              <li><i class="fas fa-check-circle"></i> Room layouts designed for bedrooms, offices or ensuites</li>
+              <li><i class="fas fa-check-circle"></i> Building regulations support throughout the build</li>
+            </ul>
+          </article>
+          <article class="area-panel">
+            <h3>Why St Ives Homes Need Specialist Input</h3>
+            <p>St Ives has a mix of period cottages, Victorian terraces and commuter era family homes. Each roof type needs a different approach to get the best result. See the <a href="https://www.planningportal.co.uk/permission/common-projects/loft-conversion" target="_blank" rel="noopener nofollow">Planning Portal loft conversion guidance</a> for permitted development rules.</p>
+            <ul class="area-list">
+              <li><i class="fas fa-check-circle"></i> Knowledge of St Ives planning and property types</li>
+              <li><i class="fas fa-check-circle"></i> Design to maximise headroom and usable floor area</li>
+              <li><i class="fas fa-check-circle"></i> Staircase planning that works within your existing layout</li>
+              <li><i class="fas fa-check-circle"></i> Build management to keep disruption to a minimum</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-section">
+      <div class="area-wrap">
+        <div class="area-head">
+          <h2>Popular Loft Conversion Types For St Ives Properties</h2>
+          <p>We recommend the right option for your roof shape and goals. Our <a href="/loft-conversion-glossary/" style="color: var(--area-blue); font-weight:600;">loft conversion glossary</a> explains each type clearly.</p>
+        </div>
+        <div class="area-types-grid">
+          <article class="area-type">
+            <h3>Dormer Conversion</h3>
+            <p>Popular for St Ives terraces and semis. Adds meaningful headroom and floor area for a new bedroom, bathroom or home working space.</p>
+          </article>
+          <article class="area-type">
+            <h3>Velux Conversion</h3>
+            <p>Uses roof windows to add light and usable space. Often the most affordable route and suits properties where the roofline cannot be altered.</p>
+          </article>
+          <article class="area-type">
+            <h3>Hip To Gable</h3>
+            <p>Ideal for end of terrace and semi detached homes. Creates wider room proportions by extending the existing hip roof to a gable end.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-section area-zone">
+      <div class="area-wrap">
+        <div class="area-head">
+          <h2>Areas We Cover Around St Ives</h2>
+          <p>We work across St Ives and neighbouring Cambridgeshire communities delivering quality loft conversions with consistent results.</p>
+        </div>
+        <div class="area-zone-grid">
+          <article class="area-zone-item"><h3>St Ives Town Centre</h3><p>Market town terraces and Victorian properties along the River Great Ouse corridor.</p></article>
+          <article class="area-zone-item"><h3>Hemingford Grey and Abbots</h3><p>Riverside villages with period homes and modern infill development close to St Ives.</p></article>
+          <article class="area-zone-item"><h3>Houghton and Needingworth</h3><p>Family villages with a mix of older housing and newer residential estates.</p></article>
+          <article class="area-zone-item"><h3>Holywell and Over</h3><p>Smaller Cambridgeshire communities with traditional housing stock within our service area.</p></article>
+          <article class="area-zone-item"><h3><a href="/loft-conversion-huntingdon/">Huntingdon</a></h3><p>Larger neighbouring town with extensive housing coverage across all property types.</p></article>
+          <article class="area-zone-item"><h3><a href="/loft-conversion-st-neots/">St Neots</a></h3><p>Fast growing town to the south with a wide range of family homes and new developments.</p></article>
+          <article class="area-zone-item"><h3><a href="/loft-conversion-cambridge/">Cambridge</a></h3><p>Full city coverage including all suburbs and surrounding Cambridge villages.</p></article>
+          <article class="area-zone-item"><h3><a href="/loft-conversion-ely/">Ely</a> Area</h3><p>Cathedral city and surrounding Fenland communities northeast of St Ives.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-section">
+      <div class="area-wrap">
+        <div class="area-head">
+          <h2>Why St Ives Homeowners Choose Truleum</h2>
+          <p>Homeowners in St Ives and across the Ouse Valley choose us for quality workmanship, honest pricing and reliable project delivery.</p>
+        </div>
+        <div class="area-proof-grid">
+          <article class="area-proof"><i class="fas fa-map-marked-alt"></i><h3>Local Team</h3><p>Good knowledge of St Ives property types, planning rules and access logistics.</p></article>
+          <article class="area-proof"><i class="fas fa-file-signature"></i><h3>Transparent Quotes</h3><p>Written quotes with clear inclusions so you know exactly what is covered.</p></article>
+          <article class="area-proof"><i class="fas fa-shield-alt"></i><h3>Fully Insured</h3><p>Full professional insurance throughout every stage of the project.</p></article>
+          <article class="area-proof"><i class="fas fa-award"></i><h3>Quality Finish</h3><p>Thorough finishing at every stage creates a space that feels complete and well made.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-section area-faq">
+      <div class="area-wrap">
+        <div class="area-head">
+          <h2>St Ives Cambridgeshire Loft Conversion FAQs</h2>
+          <p>Answers to common questions from St Ives homeowners. Our <a href="/loft-conversion-cost-cambridge/" style="color: var(--area-blue); font-weight:600;">cost guide</a> has full pricing detail for Cambridgeshire projects.</p>
+        </div>
+        <div class="area-faq-grid">
+          <article class="area-faq-item">
+            <h3>How much does a loft conversion cost in St Ives Cambridgeshire?</h3>
+            <p>Projects in St Ives typically range from £28,000 to £63,000 depending on loft type, structural requirements and the level of finish. We provide a written quote after a free site survey.</p>
+          </article>
+          <article class="area-faq-item">
+            <h3>Do I need planning permission for a loft conversion in St Ives?</h3>
+            <p>Many projects in St Ives are covered by permitted development and do not need planning permission. Properties near the river or in any designated area may need an application. We check and advise during the survey.</p>
+          </article>
+          <article class="area-faq-item">
+            <h3>Are commuter family homes in St Ives good for loft conversions?</h3>
+            <p>Yes. The majority of modern detached and semi detached homes in St Ives have roof spaces that convert well, often into a bedroom with ensuite or a home office. We assess each roof individually during the survey.</p>
+          </article>
+          <article class="area-faq-item">
+            <h3>How long does a loft conversion in St Ives take?</h3>
+            <p>Most builds take between 6 and 10 weeks from start, depending on the conversion type chosen and the complexity of any structural alterations required.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="area-cta">
+      <div class="area-wrap">
+        <p style="margin:0 0 12px; color: rgba(255,255,255,0.82);">Useful links: <a href="/loft-conversion-glossary/" style="color:#ffe89f; font-weight:600;">Loft Conversion Glossary</a> | <a href="/loft-conversion-cost-cambridge/" style="color:#ffe89f; font-weight:600;">Cost Guide</a> | <a href="/loft-conversion-cambridge-guide-for-homeowners/" style="color:#ffe89f; font-weight:600;">Homeowner Guide</a> | <a href="/loft-conversion-cambridge/" style="color:#ffe89f; font-weight:600;">Cambridge Area Page</a></p>
+        <h2>Plan Your St Ives Loft Conversion Today</h2>
+        <p>Book a free site survey to discuss your project, get layout ideas and understand the costs involved. We make the process straightforward from the first call.</p>
+        <a href="/contact/" class="area-btn area-btn-primary">Book Free Consultation <i class="fas fa-calendar-check"></i></a>
+      </div>
+    </section>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a loft conversion cost in St Ives Cambridgeshire?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Projects in St Ives typically range from £28,000 to £63,000 depending on loft type, structural requirements and the level of finish."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need planning permission for a loft conversion in St Ives?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many projects in St Ives are covered by permitted development. Properties near the river or in designated areas may need a planning application."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are commuter family homes in St Ives good for loft conversions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Most modern detached and semi detached homes in St Ives have roof spaces that convert well into bedrooms with ensuites or home offices."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a loft conversion in St Ives take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most builds in St Ives take between 6 and 10 weeks from start, depending on conversion type and structural complexity."
+          }
+        }
+      ]
+    }
+    </script>
+
+  </main>
+</BaseLayout>

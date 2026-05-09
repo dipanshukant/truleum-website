@@ -1,0 +1,129 @@
+/* Footer Styles */
+.site-footer {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: #F0F0F0;
+    padding: 60px 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-company-info {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: -40px;
+    margin-top: -45px;
+}
+
+.footer-company-text {
+    color: #142968;
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.footer-quick-links {
+    flex: 0.5;
+    min-width: 200px;
+    margin-left: 40px;
+}
+
+.footer-section-title {
+    color: #142968;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 25px 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+.footer-links-list li {
+    margin-bottom: 10px;
+}
+
+.footer-links-list li:last-child {
+    margin-bottom: 0;
+}
+
+.footer-links-list a {
+    color: #142968;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-contact-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-contact-phone,
+.footer-contact-email {
+    margin: 0 0 10px 0;
+}
+
+.footer-contact-email {
+    margin-bottom: 20px;
+}
+
+.footer-contact-phone a,
+.footer-contact-email a {
+    color: #142968;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+.footer-contact-address {
+    color: #142968;
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Footer specific link styling */
+.site-footer a {
+    background-color: unset !important;
+}
+
+/* Hover effects */
+.site-footer a:hover {
+    color: #d4af37 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-company-info {
+        min-width: 100% !important;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
