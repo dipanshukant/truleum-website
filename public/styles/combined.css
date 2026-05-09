@@ -620,6 +620,8 @@ body {
 
 @media (max-width: 768px) {
     .truleum-container h1 { font-size: 30px !important; margin-top: -50px !important; }
+    .features-container { gap: 14px; }
+    .feature-card { width: calc(50% - 7px); min-width: unset; padding: 22px 16px 20px; }
 }
 
 /* ========== WHO WE ARE SECTION ========== */
