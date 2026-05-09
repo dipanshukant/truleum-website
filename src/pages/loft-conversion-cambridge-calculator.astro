@@ -1,0 +1,630 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Loft Conversion Calculator Cambridge | Truleum"
+  description="Free loft conversion cost calculator for Cambridge. Estimate costs, check ROI value uplift and planning permission requirements instantly."
+  canonical="https://truleumloftspecialist.com/loft-conversion-cambridge-calculator/"
+>
+
+<!-- Breadcrumb -->
+<nav class="calc-breadcrumb" aria-label="Breadcrumb">
+  <div class="calc-breadcrumb-inner">
+    <a href="/">Home</a>
+    <span>›</span>
+    <span>Loft Conversion Calculator Cambridge</span>
+  </div>
+</nav>
+
+<style>
+* { box-sizing: border-box; }
+
+.calc-breadcrumb {
+  background: #0d1f5c;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 10px 20px;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+.calc-breadcrumb-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.calc-breadcrumb a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 600; }
+.calc-breadcrumb a:hover { color: #f59e0b; }
+
+/* Hero */
+.calc-page-hero {
+  background: linear-gradient(135deg, #060f32 0%, #0f2460 100%);
+  padding: 60px 20px 48px;
+  text-align: center;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+.calc-page-hero h1 {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.calc-page-hero h1 em { font-style: normal; color: #f59e0b; }
+.calc-page-hero p {
+  color: rgba(255,255,255,0.65);
+  font-size: 1rem;
+  max-width: 520px;
+  margin: 0 auto 40px;
+}
+
+/* Tool selector cards */
+.tool-cards {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.tool-card {
+  background: rgba(255,255,255,0.07);
+  border: 1.5px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 22px 24px;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  text-align: center;
+  min-width: 180px;
+  flex: 1;
+  font-family: 'Poppins', Arial, sans-serif;
+  color: rgba(255,255,255,0.75);
+  user-select: none;
+}
+.tool-card:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(245,158,11,0.4);
+  color: #fff;
+  transform: translateY(-3px);
+}
+.tool-card.active {
+  background: #d97706;
+  border-color: #d97706;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: none;
+}
+.tool-card-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+.tool-card-title { font-size: 13px; font-weight: 700; line-height: 1.3; }
+
+/* Main tools area */
+.calc-tools-wrap {
+  background: #e8ecf5;
+  font-family: 'Poppins', Arial, sans-serif;
+  min-height: 600px;
+}
+
+.calc-panel {
+  display: none;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 64px 20px 250px;
+}
+.calc-panel.active { display: block; }
+
+.calc-eyebrow {
+  display: inline-block;
+  background: rgba(10,26,74,0.1);
+  color: #0a1a4a;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 50px;
+  border: 1px solid rgba(10,26,74,0.15);
+  margin-bottom: 14px;
+}
+.calc-section-title {
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  font-weight: 900;
+  color: #0a1a4a;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.calc-section-title em { font-style: normal; color: #1f3a8a; }
+.calc-section-sub {
+  color: #4b5563;
+  font-size: 14px;
+  margin-bottom: 36px;
+  max-width: 520px;
+}
+
+/* ── COST CALCULATOR ── */
+.qc-container { text-align: center; }
+.qc-eyebrow {
+  display: inline-block;
+  background: rgba(10,26,74,0.1);
+  color: #0a1a4a;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 50px;
+  border: 1px solid rgba(10,26,74,0.15);
+  margin-bottom: 16px;
+}
+.qc-title { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 900; color: #0a1a4a; margin-bottom: 10px; line-height: 1.2; }
+.qc-title em { font-style: normal; color: #1f3a8a; }
+.qc-subtitle { color: #4b5563; font-size: 15px; margin-bottom: 36px; max-width: 520px; margin-left: auto; margin-right: auto; }
+.qc-card {
+  background: #fff;
+  border-radius: 24px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  text-align: left;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 8px 48px rgba(10,26,74,0.12);
+  overflow: hidden;
+  align-items: stretch;
+}
+.qc-fields { padding: 40px 36px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid #e5e7eb; }
+.qc-field { margin-bottom: 28px; }
+.qc-field:last-child { margin-bottom: 0; }
+.qc-label { display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 800; color: #9ca3af; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px; }
+.qc-label::before { content: ''; display: inline-block; width: 16px; height: 2px; background: #f59e0b; border-radius: 1px; flex-shrink: 0; }
+.qc-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.qc-opt { background: #f3f4f6; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 10px 18px; font-size: 14px; font-weight: 600; color: #374151; cursor: pointer; transition: all 0.18s ease; font-family: inherit; line-height: 1; }
+.qc-opt:hover { border-color: #1f3a8a; color: #1f3a8a; background: rgba(31,58,138,0.06); transform: translateY(-1px); }
+.qc-opt--active { background: #0a1a4a; border-color: #0a1a4a; color: #fff; box-shadow: 0 4px 14px rgba(10,26,74,0.22); }
+.qc-opt--active:hover { transform: none; }
+.qc-divider { display: none; }
+.qc-result { background: linear-gradient(160deg, #0a1a4a 0%, #1a3070 100%); padding: 40px 28px; text-align: center; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.qc-result::before { content: ''; position: absolute; top: -40px; right: -40px; width: 160px; height: 160px; border-radius: 50%; background: rgba(245,158,11,0.08); pointer-events: none; }
+.qc-result-icon { width: 52px; height: 52px; background: rgba(245,158,11,0.15); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 24px; }
+.qc-result-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(165,180,252,0.9); margin-bottom: 10px; }
+.qc-price { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 900; color: #ffe89f; line-height: 1.1; margin-bottom: 12px; transition: opacity 0.2s ease; }
+.qc-price.updating { opacity: 0.4; }
+.qc-includes { width: 100%; background: rgba(255,255,255,0.06); border-radius: 10px; padding: 14px 16px; margin-bottom: 16px; text-align: left; border: 1px solid rgba(255,255,255,0.08); }
+.qc-includes-title { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.qc-includes ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 5px; }
+.qc-includes li { font-size: 12px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 7px; }
+.qc-includes li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #f59e0b; flex-shrink: 0; }
+.qc-disclaimer { font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.5; margin-bottom: 18px; }
+.qc-cta { display: block; background: linear-gradient(135deg, #f59e0b, #fbbf24); color: #0a1a4a; font-weight: 900; font-size: 14px; border-radius: 50px; padding: 14px 24px; text-decoration: none; transition: all 0.2s ease; width: 100%; text-align: center; letter-spacing: 0.3px; box-shadow: 0 4px 16px rgba(245,158,11,0.3); }
+.qc-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,0.45); }
+@media (max-width: 580px) {
+  .qc-card { grid-template-columns: 1fr; }
+  .qc-fields { padding: 28px 20px; justify-content: flex-start; border-right: none; border-bottom: 1px solid #e5e7eb; }
+  .qc-result { padding: 28px 20px; }
+}
+
+/* ── ROI CALCULATOR ── */
+.roi-card { background: #fff; border-radius: 24px; border: 1px solid #d1d5db; box-shadow: 0 8px 48px rgba(10,26,74,0.12); overflow: hidden; display: grid; grid-template-columns: 1fr 300px; align-items: stretch; }
+.roi-fields { padding: 40px 36px; border-right: 1px solid #e5e7eb; }
+.roi-input-group { margin-bottom: 28px; }
+.roi-input-group:last-child { margin-bottom: 0; }
+.roi-input-label { display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 800; color: #9ca3af; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px; }
+.roi-input-label::before { content: ''; display: inline-block; width: 16px; height: 2px; background: #f59e0b; border-radius: 1px; flex-shrink: 0; }
+.roi-home-input { width: 100%; padding: 12px 16px; border: 1.5px solid #e5e7eb; border-radius: 10px; font-size: 15px; font-weight: 600; color: #0a1a4a; font-family: inherit; outline: none; transition: border-color 0.2s; }
+.roi-home-input:focus { border-color: #0a1a4a; }
+.roi-result { background: linear-gradient(160deg, #0a1a4a 0%, #1a3070 100%); padding: 40px 28px; text-align: center; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.roi-result::before { content: ''; position: absolute; top: -40px; right: -40px; width: 160px; height: 160px; border-radius: 50%; background: rgba(245,158,11,0.08); pointer-events: none; }
+.roi-result-icon { width: 52px; height: 52px; background: rgba(245,158,11,0.15); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 24px; }
+.roi-result-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(165,180,252,0.9); margin-bottom: 8px; }
+.roi-uplift { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 900; color: #ffe89f; line-height: 1.1; margin-bottom: 6px; transition: opacity 0.2s; }
+.roi-uplift.updating { opacity: 0.4; }
+.roi-new-value { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
+.roi-stats { width: 100%; background: rgba(255,255,255,0.06); border-radius: 10px; padding: 14px 16px; text-align: left; border: 1px solid rgba(255,255,255,0.08); margin-bottom: 16px; }
+.roi-stat-row { display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.7); padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.roi-stat-row:last-child { border-bottom: none; }
+.roi-stat-row span:last-child { color: #ffe89f; font-weight: 700; }
+.roi-disclaimer { font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.5; margin-bottom: 18px; }
+.roi-cta { display: block; background: linear-gradient(135deg, #f59e0b, #fbbf24); color: #0a1a4a; font-weight: 900; font-size: 14px; border-radius: 50px; padding: 14px 24px; text-decoration: none; transition: all 0.2s ease; width: 100%; text-align: center; box-shadow: 0 4px 16px rgba(245,158,11,0.3); }
+.roi-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,0.45); }
+@media (max-width: 580px) {
+  .roi-card { grid-template-columns: 1fr; }
+  .roi-fields { border-right: none; border-bottom: 1px solid #e5e7eb; padding: 28px 20px; }
+  .roi-result { padding: 28px 20px; }
+}
+
+/* ── PLANNING CHECKER ── */
+.plan-card { background: #fff; border-radius: 24px; border: 1px solid #d1d5db; box-shadow: 0 8px 48px rgba(10,26,74,0.12); overflow: hidden; }
+.plan-questions { padding: 40px 36px; }
+.plan-q { margin-bottom: 28px; }
+.plan-q:last-child { margin-bottom: 32px; }
+.plan-q-text { font-size: 14px; font-weight: 700; color: #0a1a4a; margin-bottom: 12px; display: flex; align-items: flex-start; gap: 10px; }
+.plan-q-num { background: #0a1a4a; color: #fff; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+.plan-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.plan-btn { background: #f3f4f6; border: 1.5px solid #e5e7eb; border-radius: 10px; padding: 9px 20px; font-size: 13px; font-weight: 600; color: #374151; cursor: pointer; font-family: inherit; transition: all 0.18s ease; }
+.plan-btn:hover { border-color: #0a1a4a; color: #0a1a4a; }
+.plan-btn--active { background: #0a1a4a; border-color: #0a1a4a; color: #fff; }
+.plan-result-box { margin: 0 36px 36px; border-radius: 14px; padding: 24px 28px; display: flex; align-items: flex-start; gap: 16px; }
+.plan-result-box.permitted { background: rgba(16,185,129,0.08); border: 1.5px solid rgba(16,185,129,0.3); }
+.plan-result-box.planning  { background: rgba(245,158,11,0.08); border: 1.5px solid rgba(245,158,11,0.3); }
+.plan-result-box.unclear   { background: rgba(10,26,74,0.06);   border: 1.5px solid rgba(10,26,74,0.15); }
+.plan-result-icon { font-size: 28px; flex-shrink: 0; }
+.plan-result-title { font-size: 15px; font-weight: 800; color: #0a1a4a; margin-bottom: 4px; }
+.plan-result-desc { font-size: 13px; color: #4b5563; line-height: 1.6; }
+@media (max-width: 580px) {
+  .plan-questions { padding: 28px 20px; }
+  .plan-result-box { margin: 0 20px 28px; }
+}
+
+/* ── COMPARISON TABLE ── */
+.comp-table-wrap { overflow-x: auto; border-radius: 16px; border: 1px solid #d1d5db; box-shadow: 0 8px 48px rgba(10,26,74,0.1); }
+.comp-table { width: 100%; border-collapse: collapse; background: #fff; font-size: 14px; min-width: 620px; }
+.comp-table th { background: #0a1a4a; color: #fff; padding: 14px 18px; text-align: left; font-weight: 700; font-size: 13px; letter-spacing: 0.3px; }
+.comp-table td { padding: 13px 18px; border-bottom: 1px solid #e5e7eb; color: #374151; vertical-align: top; }
+.comp-table tr:last-child td { border-bottom: none; }
+.comp-table tr:nth-child(even) td { background: #f3f4f6; }
+.comp-table .td-type { font-weight: 700; color: #0a1a4a; }
+.comp-badge { display: inline-block; padding: 3px 10px; border-radius: 50px; font-size: 11px; font-weight: 700; }
+.badge-green { background: rgba(16,185,129,0.12); color: #059669; }
+.badge-amber { background: rgba(245,158,11,0.12); color: #b45309; }
+.badge-red   { background: rgba(239,68,68,0.1);   color: #dc2626; }
+
+@media (max-width: 700px) {
+  .tool-cards { gap: 10px; }
+  .tool-card { min-width: calc(50% - 10px); flex: unset; padding: 18px 14px; }
+}
+</style>
+
+<!-- Hero + Tool Selector Cards -->
+<section class="calc-page-hero">
+  <h1>Loft Conversion <em>Tools</em> for Cambridge Homeowners</h1>
+  <p>Free calculators and checkers — no registration, no sales calls. Click a tool to get started.</p>
+
+  <div class="tool-cards">
+    <div class="tool-card active" data-tool="cost">
+      <span class="tool-card-icon">🏠</span>
+      <div class="tool-card-title">Cost Calculator</div>
+    </div>
+    <div class="tool-card" data-tool="roi">
+      <span class="tool-card-icon">📈</span>
+      <div class="tool-card-title">ROI &amp; Value Uplift</div>
+    </div>
+    <div class="tool-card" data-tool="planning">
+      <span class="tool-card-icon">📋</span>
+      <div class="tool-card-title">Planning Permission Checker</div>
+    </div>
+    <div class="tool-card" data-tool="compare">
+      <span class="tool-card-icon">⚖️</span>
+      <div class="tool-card-title">Compare Loft Types</div>
+    </div>
+  </div>
+</section>
+
+<div class="calc-tools-wrap">
+
+  <!-- ① COST CALCULATOR -->
+  <div class="calc-panel active" id="panel-cost">
+    <div class="qc-container">
+      <span class="qc-eyebrow">Free Estimate</span>
+      <h2 class="qc-title">How Much Will Your <em>Loft Conversion</em> Cost?</h2>
+      <p class="qc-subtitle">Pick your options below for an instant guide price. No registration required.</p>
+      <div class="qc-card">
+        <div class="qc-fields">
+          <div class="qc-field">
+            <label class="qc-label">Loft Type</label>
+            <div class="qc-options">
+              <button class="qc-opt qc-opt--active" data-key="type" data-val="velux">Velux / Roof Light</button>
+              <button class="qc-opt" data-key="type" data-val="dormer">Dormer</button>
+              <button class="qc-opt" data-key="type" data-val="hipgable">Hip-to-Gable</button>
+              <button class="qc-opt" data-key="type" data-val="mansard">Mansard</button>
+              <button class="qc-opt" data-key="type" data-val="lshaped">L-Shaped Dormer</button>
+            </div>
+          </div>
+          <div class="qc-field">
+            <label class="qc-label">Property Size</label>
+            <div class="qc-options">
+              <button class="qc-opt qc-opt--active" data-key="size" data-val="small">Small (1-2 bed)</button>
+              <button class="qc-opt" data-key="size" data-val="medium">Medium (3 bed)</button>
+              <button class="qc-opt" data-key="size" data-val="large">Large (4+ bed)</button>
+            </div>
+          </div>
+          <div class="qc-field">
+            <label class="qc-label">Finish Level</label>
+            <div class="qc-options">
+              <button class="qc-opt qc-opt--active" data-key="finish" data-val="standard">Standard</button>
+              <button class="qc-opt" data-key="finish" data-val="premium">Premium</button>
+              <button class="qc-opt" data-key="finish" data-val="luxury">Luxury</button>
+            </div>
+          </div>
+        </div>
+        <div class="qc-divider"></div>
+        <div class="qc-result">
+          <div class="qc-result-icon">&#127968;</div>
+          <div class="qc-result-label">Estimated Price Range</div>
+          <div class="qc-price" id="qcPrice">£18,000 – £24,000</div>
+          <div class="qc-includes">
+            <div class="qc-includes-title">Typically Includes</div>
+            <ul>
+              <li>Full structural work</li>
+              <li>Insulation &amp; plasterboard</li>
+              <li>Staircase installation</li>
+              <li>Electrics &amp; lighting</li>
+            </ul>
+          </div>
+          <p class="qc-disclaimer">Guide price only. Free survey confirms your exact quote with no obligation.</p>
+          <a href="/contact/" class="qc-cta">Get My Free Quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ② ROI CALCULATOR -->
+  <div class="calc-panel" id="panel-roi">
+    <span class="calc-eyebrow">Value Uplift</span>
+    <h2 class="calc-section-title">How Much Value Will It <em>Add</em> to Your Home?</h2>
+    <p class="calc-section-sub">Loft conversions typically add 15–25% to Cambridge property values. Enter your home value to see your estimated uplift.</p>
+    <div class="roi-card">
+      <div class="roi-fields">
+        <div class="roi-input-group">
+          <label class="roi-input-label">Current Home Value (£)</label>
+          <input type="number" id="roiHomeVal" class="roi-home-input" value="350000" min="100000" max="2000000" step="5000" placeholder="e.g. 350000">
+        </div>
+        <div class="roi-input-group">
+          <label class="roi-input-label">Loft Type</label>
+          <div class="qc-options">
+            <button class="qc-opt qc-opt--active" data-roi="type" data-val="velux">Velux</button>
+            <button class="qc-opt" data-roi="type" data-val="dormer">Dormer</button>
+            <button class="qc-opt" data-roi="type" data-val="hipgable">Hip-to-Gable</button>
+            <button class="qc-opt" data-roi="type" data-val="mansard">Mansard</button>
+          </div>
+        </div>
+      </div>
+      <div class="roi-result">
+        <div class="roi-result-icon">📈</div>
+        <div class="roi-result-label">Estimated Value Added</div>
+        <div class="roi-uplift" id="roiUplift">+£52,500</div>
+        <div class="roi-new-value" id="roiNewVal">New value: ~£402,500</div>
+        <div class="roi-stats">
+          <div class="roi-stat-row"><span>Uplift %</span><span id="roiPct">15%</span></div>
+          <div class="roi-stat-row"><span>Est. build cost</span><span id="roiCost">£18k–£24k</span></div>
+          <div class="roi-stat-row"><span>Net gain estimate</span><span id="roiNet">~£28k–£34k</span></div>
+        </div>
+        <p class="roi-disclaimer">Based on typical Cambridge market uplifts. Actual value depends on property, location and finish.</p>
+        <a href="/contact/" class="roi-cta">Book Free Survey</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ③ PLANNING CHECKER -->
+  <div class="calc-panel" id="panel-planning">
+    <span class="calc-eyebrow">Planning Permission</span>
+    <h2 class="calc-section-title">Do You Need <em>Planning Permission</em>?</h2>
+    <p class="calc-section-sub">Answer 4 quick questions to find out if your loft conversion likely falls under Permitted Development.</p>
+    <div class="plan-card">
+      <div class="plan-questions">
+        <div class="plan-q">
+          <div class="plan-q-text"><span class="plan-q-num">1</span>Is your property in a conservation area or listed building?</div>
+          <div class="plan-btns">
+            <button class="plan-btn" data-pq="conservation" data-val="yes">Yes</button>
+            <button class="plan-btn plan-btn--active" data-pq="conservation" data-val="no">No</button>
+          </div>
+        </div>
+        <div class="plan-q">
+          <div class="plan-q-text"><span class="plan-q-num">2</span>Is your property a flat or maisonette?</div>
+          <div class="plan-btns">
+            <button class="plan-btn" data-pq="flat" data-val="yes">Yes</button>
+            <button class="plan-btn plan-btn--active" data-pq="flat" data-val="no">No</button>
+          </div>
+        </div>
+        <div class="plan-q">
+          <div class="plan-q-text"><span class="plan-q-num">3</span>Will the loft add more than 40m³ of new space? (50m³ for detached/semi)</div>
+          <div class="plan-btns">
+            <button class="plan-btn" data-pq="volume" data-val="yes">Yes</button>
+            <button class="plan-btn plan-btn--active" data-pq="volume" data-val="no">No / Unsure</button>
+          </div>
+        </div>
+        <div class="plan-q">
+          <div class="plan-q-text"><span class="plan-q-num">4</span>Will the roof extension be higher than the existing roof ridge?</div>
+          <div class="plan-btns">
+            <button class="plan-btn" data-pq="ridge" data-val="yes">Yes</button>
+            <button class="plan-btn plan-btn--active" data-pq="ridge" data-val="no">No</button>
+          </div>
+        </div>
+      </div>
+      <div class="plan-result-box permitted" id="planResult">
+        <div class="plan-result-icon">✅</div>
+        <div>
+          <div class="plan-result-title">Likely Permitted Development</div>
+          <div class="plan-result-desc">Based on your answers, your loft conversion probably doesn't need planning permission. You'll still need Building Regulations approval. We recommend confirming with Cambridge City Council before starting work.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ④ COMPARISON TABLE -->
+  <div class="calc-panel" id="panel-compare">
+    <span class="calc-eyebrow">Compare Options</span>
+    <h2 class="calc-section-title">Loft Conversion Types — <em>Side by Side</em></h2>
+    <p class="calc-section-sub">Not sure which loft type suits your home? Compare cost, space, disruption and planning requirements.</p>
+    <div class="comp-table-wrap">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Cost Range</th>
+            <th>Space Gained</th>
+            <th>Disruption</th>
+            <th>Planning Needed</th>
+            <th>Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-type">Velux / Roof Light</td>
+            <td>£18k – £35k</td>
+            <td>Low – Medium</td>
+            <td><span class="comp-badge badge-green">Low</span></td>
+            <td><span class="comp-badge badge-green">Usually No</span></td>
+            <td>Storage + light, tight budgets</td>
+          </tr>
+          <tr>
+            <td class="td-type">Dormer</td>
+            <td>£28k – £58k</td>
+            <td>Medium – High</td>
+            <td><span class="comp-badge badge-amber">Moderate</span></td>
+            <td><span class="comp-badge badge-green">Usually No</span></td>
+            <td>Extra bedroom + en-suite</td>
+          </tr>
+          <tr>
+            <td class="td-type">Hip-to-Gable</td>
+            <td>£34k – £68k</td>
+            <td>High</td>
+            <td><span class="comp-badge badge-amber">Moderate</span></td>
+            <td><span class="comp-badge badge-amber">Sometimes</span></td>
+            <td>Semi-detached, max floor space</td>
+          </tr>
+          <tr>
+            <td class="td-type">Mansard</td>
+            <td>£42k – £85k</td>
+            <td>Very High</td>
+            <td><span class="comp-badge badge-red">High</span></td>
+            <td><span class="comp-badge badge-red">Usually Yes</span></td>
+            <td>Maximum space, premium finish</td>
+          </tr>
+          <tr>
+            <td class="td-type">L-Shaped Dormer</td>
+            <td>£38k – £78k</td>
+            <td>Very High</td>
+            <td><span class="comp-badge badge-amber">Moderate</span></td>
+            <td><span class="comp-badge badge-amber">Sometimes</span></td>
+            <td>Victorian/Edwardian terraces</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<script is:inline>
+(function() {
+  /* ── Tab switching ── */
+  document.querySelectorAll('.tool-card').forEach(function(card) {
+    card.addEventListener('click', function() {
+      document.querySelectorAll('.tool-card').forEach(function(c) { c.classList.remove('active'); });
+      document.querySelectorAll('.calc-panel').forEach(function(p) { p.classList.remove('active'); });
+      card.classList.add('active');
+      var panel = document.getElementById('panel-' + card.dataset.tool);
+      if (panel) panel.classList.add('active');
+    });
+  });
+
+  /* ── Cost Calculator ── */
+  var prices = {
+    velux:    { small: [18000,24000], medium: [22000,28000], large: [26000,34000] },
+    dormer:   { small: [28000,38000], medium: [34000,46000], large: [42000,58000] },
+    hipgable: { small: [34000,46000], medium: [40000,54000], large: [50000,68000] },
+    mansard:  { small: [42000,58000], medium: [52000,70000], large: [65000,85000] },
+    lshaped:  { small: [38000,52000], medium: [46000,62000], large: [58000,78000] }
+  };
+  var finishMult = { standard: 1, premium: 1.15, luxury: 1.35 };
+  var sel = { type: 'velux', size: 'small', finish: 'standard' };
+  function fmt(n) { return '£' + n.toLocaleString('en-GB'); }
+  function updateCost() {
+    var priceEl = document.getElementById('qcPrice');
+    if (!priceEl) return;
+    priceEl.classList.add('updating');
+    setTimeout(function() {
+      var base = prices[sel.type][sel.size];
+      var mult = finishMult[sel.finish];
+      var lo = Math.round(base[0] * mult / 500) * 500;
+      var hi = Math.round(base[1] * mult / 500) * 500;
+      priceEl.textContent = fmt(lo) + ' – ' + fmt(hi);
+      priceEl.classList.remove('updating');
+    }, 120);
+  }
+  document.querySelectorAll('.qc-opt[data-key]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var key = btn.dataset.key;
+      document.querySelectorAll('.qc-opt[data-key="' + key + '"]').forEach(function(b) { b.classList.remove('qc-opt--active'); });
+      btn.classList.add('qc-opt--active');
+      sel[key] = btn.dataset.val;
+      updateCost();
+    });
+  });
+
+  /* ── ROI Calculator ── */
+  var roiSel = { type: 'velux' };
+  var roiUplifts    = { velux: 0.15, dormer: 0.20, hipgable: 0.22, mansard: 0.25 };
+  var roiCostLabels = { velux: '£18k–£24k', dormer: '£28k–£38k', hipgable: '£34k–£46k', mansard: '£42k–£58k' };
+  var roiCostLow    = { velux: 18000, dormer: 28000, hipgable: 34000, mansard: 42000 };
+  var roiCostHigh   = { velux: 24000, dormer: 38000, hipgable: 46000, mansard: 58000 };
+  function fmtK(n) { return n >= 1000 ? '£' + Math.round(n/1000) + 'k' : '£' + n; }
+  function updateROI() {
+    var homeVal = parseInt(document.getElementById('roiHomeVal').value) || 350000;
+    var pct = roiUplifts[roiSel.type] || 0.15;
+    var uplift = Math.round(homeVal * pct / 500) * 500;
+    var newVal = homeVal + uplift;
+    var costLo = roiCostLow[roiSel.type];
+    var costHi = roiCostHigh[roiSel.type];
+    var netLo = uplift - costHi;
+    var netHi = uplift - costLo;
+    var upliftEl = document.getElementById('roiUplift');
+    if (upliftEl) { upliftEl.classList.add('updating'); }
+    setTimeout(function() {
+      if (upliftEl) { upliftEl.textContent = '+' + fmt(uplift); upliftEl.classList.remove('updating'); }
+      var nv = document.getElementById('roiNewVal'); if (nv) nv.textContent = 'New value: ~' + fmt(newVal);
+      var pctEl = document.getElementById('roiPct'); if (pctEl) pctEl.textContent = Math.round(pct*100) + '%';
+      var costEl = document.getElementById('roiCost'); if (costEl) costEl.textContent = roiCostLabels[roiSel.type];
+      var netEl = document.getElementById('roiNet'); if (netEl) netEl.textContent = netLo > 0 ? '~' + fmtK(netLo) + '–' + fmtK(netHi) : 'Varies';
+    }, 120);
+  }
+  document.querySelectorAll('.qc-opt[data-roi]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.qc-opt[data-roi="type"]').forEach(function(b) { b.classList.remove('qc-opt--active'); });
+      btn.classList.add('qc-opt--active');
+      roiSel.type = btn.dataset.val;
+      updateROI();
+    });
+  });
+  var homeInput = document.getElementById('roiHomeVal');
+  if (homeInput) homeInput.addEventListener('input', updateROI);
+  updateROI();
+
+  /* ── Planning Checker ── */
+  var planSel = { conservation: 'no', flat: 'no', volume: 'no', ridge: 'no' };
+  function updatePlan() {
+    var box = document.getElementById('planResult');
+    if (!box) return;
+    box.className = 'plan-result-box';
+    if (planSel.conservation === 'yes' || planSel.flat === 'yes') {
+      box.classList.add('planning');
+      box.innerHTML = '<div class="plan-result-icon">⚠️</div><div><div class="plan-result-title">Planning Permission Likely Required</div><div class="plan-result-desc">Conservation areas, listed buildings, and flats are not covered by Permitted Development rights. You will need to apply for full planning permission with Cambridge City Council before starting work.</div></div>';
+    } else if (planSel.volume === 'yes' || planSel.ridge === 'yes') {
+      box.classList.add('unclear');
+      box.innerHTML = '<div class="plan-result-icon">🔍</div><div><div class="plan-result-title">Worth Checking with the Council</div><div class="plan-result-desc">Your answers suggest the project may exceed Permitted Development limits. We recommend a pre-application consultation with Cambridge City Council, or contact us — we handle planning queries regularly.</div></div>';
+    } else {
+      box.classList.add('permitted');
+      box.innerHTML = '<div class="plan-result-icon">✅</div><div><div class="plan-result-title">Likely Permitted Development</div><div class="plan-result-desc">Based on your answers, your loft conversion probably doesn\'t need planning permission. You\'ll still need Building Regulations approval. We recommend confirming with Cambridge City Council before starting work.</div></div>';
+    }
+  }
+  document.querySelectorAll('.plan-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var q = btn.dataset.pq;
+      document.querySelectorAll('.plan-btn[data-pq="' + q + '"]').forEach(function(b) { b.classList.remove('plan-btn--active'); });
+      btn.classList.add('plan-btn--active');
+      planSel[q] = btn.dataset.val;
+      updatePlan();
+    });
+  });
+})();
+</script>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://truleumloftspecialist.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Loft Conversion Calculator Cambridge", "item": "https://truleumloftspecialist.com/loft-conversion-cambridge-calculator/" }
+  ]
+})} />
+
+</BaseLayout>
