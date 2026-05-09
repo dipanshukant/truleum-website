@@ -78,14 +78,15 @@
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 16px rgba(0,0,0,0.65), 0 1px 4px rgba(0,0,0,0.5);
     font-family: 'Poppins', Arial, sans-serif;
 }
 
 .hero-text h1 span {
-    color: #D4AF37;
     display: block;
-	z-index: 99999;
+    z-index: 99999;
+    color: #d4a843;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.4);
 }
 
 .hero-text p {

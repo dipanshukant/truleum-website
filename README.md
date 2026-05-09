@@ -66,7 +66,10 @@ truleum-astro/
 │       ├── cambridge-loft-conversions/
 │       ├── designs-for-cambridge-loft-conversions/
 │       ├── privacy-policy/
-│       └── thank-you/
+│       ├── thank-you/
+│       ├── sitemap/                   ← /sitemap/ (HTML sitemap page for visitors)
+│       ├── loft-conversion-cambridge-calculator/ ← /loft-conversion-cambridge-calculator/
+│       └── loft-room-configurator.astro          ← /loft-room-configurator/
 └── public/
     └── wp-content/
         ├── uploads/                ← all images (kept in original WP structure)
@@ -252,7 +255,9 @@ All images live in `public/wp-content/uploads/`. Reference them with an absolute
   };
   var finishMult = { standard: 1, premium: 1.15, luxury: 1.35 };
   ```
+- Calculator shows **starting price only** (low end of range) — client decision, no max price shown
 - To update prices: edit the numbers above and rebuild
+- Same calculator exists on `/loft-conversion-cambridge-calculator/` — keep both in sync if prices change
 
 ---
 
@@ -279,6 +284,8 @@ No CSS preprocessor — plain CSS only.
 
 **Inline `<style>` blocks** are used directly in area pages and homepage interactive sections (slider, calculator, reviews). These are scoped to that page only.
 
+**Cache busting:** `BaseLayout.astro` appends `?v={buildTimestamp}` to all external CSS links automatically. Every new build generates a fresh timestamp, forcing browsers to fetch updated CSS. No manual version bumping needed.
+
 ---
 
 ## SEO Notes
@@ -293,14 +300,31 @@ No CSS preprocessor — plain CSS only.
 
 ## Brand Colours
 
-| Name | Hex |
-|---|---|
-| Navy (primary) | `#0a1a4a` |
-| Navy (mid) | `#1f3a8a` |
-| Gold/Amber | `#f59e0b` |
-| Light Amber | `#fbbf24` |
-| Cream Gold | `#ffe89f` |
-| Off-white bg | `#f8f9fb` |
+| Name | Value | Usage |
+|---|---|---|
+| Navy (primary) | `#0a1a4a` | Backgrounds, headings, buttons |
+| Navy (mid) | `#1f3a8a` | Hover states, gradients |
+| Navy (dark) | `#060f32` | Hero/page hero backgrounds |
+| **Gold (gradient)** | `linear-gradient(135deg, #ffe89f 0%, #75561d 100%)` | **All buttons, CTAs, active states, highlights** |
+| Gold (solid text) | `#c9902e` | Text accents, borders, icons — use when gradient not applicable |
+| Off-white bg | `#f8f9fb` | Page section backgrounds |
+| Light grey bg | `#f0f4f8` | Card area backgrounds |
+
+> **Important for devs:** The old amber/orange `#f59e0b` / `#d4af37` / `#fbbf24` are retired. Do **not** use them for new work. Always use the gold gradient for buttons and `#c9902e` for text/borders/icons.
+
+### Gold gradient quick reference
+
+```css
+/* Buttons, CTAs, active cards, highlights */
+background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%);
+
+/* Text colour, icon colour, border colour */
+color: #c9902e;
+border-color: #c9902e;
+
+/* Box shadow (use when button needs shadow) */
+box-shadow: 0 4px 20px rgba(117, 86, 29, 0.4);
+```
 
 ---
 
