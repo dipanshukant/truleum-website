@@ -58,6 +58,53 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
   <link rel="stylesheet" href="/styles/global-overrides.css">
   <link rel="stylesheet" href="/wp-content/themes/truleum-theme/assets/css/popup-contact-form.css">
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "GeneralContractor"],
+    "name": "Truleum Loft Specialist",
+    "legalName": "Truleum Loft Specialist Ltd",
+    "url": "https://truleumloftspecialist.com",
+    "logo": "https://truleumloftspecialist.com/wp-content/uploads/2025/09/truleum-logo.png",
+    "image": "https://truleumloftspecialist.com/wp-content/uploads/2025/09/truleum-logo.png",
+    "telephone": "+447857035925",
+    "email": "Truleumloftspecialist@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3rd Floor, 86-90 Paul Street",
+      "addressLocality": "London",
+      "postalCode": "EC2A 4NE",
+      "addressCountry": "GB"
+    },
+    "areaServed": [
+      {"@type": "City", "name": "Cambridge"},
+      {"@type": "AdministrativeArea", "name": "Cambridgeshire"},
+      {"@type": "City", "name": "Ely"},
+      {"@type": "City", "name": "Huntingdon"},
+      {"@type": "City", "name": "Peterborough"},
+      {"@type": "City", "name": "St Ives"},
+      {"@type": "City", "name": "St Neots"},
+      {"@type": "City", "name": "March"},
+      {"@type": "City", "name": "Wisbech"},
+      {"@type": "City", "name": "Soham"}
+    ],
+    "sameAs": [
+      "https://www.tiktok.com/@truleumloftspecialist",
+      "https://www.instagram.com/truleumloftspecialist",
+      "https://www.facebook.com/people/Truleum-Loft-Specialist-Ltd/61564180331986/"
+    ],
+    "description": "Truleum Loft Specialist provides expert loft conversions, house extensions, bathroom renovations and kitchen refurbishments across Cambridge and Cambridgeshire.",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Loft Conversion & Renovation Services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Loft Conversion Cambridge"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "House Extension Cambridge"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Bathroom Renovation"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Kitchen Refurbishment"}}
+      ]
+    }
+  })} />
+
   <slot name="head" />
 </head>
 <body>
