@@ -24,6 +24,11 @@ body { overflow-x: hidden; }
 
 body > footer { margin-top: -150px; }
 
+/* Prevent the lifted footer from overlapping the final CTA on area subpages */
+body > main > main[class*="area-"][class$="-page"] {
+    padding-bottom: 170px;
+}
+
 #submit-btn { background: linear-gradient(135deg, #ffe89f 0%, #75561d 100%); }
 
 .post-author { display: none !important; }
@@ -77,6 +82,7 @@ body > main > main > div.gallery-hero-gallery > div { margin-top: -45px; }
     .footer-quick-links { margin-left: 0px !important; margin-top: -50px !important; }
     body > footer > div > div.footer-company-info > img { margin-left: -16px !important; }
     .logo-container img { margin-left: -15px !important; }
+    body > main > main[class*="area-"][class$="-page"] { padding-bottom: 210px; }
 }
 @media (max-width: 768px) {
     .locations-grid { margin-left: 15px; }
